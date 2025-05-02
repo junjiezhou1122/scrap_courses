@@ -1,0 +1,265 @@
+university,course_code,title,url
+Stanford,CS 1U,Practical Unix,https://www.coursicle.com/stanford/courses/CS/1U/
+Stanford,CS 7,Personal Finance for Engineers,https://www.coursicle.com/stanford/courses/CS/7/
+Stanford,CS 9,Problem-Solving for the CS Technical Interview,https://www.coursicle.com/stanford/courses/CS/9/
+Stanford,CS 11SI,How to Make VR: Introduction to Virtual Reality Design and D...,https://www.coursicle.com/stanford/courses/CS/11SI/
+Stanford,CS 20,Tensorflow for Deep Learning Research,https://www.coursicle.com/stanford/courses/CS/20/
+Stanford,CS 21SI,AI for Social Good,https://www.coursicle.com/stanford/courses/CS/21SI/
+Stanford,CS 22A,The Social & Economic Impact of Artificial Intelligence,https://www.coursicle.com/stanford/courses/CS/22A/
+Stanford,CS 28,"Artificial Intelligence, Entrepreneurship and Society in the...",https://www.coursicle.com/stanford/courses/CS/28/
+Stanford,CS 41,Hap.py Code: the Python Programming Language,https://www.coursicle.com/stanford/courses/CS/41/
+Stanford,CS 42,Callback Me Maybe: Contemporary Javascript,https://www.coursicle.com/stanford/courses/CS/42/
+Stanford,CS 43,Functional Programming in Clojure,https://www.coursicle.com/stanford/courses/CS/43/
+Stanford,CS 45N,Computers and Photography: From Capture to Sharing,https://www.coursicle.com/stanford/courses/CS/45N/
+Stanford,CS 47,Cross-Platform Mobile Development,https://www.coursicle.com/stanford/courses/CS/47/
+Stanford,CS 47SI,Cross-Platform Mobile Development,https://www.coursicle.com/stanford/courses/CS/47SI/
+Stanford,CS 49N,Using Bits to Control Atoms,https://www.coursicle.com/stanford/courses/CS/49N/
+Stanford,CS 50,Using Tech for Good,https://www.coursicle.com/stanford/courses/CS/50/
+Stanford,CS 51,Cs + Social Good Studio: Designing Social Impact Projects,https://www.coursicle.com/stanford/courses/CS/51/
+Stanford,CS 52,CS + Social Good Studio: Implementing Social Good Projects,https://www.coursicle.com/stanford/courses/CS/52/
+Stanford,CS 53SI,Discussion in Tech for Good,https://www.coursicle.com/stanford/courses/CS/53SI/
+Stanford,CS 56N,Great Discoveries and Inventions in Computing,https://www.coursicle.com/stanford/courses/CS/56N/
+Stanford,CS 57N,Randomness: Computational and Philosophical Approaches,https://www.coursicle.com/stanford/courses/CS/57N/
+Stanford,CS 58N,The Blockchain Revolution Will Not Be Televised,https://www.coursicle.com/stanford/courses/CS/58N/
+Stanford,CS 62N,Let There Be Computations,https://www.coursicle.com/stanford/courses/CS/62N/
+Stanford,CS 80Q,Race and Gender in Silicon Valley,https://www.coursicle.com/stanford/courses/CS/80Q/
+Stanford,CS 81SI,AI Interpretability and Fairness,https://www.coursicle.com/stanford/courses/CS/81SI/
+Stanford,CS 82SI,Wellness in Tech: Designing an Intentional Lifestyle in a Te...,https://www.coursicle.com/stanford/courses/CS/82SI/
+Stanford,CS 83,Playback Theater,https://www.coursicle.com/stanford/courses/CS/83/
+Stanford,CS 84,Emotional Intelligence,https://www.coursicle.com/stanford/courses/CS/84/
+Stanford,CS 91SI,Digital Canvas: an Introduction to UI/UX Design,https://www.coursicle.com/stanford/courses/CS/91SI/
+Stanford,CS 93,Teaching AI,https://www.coursicle.com/stanford/courses/CS/93/
+Stanford,CS 100A,Problem-solving Lab for CS106A,https://www.coursicle.com/stanford/courses/CS/100A/
+Stanford,CS 101,Introduction to Computing Principles,https://www.coursicle.com/stanford/courses/CS/101/
+Stanford,CS 102,Working with Data - Tools and Techniques,https://www.coursicle.com/stanford/courses/CS/102/
+Stanford,CS 103,Mathematical Foundations of Computing,https://www.coursicle.com/stanford/courses/CS/103/
+Stanford,CS 103A,Mathematical Problem-solving Strategies,https://www.coursicle.com/stanford/courses/CS/103A/
+Stanford,CS 105,Introduction to Computers,https://www.coursicle.com/stanford/courses/CS/105/
+Stanford,CS 106A,Programming Methodology,https://www.coursicle.com/stanford/courses/CS/106A/
+Stanford,CS 106B,Programming Abstractions,https://www.coursicle.com/stanford/courses/CS/106B/
+Stanford,CS 106E,Exploration of Computing,https://www.coursicle.com/stanford/courses/CS/106E/
+Stanford,CS 106L,Standard C++ Programming Laboratory,https://www.coursicle.com/stanford/courses/CS/106L/
+Stanford,CS 106S,Coding for Social Good,https://www.coursicle.com/stanford/courses/CS/106S/
+Stanford,CS 106X,Programming Abstractions (Accelerated),https://www.coursicle.com/stanford/courses/CS/106X/
+Stanford,CS 106AJ,Programming Methodology in JavaScript,https://www.coursicle.com/stanford/courses/CS/106AJ/
+Stanford,CS 106AP,Programming Methodology in Python,https://www.coursicle.com/stanford/courses/CS/106AP/
+Stanford,CS 106AX,Programming Methodologies in JavaScript and Python (Accelera...,https://www.coursicle.com/stanford/courses/CS/106AX/
+Stanford,CS 107,Computer Organization and Systems,https://www.coursicle.com/stanford/courses/CS/107/
+Stanford,CS 107A,Problem-solving Lab for CS107,https://www.coursicle.com/stanford/courses/CS/107A/
+Stanford,CS 107E,Computer Systems from the Ground Up,https://www.coursicle.com/stanford/courses/CS/107E/
+Stanford,CS 108,Object-Oriented Systems Design,https://www.coursicle.com/stanford/courses/CS/108/
+Stanford,CS 109,Introduction to Probability for Computer Scientists,https://www.coursicle.com/stanford/courses/CS/109/
+Stanford,CS 110,Principles of Computer Systems,https://www.coursicle.com/stanford/courses/CS/110/
+Stanford,CS 110L,Principles of Computer Systems Laboratory,https://www.coursicle.com/stanford/courses/CS/110L/
+Stanford,CS 124,From Languages to Information,https://www.coursicle.com/stanford/courses/CS/124/
+Stanford,CS 129,Applied Machine Learning,https://www.coursicle.com/stanford/courses/CS/129/
+Stanford,CS 131,Computer Vision: Foundations and Applications,https://www.coursicle.com/stanford/courses/CS/131/
+Stanford,CS 140,Operating Systems and Systems Programming,https://www.coursicle.com/stanford/courses/CS/140/
+Stanford,CS 140E,Operating systems design and implementation,https://www.coursicle.com/stanford/courses/CS/140E/
+Stanford,CS 141,Introduction to Computer Sound,https://www.coursicle.com/stanford/courses/CS/141/
+Stanford,CS 142,Web Applications,https://www.coursicle.com/stanford/courses/CS/142/
+Stanford,CS 143,Compilers,https://www.coursicle.com/stanford/courses/CS/143/
+Stanford,CS 144,Introduction to Computer Networking,https://www.coursicle.com/stanford/courses/CS/144/
+Stanford,CS 145,Data Management and Data Systems,https://www.coursicle.com/stanford/courses/CS/145/
+Stanford,CS 146,Introduction to Game Design and Development,https://www.coursicle.com/stanford/courses/CS/146/
+Stanford,CS 147,Introduction to Human-Computer Interaction Design,https://www.coursicle.com/stanford/courses/CS/147/
+Stanford,CS 148,Introduction to Computer Graphics and Imaging,https://www.coursicle.com/stanford/courses/CS/148/
+Stanford,CS 149,Parallel Computing,https://www.coursicle.com/stanford/courses/CS/149/
+Stanford,CS 151,Logic Programming,https://www.coursicle.com/stanford/courses/CS/151/
+Stanford,CS 152,Trust and Safety Engineering,https://www.coursicle.com/stanford/courses/CS/152/
+Stanford,CS 154,Introduction to Automata and Complexity Theory,https://www.coursicle.com/stanford/courses/CS/154/
+Stanford,CS 155,Computer and Network Security,https://www.coursicle.com/stanford/courses/CS/155/
+Stanford,CS 157,Computational Logic,https://www.coursicle.com/stanford/courses/CS/157/
+Stanford,CS 161,Design and Analysis of Algorithms,https://www.coursicle.com/stanford/courses/CS/161/
+Stanford,CS 166,Data Structures,https://www.coursicle.com/stanford/courses/CS/166/
+Stanford,CS 168,The Modern Algorithmic Toolbox,https://www.coursicle.com/stanford/courses/CS/168/
+Stanford,CS 170,"Stanford Laptop Orchestra: Composition, Coding, and Performa...",https://www.coursicle.com/stanford/courses/CS/170/
+Stanford,CS 181,"Computers, Ethics, and Public Policy",https://www.coursicle.com/stanford/courses/CS/181/
+Stanford,CS 181W,"Computers, Ethics, and Public Policy (WIM)",https://www.coursicle.com/stanford/courses/CS/181W/
+Stanford,CS 182,"Ethics, Public Policy, and Technological Change",https://www.coursicle.com/stanford/courses/CS/182/
+Stanford,CS 183E,Effective Leadership in High-Tech,https://www.coursicle.com/stanford/courses/CS/183E/
+Stanford,CS 184,Bridging Policy and Tech Through Design,https://www.coursicle.com/stanford/courses/CS/184/
+Stanford,CS 190,Software Design Studio,https://www.coursicle.com/stanford/courses/CS/190/
+Stanford,CS 191,Senior Project,https://www.coursicle.com/stanford/courses/CS/191/
+Stanford,CS 191W,Writing Intensive Senior Project (WIM),https://www.coursicle.com/stanford/courses/CS/191W/
+Stanford,CS 193P,iOS Application Development,https://www.coursicle.com/stanford/courses/CS/193P/
+Stanford,CS 193X,Web Programming Fundamentals,https://www.coursicle.com/stanford/courses/CS/193X/
+Stanford,CS 194,Software Project,https://www.coursicle.com/stanford/courses/CS/194/
+Stanford,CS 194A,Android Programming Workshop,https://www.coursicle.com/stanford/courses/CS/194A/
+Stanford,CS 194H,User Interface Design Project,https://www.coursicle.com/stanford/courses/CS/194H/
+Stanford,CS 194W,Software Project (WIM),https://www.coursicle.com/stanford/courses/CS/194W/
+Stanford,CS 195,Supervised Undergraduate Research,https://www.coursicle.com/stanford/courses/CS/195/
+Stanford,CS 196,Computer Consulting,https://www.coursicle.com/stanford/courses/CS/196/
+Stanford,CS 197,Computer Science Research,https://www.coursicle.com/stanford/courses/CS/197/
+Stanford,CS 198,Teaching Computer Science,https://www.coursicle.com/stanford/courses/CS/198/
+Stanford,CS 198B,Additional Topics in Teaching Computer Science,https://www.coursicle.com/stanford/courses/CS/198B/
+Stanford,CS 199,Independent Work,https://www.coursicle.com/stanford/courses/CS/199/
+Stanford,CS 199P,Independent Work,https://www.coursicle.com/stanford/courses/CS/199P/
+Stanford,CS 202,Law for Computer Science Professionals,https://www.coursicle.com/stanford/courses/CS/202/
+Stanford,CS 203,Cybersecurity: a Legal and Technical Perspective,https://www.coursicle.com/stanford/courses/CS/203/
+Stanford,CS 204,Computational Law,https://www.coursicle.com/stanford/courses/CS/204/
+Stanford,CS 205A,"Mathematical Methods for Robotics, Vision, and Graphics",https://www.coursicle.com/stanford/courses/CS/205A/
+Stanford,CS 205L,Continuous Mathematical Methods with an Emphasis on Machine...,https://www.coursicle.com/stanford/courses/CS/205L/
+Stanford,CS 206,Exploring Computational Journalism,https://www.coursicle.com/stanford/courses/CS/206/
+Stanford,CS 208E,Great Ideas in Computer Science,https://www.coursicle.com/stanford/courses/CS/208E/
+Stanford,CS 209,"Law, Bias, & Algorithms",https://www.coursicle.com/stanford/courses/CS/209/
+Stanford,CS 210A,Software Project Experience with Corporate Partners,https://www.coursicle.com/stanford/courses/CS/210A/
+Stanford,CS 210B,Software Project Experience with Corporate Partners,https://www.coursicle.com/stanford/courses/CS/210B/
+Stanford,CS 217,Hardware Accelerators for Machine Learning,https://www.coursicle.com/stanford/courses/CS/217/
+Stanford,CS 221,Artificial Intelligence: Principles and Techniques,https://www.coursicle.com/stanford/courses/CS/221/
+Stanford,CS 223A,Introduction to Robotics,https://www.coursicle.com/stanford/courses/CS/223A/
+Stanford,CS 224N,Natural Language Processing with Deep Learning,https://www.coursicle.com/stanford/courses/CS/224N/
+Stanford,CS 224S,Spoken Language Processing,https://www.coursicle.com/stanford/courses/CS/224S/
+Stanford,CS 224U,Natural Language Understanding,https://www.coursicle.com/stanford/courses/CS/224U/
+Stanford,CS 224W,Machine Learning with Graphs,https://www.coursicle.com/stanford/courses/CS/224W/
+Stanford,CS 225A,Experimental Robotics,https://www.coursicle.com/stanford/courses/CS/225A/
+Stanford,CS 227B,General Game Playing,https://www.coursicle.com/stanford/courses/CS/227B/
+Stanford,CS 228,Probabilistic Graphical Models: Principles and Techniques,https://www.coursicle.com/stanford/courses/CS/228/
+Stanford,CS 229,Machine Learning,https://www.coursicle.com/stanford/courses/CS/229/
+Stanford,CS 229A,Applied Machine Learning,https://www.coursicle.com/stanford/courses/CS/229A/
+Stanford,CS 229T,Statistical Learning Theory,https://www.coursicle.com/stanford/courses/CS/229T/
+Stanford,CS 230,Deep Learning,https://www.coursicle.com/stanford/courses/CS/230/
+Stanford,CS 231A,Computer Vision: From 3D Reconstruction to Recognition,https://www.coursicle.com/stanford/courses/CS/231A/
+Stanford,CS 231C,Computer Vision and Image Analysis of Art,https://www.coursicle.com/stanford/courses/CS/231C/
+Stanford,CS 231N,Convolutional Neural Networks for Visual Recognition,https://www.coursicle.com/stanford/courses/CS/231N/
+Stanford,CS 232,Digital Image Processing,https://www.coursicle.com/stanford/courses/CS/232/
+Stanford,CS 233,Geometric and Topological Data Analysis,https://www.coursicle.com/stanford/courses/CS/233/
+Stanford,CS 234,Reinforcement Learning,https://www.coursicle.com/stanford/courses/CS/234/
+Stanford,CS 235,Computational Methods for Biomedical Image Analysis and Inte...,https://www.coursicle.com/stanford/courses/CS/235/
+Stanford,CS 236,Deep Generative Models,https://www.coursicle.com/stanford/courses/CS/236/
+Stanford,CS 237A,Principles of Robot Autonomy I,https://www.coursicle.com/stanford/courses/CS/237A/
+Stanford,CS 237B,Principles of Robot Autonomy II,https://www.coursicle.com/stanford/courses/CS/237B/
+Stanford,CS 238,Decision Making under Uncertainty,https://www.coursicle.com/stanford/courses/CS/238/
+Stanford,CS 239,Advanced Topics in Sequential Decision Making,https://www.coursicle.com/stanford/courses/CS/239/
+Stanford,CS 240,Advanced Topics in Operating Systems,https://www.coursicle.com/stanford/courses/CS/240/
+Stanford,CS 240LX,"Advanced Systems Laboratory, Accelerated",https://www.coursicle.com/stanford/courses/CS/240LX/
+Stanford,CS 241,Embedded Systems Workshop,https://www.coursicle.com/stanford/courses/CS/241/
+Stanford,CS 242,Programming Languages,https://www.coursicle.com/stanford/courses/CS/242/
+Stanford,CS 243,Program Analysis and Optimizations,https://www.coursicle.com/stanford/courses/CS/243/
+Stanford,CS 244,Advanced Topics in Networking,https://www.coursicle.com/stanford/courses/CS/244/
+Stanford,CS 244B,Distributed Systems,https://www.coursicle.com/stanford/courses/CS/244B/
+Stanford,CS 245,Principles of Data-Intensive Systems,https://www.coursicle.com/stanford/courses/CS/245/
+Stanford,CS 246,Mining Massive Data Sets,https://www.coursicle.com/stanford/courses/CS/246/
+Stanford,CS 246H,Mining Massive Data Sets Hadoop Lab,https://www.coursicle.com/stanford/courses/CS/246H/
+Stanford,CS 247,Human-Computer Interaction Design Studio,https://www.coursicle.com/stanford/courses/CS/247/
+Stanford,CS 247A,Design for Artificial Intelligence,https://www.coursicle.com/stanford/courses/CS/247A/
+Stanford,CS 247G,Introduction to Game Design,https://www.coursicle.com/stanford/courses/CS/247G/
+Stanford,CS 247I,Design for Understanding,https://www.coursicle.com/stanford/courses/CS/247I/
+Stanford,CS 247S,Service Design,https://www.coursicle.com/stanford/courses/CS/247S/
+Stanford,CS 248,Interactive Computer Graphics,https://www.coursicle.com/stanford/courses/CS/248/
+Stanford,CS 250,Algebraic Error Correcting Codes,https://www.coursicle.com/stanford/courses/CS/250/
+Stanford,CS 251,Cryptocurrencies and blockchain technologies,https://www.coursicle.com/stanford/courses/CS/251/
+Stanford,CS 252,Analysis of Boolean Functions,https://www.coursicle.com/stanford/courses/CS/252/
+Stanford,CS 253,Web Security,https://www.coursicle.com/stanford/courses/CS/253/
+Stanford,CS 254,Computational Complexity,https://www.coursicle.com/stanford/courses/CS/254/
+Stanford,CS 254B,Computational Complexity II,https://www.coursicle.com/stanford/courses/CS/254B/
+Stanford,CS 255,Introduction to Cryptography,https://www.coursicle.com/stanford/courses/CS/255/
+Stanford,CS 257,Logic and Artificial Intelligence,https://www.coursicle.com/stanford/courses/CS/257/
+Stanford,CS 259Q,Quantum Computing,https://www.coursicle.com/stanford/courses/CS/259Q/
+Stanford,CS 260,Geometry of Polynomials in Algorithm Design,https://www.coursicle.com/stanford/courses/CS/260/
+Stanford,CS 261,Optimization and Algorithmic Paradigms,https://www.coursicle.com/stanford/courses/CS/261/
+Stanford,CS 265,Randomized Algorithms and Probabilistic Analysis,https://www.coursicle.com/stanford/courses/CS/265/
+Stanford,CS 269G,Almost Linear Time Graph Algorithms,https://www.coursicle.com/stanford/courses/CS/269G/
+Stanford,CS 269I,Incentives in Computer Science,https://www.coursicle.com/stanford/courses/CS/269I/
+Stanford,CS 269O,Introduction to Optimization Theory,https://www.coursicle.com/stanford/courses/CS/269O/
+Stanford,CS 270,"Modeling Biomedical Systems: Ontology, Terminology, Problem...",https://www.coursicle.com/stanford/courses/CS/270/
+Stanford,CS 271,Artificial Intelligence in Healthcare,https://www.coursicle.com/stanford/courses/CS/271/
+Stanford,CS 272,Introduction to Biomedical Informatics Research Methodology,https://www.coursicle.com/stanford/courses/CS/272/
+Stanford,CS 273A,The Human Genome Source Code,https://www.coursicle.com/stanford/courses/CS/273A/
+Stanford,CS 273B,Deep Learning in Genomics and Biomedicine,https://www.coursicle.com/stanford/courses/CS/273B/
+Stanford,CS 273C,Cloud Computing for Biology and Healthcare,https://www.coursicle.com/stanford/courses/CS/273C/
+Stanford,CS 274,Representations and Algorithms for Computational Molecular B...,https://www.coursicle.com/stanford/courses/CS/274/
+Stanford,CS 275,Translational Bioinformatics,https://www.coursicle.com/stanford/courses/CS/275/
+Stanford,CS 275A,Symbolic Musical Information,https://www.coursicle.com/stanford/courses/CS/275A/
+Stanford,CS 275B,"Music Query, Analysis, and Style Simulation",https://www.coursicle.com/stanford/courses/CS/275B/
+Stanford,CS 276,Information Retrieval and Web Search,https://www.coursicle.com/stanford/courses/CS/276/
+Stanford,CS 278,Social Computing,https://www.coursicle.com/stanford/courses/CS/278/
+Stanford,CS 279,Computational Biology: Structure and Organization of Biomole...,https://www.coursicle.com/stanford/courses/CS/279/
+Stanford,CS 294S,Research Project in Software Systems and Security,https://www.coursicle.com/stanford/courses/CS/294S/
+Stanford,CS 294W,Writing Intensive Research Project in Computer Science,https://www.coursicle.com/stanford/courses/CS/294W/
+Stanford,CS 295,Software Engineering,https://www.coursicle.com/stanford/courses/CS/295/
+Stanford,CS 298,Seminar on Teaching Introductory Computer Science,https://www.coursicle.com/stanford/courses/CS/298/
+Stanford,CS 300,Departmental Lecture Series,https://www.coursicle.com/stanford/courses/CS/300/
+Stanford,CS 309A,Cloud Computing Seminar,https://www.coursicle.com/stanford/courses/CS/309A/
+Stanford,CS 315B,Parallel Computing Research Project,https://www.coursicle.com/stanford/courses/CS/315B/
+Stanford,CS 316,Advanced Multi-Core Systems,https://www.coursicle.com/stanford/courses/CS/316/
+Stanford,CS 320,Value of Data and AI,https://www.coursicle.com/stanford/courses/CS/320/
+Stanford,CS 325B,Data for Sustainable Development,https://www.coursicle.com/stanford/courses/CS/325B/
+Stanford,CS 326,Topics in Advanced Robotic Manipulation,https://www.coursicle.com/stanford/courses/CS/326/
+Stanford,CS 327A,Advanced Robotic Manipulation,https://www.coursicle.com/stanford/courses/CS/327A/
+Stanford,CS 330,Deep Multi-task and Meta Learning,https://www.coursicle.com/stanford/courses/CS/330/
+Stanford,CS 331B,Representation Learning in Computer Vision,https://www.coursicle.com/stanford/courses/CS/331B/
+Stanford,CS 332,Advanced Survey of Reinforcement Learning,https://www.coursicle.com/stanford/courses/CS/332/
+Stanford,CS 333,Safe and Interactive Robotics,https://www.coursicle.com/stanford/courses/CS/333/
+Stanford,CS 334A,Convex Optimization I,https://www.coursicle.com/stanford/courses/CS/334A/
+Stanford,CS 335,"Fair, Accountable, and Transparent (FAT) Deep Learning",https://www.coursicle.com/stanford/courses/CS/335/
+Stanford,CS 336,Robot Perception and Decision-Making: Optimal and Learning-b...,https://www.coursicle.com/stanford/courses/CS/336/
+Stanford,CS 337,AI-Assisted Care,https://www.coursicle.com/stanford/courses/CS/337/
+Stanford,CS 341,Project in Mining Massive Data Sets,https://www.coursicle.com/stanford/courses/CS/341/
+Stanford,CS 342,Building for Digital Health,https://www.coursicle.com/stanford/courses/CS/342/
+Stanford,CS 344,Topics in Computer Networks,https://www.coursicle.com/stanford/courses/CS/344/
+Stanford,CS 347,Human-Computer Interaction Research,https://www.coursicle.com/stanford/courses/CS/347/
+Stanford,CS 348A,Computer Graphics: Geometric Modeling & Processing,https://www.coursicle.com/stanford/courses/CS/348A/
+Stanford,CS 348B,Computer Graphics: Image Synthesis Techniques,https://www.coursicle.com/stanford/courses/CS/348B/
+Stanford,CS 348C,Computer Graphics: Animation and Simulation,https://www.coursicle.com/stanford/courses/CS/348C/
+Stanford,CS 348E,"Character Animation: Modeling, Simulation, and Control of Hu...",https://www.coursicle.com/stanford/courses/CS/348E/
+Stanford,CS 348K,Visual Computing Systems,https://www.coursicle.com/stanford/courses/CS/348K/
+Stanford,CS 348V,Visual Computing Systems,https://www.coursicle.com/stanford/courses/CS/348V/
+Stanford,CS 349D,Cloud Computing Technology,https://www.coursicle.com/stanford/courses/CS/349D/
+Stanford,CS 349F,Technology for Financial Systems,https://www.coursicle.com/stanford/courses/CS/349F/
+Stanford,CS 350,Secure Compilation,https://www.coursicle.com/stanford/courses/CS/350/
+Stanford,CS 353,The Practice of Theory Research,https://www.coursicle.com/stanford/courses/CS/353/
+Stanford,CS 354,Topics in Intractability: Unfulfilled Algorithmic Fantasies,https://www.coursicle.com/stanford/courses/CS/354/
+Stanford,CS 355,Advanced Topics in Cryptography,https://www.coursicle.com/stanford/courses/CS/355/
+Stanford,CS 356,Topics in Computer and Network Security,https://www.coursicle.com/stanford/courses/CS/356/
+Stanford,CS 357,Advanced Topics in Formal Methods,https://www.coursicle.com/stanford/courses/CS/357/
+Stanford,CS 358,Topics in Programming Language Theory,https://www.coursicle.com/stanford/courses/CS/358/
+Stanford,CS 358A,Programming Language Foundations,https://www.coursicle.com/stanford/courses/CS/358A/
+Stanford,CS 359B,Designing Decentralized Applications on Blockchain,https://www.coursicle.com/stanford/courses/CS/359B/
+Stanford,CS 360,Simplicity and Complexity in Economic Theory,https://www.coursicle.com/stanford/courses/CS/360/
+Stanford,CS 361,Engineering Design Optimization,https://www.coursicle.com/stanford/courses/CS/361/
+Stanford,CS 366,Computational Social Choice,https://www.coursicle.com/stanford/courses/CS/366/
+Stanford,CS 368,Algorithmic Techniques for Big Data,https://www.coursicle.com/stanford/courses/CS/368/
+Stanford,CS 369M,Metric Embeddings and Algorithmic Applications,https://www.coursicle.com/stanford/courses/CS/369M/
+Stanford,CS 371,Computational Biology in Four Dimensions,https://www.coursicle.com/stanford/courses/CS/371/
+Stanford,CS 372,Artificial Intelligence for Disease Diagnosis and Informatio...,https://www.coursicle.com/stanford/courses/CS/372/
+Stanford,CS 373,Statistical and Machine Learning Methods for Genomics,https://www.coursicle.com/stanford/courses/CS/373/
+Stanford,CS 375,Large-Scale Neural Network Modeling for Neuroscience,https://www.coursicle.com/stanford/courses/CS/375/
+Stanford,CS 376,Human-Computer Interaction Research,https://www.coursicle.com/stanford/courses/CS/376/
+Stanford,CS 377C,Topics in HCI: Crowdsourcing and Social Computing,https://www.coursicle.com/stanford/courses/CS/377C/
+Stanford,CS 377E,Designing Solutions to Global Grand Challenges,https://www.coursicle.com/stanford/courses/CS/377E/
+Stanford,CS 377G,Designing Serious Games,https://www.coursicle.com/stanford/courses/CS/377G/
+Stanford,CS 377I,Designing Systems for Humans,https://www.coursicle.com/stanford/courses/CS/377I/
+Stanford,CS 377N,Introduction to the Design of Smart Products,https://www.coursicle.com/stanford/courses/CS/377N/
+Stanford,CS 377Q,Designing for Accessibility,https://www.coursicle.com/stanford/courses/CS/377Q/
+Stanford,CS 377T,Topics in Human-Computer Interaction: Teaching Studio Classe...,https://www.coursicle.com/stanford/courses/CS/377T/
+Stanford,CS 377U,Understanding Users,https://www.coursicle.com/stanford/courses/CS/377U/
+Stanford,CS 379C,Computational Models of the Neocortex,https://www.coursicle.com/stanford/courses/CS/379C/
+Stanford,CS 384,Seminar on Ethical and Social Issues in Natural Language Pro...,https://www.coursicle.com/stanford/courses/CS/384/
+Stanford,CS 390A,Curricular Practical Training,https://www.coursicle.com/stanford/courses/CS/390A/
+Stanford,CS 390B,Curricular Practical Training,https://www.coursicle.com/stanford/courses/CS/390B/
+Stanford,CS 398,Computational Education,https://www.coursicle.com/stanford/courses/CS/398/
+Stanford,CS 399,Independent Project,https://www.coursicle.com/stanford/courses/CS/399/
+Stanford,CS 399P,Independent Project,https://www.coursicle.com/stanford/courses/CS/399P/
+Stanford,CS 402,Beyond Bits and Atoms: Designing Technological Tools,https://www.coursicle.com/stanford/courses/CS/402/
+Stanford,CS 402L,Beyond Bits and Atoms - Lab,https://www.coursicle.com/stanford/courses/CS/402L/
+Stanford,CS 421,Designing AI to Cultivate Human Well-Being,https://www.coursicle.com/stanford/courses/CS/421/
+Stanford,CS 428,Computation and Cognition: the Probabilistic Approach,https://www.coursicle.com/stanford/courses/CS/428/
+Stanford,CS 448B,Data Visualization,https://www.coursicle.com/stanford/courses/CS/448B/
+Stanford,CS 448H,Topics in Computer Graphics: Agile Hardware Design,https://www.coursicle.com/stanford/courses/CS/448H/
+Stanford,CS 448I,Computational Imaging and Display,https://www.coursicle.com/stanford/courses/CS/448I/
+Stanford,CS 448M,Making Making Machines for Makers,https://www.coursicle.com/stanford/courses/CS/448M/
+Stanford,CS 448P,Hacking the Pandemic,https://www.coursicle.com/stanford/courses/CS/448P/
+Stanford,CS 448V,Topics in Computer Graphics: Computational Video Manipulatio...,https://www.coursicle.com/stanford/courses/CS/448V/
+Stanford,CS 472,Data science and AI for COVID-19,https://www.coursicle.com/stanford/courses/CS/472/
+Stanford,CS 476A,"Music, Computing, Design I: the Art of Design",https://www.coursicle.com/stanford/courses/CS/476A/
+Stanford,CS 499,Advanced Reading and Research,https://www.coursicle.com/stanford/courses/CS/499/
+Stanford,CS 499P,Advanced Reading and Research,https://www.coursicle.com/stanford/courses/CS/499P/
+Stanford,CS 520,Knowledge Graphs,https://www.coursicle.com/stanford/courses/CS/520/
+Stanford,CS 521,Seminar on AI Safety,https://www.coursicle.com/stanford/courses/CS/521/
+Stanford,CS 522,Seminar in Artificial Intelligence in Healthcare,https://www.coursicle.com/stanford/courses/CS/522/
+Stanford,CS 529,Robotics and Autonomous Systems Seminar,https://www.coursicle.com/stanford/courses/CS/529/
+Stanford,CS 544,Interactive Media and Games,https://www.coursicle.com/stanford/courses/CS/544/
+Stanford,CS 547,Human-Computer Interaction Seminar,https://www.coursicle.com/stanford/courses/CS/547/
+Stanford,CS 581,Media Innovation,https://www.coursicle.com/stanford/courses/CS/581/
+Stanford,CS 802,TGR Dissertation,https://www.coursicle.com/stanford/courses/CS/802/

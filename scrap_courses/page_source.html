@@ -1,0 +1,1235 @@
+<html lang="en"><head>
+
+	<title> CS courses at Stanford University | Coursicle Stanford </title>
+	<script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ga/inpage_linkid.js" id="undefined"></script><script type="text/javascript" async="" src="https://stats.g.doubleclick.net/dc.js"></script><script> window.schoolName = "stanford"; </script>
+
+		<script> window.viewingInApp = false; </script>
+
+	<!-- Init -->
+	<script defer="" src="/all/directory/shared/js/loginless.js?new5"></script>
+	<!-- 
+	This file contains code that should be executed on every Coursicle page 
+	It is included in all pages to ensure we are running loginless
+
+	NOTE: if you are allowing them to see their profile (top right)
+	then you also need to include shared/loginless/ui/modals.php
+-->
+
+<!-- Our custom code for tracking console errors, not using defer so that it's usually the first thing that executes and can catch everything else -->
+<script src="/shared/js/consoleErrorHandling.js"></script>
+
+<!-- Fingerprinting-->
+<script defer="" src="/shared/loginless/backend/lib/toeCopy.min.js"></script>
+
+<!-- Persistent storage (local storage, cookies, memory, etc) -->
+<!-- 8/16/24: making this non defer so we can use store right away on page load, probably can't hurt-->
+<script src="/shared/loginless/backend/lib/store.min.js"></script>
+
+<!-- For parsing the user agent for fingerprinting and device identification -->
+<script defer="" src="/shared/loginless/backend/lib/uaParser.min.js"></script>
+
+<!-- For determining whether the user is still using Coursicle, so we can stop polling (calls ifvisible.js.map too) -->
+<script defer="" src="/shared/loginless/backend/lib/ifvisible.min.js"></script>
+
+<!-- Our custom code for loginless identification -->
+<script defer="" src="/shared/loginless/backend/loginless.js?new=20"></script>	<script>
+
+		/*
+			Any Javascript that executes on page load should be called here
+			Moreover, any code that executes automatically (i.e. not in response to user
+			interaction) should be called here directly or descend from a function called here
+		*/
+
+		document.addEventListener('DOMContentLoaded', () => {
+			loginless();
+		});
+
+	</script>
+
+	<!-- Meta data -->
+	<meta name="description" content="All CS courses at Stanford University (Stanford) in Stanford, California.">
+	<meta property="og:image" content="/homepage/img/coursiclePhotoForBots.jpg">
+	<meta name="twitter:card" content="summary_large_image"> <!-- Needed to make image big in some places, like Discord -->
+	<style data-tippy-stylesheet="">.tippy-box[data-animation=fade][data-state=hidden]{opacity:0}[data-tippy-root]{max-width:calc(100vw - 10px)}.tippy-box{position:relative;background-color:#333;color:#fff;border-radius:4px;font-size:14px;line-height:1.4;white-space:normal;outline:0;transition-property:transform,visibility,opacity}.tippy-box[data-placement^=top]>.tippy-arrow{bottom:0}.tippy-box[data-placement^=top]>.tippy-arrow:before{bottom:-7px;left:0;border-width:8px 8px 0;border-top-color:initial;transform-origin:center top}.tippy-box[data-placement^=bottom]>.tippy-arrow{top:0}.tippy-box[data-placement^=bottom]>.tippy-arrow:before{top:-7px;left:0;border-width:0 8px 8px;border-bottom-color:initial;transform-origin:center bottom}.tippy-box[data-placement^=left]>.tippy-arrow{right:0}.tippy-box[data-placement^=left]>.tippy-arrow:before{border-width:8px 0 8px 8px;border-left-color:initial;right:-7px;transform-origin:center left}.tippy-box[data-placement^=right]>.tippy-arrow{left:0}.tippy-box[data-placement^=right]>.tippy-arrow:before{left:-7px;border-width:8px 8px 8px 0;border-right-color:initial;transform-origin:center right}.tippy-box[data-inertia][data-state=visible]{transition-timing-function:cubic-bezier(.54,1.5,.38,1.11)}.tippy-arrow{width:16px;height:16px;color:#333}.tippy-arrow:before{content:"";position:absolute;border-color:transparent;border-style:solid}.tippy-content{position:relative;padding:5px 9px;z-index:1}</style><link rel="icon" href="/homepage/img/coursicleCLogoMedium.png"> <!-- For social sharing, like Snapchat, GroupMe -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<!-- To get everything set for iPhone -->
+	<meta name="viewport" content="width=device-width">
+
+	<!-- jQuery -->
+	<script defer="" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+    <!-- If you're interested in our course data, please contact us at team@coursicle.com -->
+
+	<!-- Custom CSS -->
+	<link defer="" href="/shared/css/comments.css" rel="stylesheet">
+	<link href="/all/directory/shared/css/shared.css?new15" rel="stylesheet">
+	<link href="/all/directory/shared/css/sharedResponsive.css?new9" rel="stylesheet">
+
+	<!-- Custom JS -->
+		<script defer="" src="/all/directory/shared/js/shared.js?new13"></script>
+	<script defer="" src="/shared/js/osSpecific.js?new2"></script>
+
+	<!-- Autocheck web app's version, force refresh if version is too old -->
+	<script defer="" id="versionCheckerScript" src="/shared/js/getRequiredVersion.js?new4" version-as-of-page-load="4.2.0" check-interval-when-active="600" check-interval-when-inactive="172800"></script>
+
+	<!-- Isotope package for filtering -->
+	<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
+	<!-- Tippy package for tooltips -->
+	<script defer="" src="/shared/js/libraries/popper.min.js"></script>
+	<script defer="" src="/shared/js/libraries/tippy-bundle.umd.min.js"></script>
+
+	<!-- Google Fonts -->
+	<!-- Loading in an async way, so it's non render blocking and we get better google lighthouse scores / indexing -->
+	<!-- using a variant of https://stackoverflow.com/a/46750893/2611730, and you can't really tell that the logo isn't loaded on page load --> 
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+	<!-- Google Webmaster Verification -->
+	<meta name="google-site-verification" content="zkhO2wc00S5Q2NrM6pl8MqgfQLxtJGu5jQZioogbptA">
+
+	<!-- PHP -->
+	
+</head>
+	<body style="">
+		<script type="text/javascript">
+	var _gaq = _gaq || [];
+	var pluginUrl = 
+	'//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+	_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+	_gaq.push(['_setAccount', 'UA-66667153-1']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics (new analytics) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SRFRW1PCBK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SRFRW1PCBK');
+</script>		
+		<div id="header"> 
+			<a href="/stanford/"><div id="coursicleLogo"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 4000 2000" style="height: 100%;" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
+	<path d="M599.4,658.55l-17.56,99.66c0,0,56.59,60.48,159.17,59.79c0,0,85.81-94.65,10.4-194.68
+		c0,0-56.36-72.24-177.82-72.24c0,0-308.68-15.43-360.4,436.08c0,0-29.92,310.71,227.27,333.07c0,0,167.12,18.07,289.2-158.82
+		l-61.66-57.72c0,0-69.21,81.32-155.16,82.76c0,0-111.85,12.65-102.31-198.28c0,0-2.86-188.03,81.13-302.56
+		C491.67,685.61,529.93,628.91,599.4,658.55z" fill="#14A2FF"></path>
+	<path d="M1638.84,1177.52l-58.04,27.87c0,0,0-53.4,26.35-160.88c26.35-107.49,30.03-213.56,30.03-213.56
+		c-142.98-3.34-179.22,17.81-179.22,17.81c9.19,58.22-55.83,330.3-55.83,330.3s-43.22,18.86-56.76,15.33s25.32-151.89,25.32-151.89
+		c48.28-153.07,19.4-212.29,19.4-212.29c-100.91-3.41-208.48,16.3-208.48,16.3l-2.02,32.22c53.93,51.23,34.58,81.45,34.58,81.45
+		c-20.51,7.46-58.45,9.05-58.45,9.05c-3.74-206.48-139.14-141.68-139.14-141.68C925.74,816.16,875.94,850,875.94,850
+		s-140.67,69.35-136.82,274.36s164.75,196.39,164.75,196.39c199.73,2.54,245.77-267.89,245.77-267.89l45.84-10.42
+		c-34.43,113.68-32.37,185.58-32.37,185.58c5.89,94.22,96.75,95.06,96.75,95.06c76.13-1.26,142.33-56.4,142.33-56.4
+		c27.34,56.95,90.75,54.68,90.75,54.68c82.39,2.28,179.73-87.62,179.73-87.62L1638.84,1177.52z M960.19,1203.92
+		c0,0-44.29,3.31-40.98-100.95s44.64-175.39,44.64-175.39s-33.41,130.85,101.81,132.04
+		C1065.66,1059.63,1029.86,1201.72,960.19,1203.92z" fill="#14A2FF"></path>
+	<path d="M2339.6,1035.16c0,0,58.98-62.82,56.63-111.6c0,0,4.55-100.08-145.53-98.33c0,0-119.57-2.81-161.3,72.59
+		c0,0-4.64-73.07-70.69-72.61c0,0-47.5-2.87-104.27,53.9c0,0-5.42-27.69-15.7-49.09c0,0-161.74-2.71-203.47,18.39v33.37
+		c0,0,37.09,35.33,37.79,75.21c0.69,39.88-58.21,266.42-56.43,304.57s6.41,50.26,6.41,50.26s140.53,5.49,176.13-18.95v-50.93
+		c0,0,5.25-71.9,20.52-142.75c15.27-70.85,23.76-114.97,23.76-114.97s19.78-19.2,29.44-20.94c0,0,38.46,56.44,44.45,53.54
+		c0,0,50.72-4.44,101.3-59.81c0,0,5.32,57.87,88.19,141.2c82.87,83.34,76.82,116.39,76.82,116.39l-0.61,12.83
+		c0,0-4.74,7.77-10.27,8.83l-2.12,0.38c0,0-28.11-76.55-90.01-118.42c0,0-28.7,1.29-84.37,54.11c0,0-31.02,29.72-30.53,49.94
+		c0.49,20.22,12.33,33.29,36.99,55.98c0,0,45.48,41.52,132.94,43.41c0,0,186.5-0.84,203.81-148.89
+		C2399.47,1172.74,2412.13,1114.83,2339.6,1035.16z M2287.08,977.64c-7.54-2.37-35.65-35.2-35.65-35.2s-32.93-36.79,34.06-35.2
+		C2352.48,908.83,2287.08,977.64,2287.08,977.64z" fill="#14A2FF"></path>
+	<g>
+		<path d="M2605.67,1202.56c0,0-6.84-33.18,25.03-144.47c31.87-111.29,29.39-155.1,29.39-155.1s3.2-36.26-21.16-73.11
+			c0,0-164.85,1.17-198.91,18.69l-1.4,31c0,0,38.77,43.23,35.89,86.05c-2.88,42.82-32.6,151.48-32.6,151.48
+			s-20.32,73.99-17.88,112.31c2.45,38.32,19.56,90.94,91.28,92.23s145-57.95,145-57.95l33.13-27.67l-28.46-61.52L2605.67,1202.56z" fill="#14A2FF"></path>
+		<path class="st0" d="M2600.04,579.08c0,0-101.29,3.03-108.35,102.3c0,0-4.71,84.46,89.85,87.15c0,0,100.61,1.07,111.93-94.73
+			C2693.46,673.81,2699.62,579.05,2600.04,579.08z" fill="#14A2FF"></path>
+	</g>
+	<path d="M2953.8,907.36c4.54,0.78-7.21,55.25-13.38,85.11c0,0,49.78,54.8,134.65,48.01c0,0,82.22-81.85,1.89-170.86
+		c0,0-44.27-47.84-136.53-44.13s-140.52,44.32-140.52,44.32s-113.43,76.81-108.96,244.97c4.34,163.32,97.34,190.56,97.34,190.56
+		s116.24,58.25,254.53-50.91c0,0,33.11-23.85,43.85-41.6l-40.64-53.72c0,0-54.7,57.61-114.46,54.66c-64.71-3.19-59.8-95.3-59.8-95.3
+		S2875.15,893.85,2953.8,907.36z" fill="#14A2FF"></path>
+	<path d="M3384.69,593.5l-6.63,80.73c-2.17,22.41-18.2,108.08-62.35,318.53c-44.15,210.45-31.79,208.85-31.79,208.85
+		l71.24-25.42l31.31,60.7l-1.09,0.66l-78.12,49.48c-61.01,40.18-115.38,33.82-115.38,33.82c-99.33-10.68-91.11-100.31-91.11-100.31
+		s21.45-149.98,50.42-281.75c29.84-135.72,49.07-293.41,49.07-293.41c3.76-41.34-6.42-87.02-6.42-87.02s87.86-34.82,175.32-31.22
+		C3369.15,527.14,3385.74,544.24,3384.69,593.5z" fill="#14A2FF"></path>
+	<path d="M3723.21,1157.93c-157.23,134.61-172.73-11.03-172.73-11.03s247.71-32.12,240.71-195.31
+		c0,0,4.23-123.96-151.98-126.77c-152.98-2.76-223.36,118.45-234.71,140.12c-1.02,1.94-2.05,3.86-3.14,5.76
+		c-6.38,11.12-31.12,59.87-31.1,147.31c0.03,93.64,50.67,204.73,167.47,203.22c159.73-2.07,228.87-108.36,228.87-108.36l-41.91-56.09
+		L3723.21,1157.93z M3612.51,907.57c0,0,23.16-3.1,16.96,58.09s-55.94,92.66-80.89,96.77
+		C3547.17,1062.66,3564.35,907.54,3612.51,907.57z" fill="#14A2FF"></path>
+</svg></div></a>
+			<a href=".." class="backLink" id="pageInfo">Courses at Stanford</a>
+		</div>
+
+		<div id="tileSearchBox">
+			<input id="tileSearchBoxInput" class="normalSubjectLength" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Browse 264 CS courses" aria-label="Search by course">
+			<i id="tileSearchBoxIcon" class="fa fa-search" aria-hidden="true"></i>
+		</div>
+		<div id="tileContainer" style="position: relative; height: 2030px;">
+								<a class="tileElement" style="background: rgb(179, 222, 255); position: absolute; left: 0px; top: 0px;" href="1U/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 1U</span>
+						<div class="tileElementHiddenText">Practical Unix</div>
+					</a>
+								<a class="tileElement" style="background: rgb(253, 218, 222); position: absolute; left: 290px; top: 0px;" href="7/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 7</span>
+						<div class="tileElementHiddenText">Personal Finance for Engineers</div>
+					</a>
+								<a class="tileElement" style="background: rgb(250, 239, 213); position: absolute; left: 580px; top: 0px;" href="9/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 9</span>
+						<div class="tileElementHiddenText">Problem-Solving for the CS Technical Interview</div>
+					</a>
+								<a class="tileElement" style="background: rgb(211, 237, 224); position: absolute; left: 0px; top: 290px;" href="11SI/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 11SI</span>
+						<div class="tileElementHiddenText longTitle">How to Make VR: Introduction to Virtual Reality Design and D...</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 225, 203); position: absolute; left: 290px; top: 290px;" href="20/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 20</span>
+						<div class="tileElementHiddenText">Tensorflow for Deep Learning Research</div>
+					</a>
+								<a class="tileElement" style="background: rgb(224, 237, 206); position: absolute; left: 580px; top: 290px;" href="21SI/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 21SI</span>
+						<div class="tileElementHiddenText">AI for Social Good</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 253, 193); position: absolute; left: 0px; top: 580px;" href="22A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 22A</span>
+						<div class="tileElementHiddenText longTitle">The Social &amp; Economic Impact of Artificial Intelligence</div>
+					</a>
+								<a class="tileElement" style="background: rgb(242, 221, 254); position: absolute; left: 290px; top: 580px;" href="28/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 28</span>
+						<div class="tileElementHiddenText longTitle">Artificial Intelligence, Entrepreneurship and Society in the...</div>
+					</a>
+								<a class="tileElement" style="background: rgb(251, 213, 198); position: absolute; left: 580px; top: 580px;" href="41/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 41</span>
+						<div class="tileElementHiddenText">Hap.py Code: the Python Programming Language</div>
+					</a>
+								<a class="tileElement" style="background: rgb(219, 239, 251); position: absolute; left: 0px; top: 870px;" href="42/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 42</span>
+						<div class="tileElementHiddenText">Callback Me Maybe: Contemporary Javascript</div>
+					</a>
+								<a class="tileElement" style="background: rgb(242, 252, 211); position: absolute; left: 290px; top: 870px;" href="43/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 43</span>
+						<div class="tileElementHiddenText">Functional Programming in Clojure</div>
+					</a>
+								<a class="tileElement" style="background: rgb(202, 240, 237); position: absolute; left: 580px; top: 870px;" href="45N/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 45N</span>
+						<div class="tileElementHiddenText">Computers and Photography: From Capture to Sharing</div>
+					</a>
+								<a class="tileElement" style="background: rgb(201, 211, 241); position: absolute; left: 0px; top: 1160px;" href="47/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 47</span>
+						<div class="tileElementHiddenText">Cross-Platform Mobile Development</div>
+					</a>
+								<a class="tileElement" style="background: rgb(214, 221, 192); position: absolute; left: 290px; top: 1160px;" href="47SI/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 47SI</span>
+						<div class="tileElementHiddenText">Cross-Platform Mobile Development</div>
+					</a>
+								<a class="tileElement" style="background: rgb(237, 192, 254); position: absolute; left: 580px; top: 1160px;" href="49N/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 49N</span>
+						<div class="tileElementHiddenText">Using Bits to Control Atoms</div>
+					</a>
+								<a class="tileElement" style="background: rgb(202, 193, 242); position: absolute; left: 0px; top: 1450px;" href="50/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 50</span>
+						<div class="tileElementHiddenText">Using Tech for Good</div>
+					</a>
+								<a class="tileElement" style="background: rgb(233, 185, 209); position: absolute; left: 290px; top: 1450px;" href="51/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 51</span>
+						<div class="tileElementHiddenText longTitle">Cs + Social Good Studio: Designing Social Impact Projects</div>
+					</a>
+								<a class="tileElement" style="background: rgb(179, 215, 213); position: absolute; left: 580px; top: 1450px;" href="52/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 52</span>
+						<div class="tileElementHiddenText longTitle">CS + Social Good Studio: Implementing Social Good Projects</div>
+					</a>
+								<a class="tileElement" style="background: rgb(253, 191, 213); position: absolute; left: 0px; top: 1740px;" href="53SI/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 53SI</span>
+						<div class="tileElementHiddenText">Discussion in Tech for Good</div>
+					</a>
+								<a class="tileElement" style="background: rgb(182, 213, 235); position: absolute; left: 290px; top: 1740px;" href="56N/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 56N</span>
+						<div class="tileElementHiddenText">Great Discoveries and Inventions in Computing</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 249, 201); position: absolute; display: none;" href="57N/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 57N</span>
+						<div class="tileElementHiddenText">Randomness: Computational and Philosophical Approaches</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 216, 195); position: absolute; display: none;" href="58N/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 58N</span>
+						<div class="tileElementHiddenText">The Blockchain Revolution Will Not Be Televised</div>
+					</a>
+								<a class="tileElement" style="background: rgb(246, 192, 203); position: absolute; display: none;" href="62N/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 62N</span>
+						<div class="tileElementHiddenText">Let There Be Computations</div>
+					</a>
+								<a class="tileElement" style="background: rgb(216, 161, 201); position: absolute; display: none;" href="80Q/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 80Q</span>
+						<div class="tileElementHiddenText">Race and Gender in Silicon Valley</div>
+					</a>
+								<a class="tileElement" style="background: rgb(128, 152, 169); position: absolute; display: none;" href="81SI/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 81SI</span>
+						<div class="tileElementHiddenText">AI Interpretability and Fairness</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 242, 224); position: absolute; display: none;" href="82SI/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 82SI</span>
+						<div class="tileElementHiddenText longTitle">Wellness in Tech: Designing an Intentional Lifestyle in a Te...</div>
+					</a>
+								<a class="tileElement" style="background: rgb(254, 166, 190); position: absolute; display: none;" href="83/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 83</span>
+						<div class="tileElementHiddenText">Playback Theater</div>
+					</a>
+								<a class="tileElement" style="background: rgb(195, 154, 174); position: absolute; display: none;" href="84/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 84</span>
+						<div class="tileElementHiddenText">Emotional Intelligence</div>
+					</a>
+								<a class="tileElement" style="background: rgb(209, 220, 207); position: absolute; display: none;" href="91SI/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 91SI</span>
+						<div class="tileElementHiddenText">Digital Canvas: an Introduction to UI/UX Design</div>
+					</a>
+								<a class="tileElement" style="background: rgb(153, 172, 167); position: absolute; display: none;" href="93/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 93</span>
+						<div class="tileElementHiddenText">Teaching AI</div>
+					</a>
+								<a class="tileElement" style="background: rgb(185, 200, 223); position: absolute; display: none;" href="100A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 100A</span>
+						<div class="tileElementHiddenText">Problem-solving Lab for CS106A</div>
+					</a>
+								<a class="tileElement" style="background: rgb(213, 163, 174); position: absolute; display: none;" href="101/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 101</span>
+						<div class="tileElementHiddenText">Introduction to Computing Principles</div>
+					</a>
+								<a class="tileElement" style="background: rgb(247, 200, 169); position: absolute; display: none;" href="102/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 102</span>
+						<div class="tileElementHiddenText">Working with Data - Tools and Techniques</div>
+					</a>
+								<a class="tileElement" style="background: rgb(180, 210, 219); position: absolute; display: none;" href="103/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 103</span>
+						<div class="tileElementHiddenText">Mathematical Foundations of Computing</div>
+					</a>
+								<a class="tileElement" style="background: rgb(178, 176, 208); position: absolute; display: none;" href="103A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 103A</span>
+						<div class="tileElementHiddenText">Mathematical Problem-solving Strategies</div>
+					</a>
+								<a class="tileElement" style="background: rgb(193, 227, 235); position: absolute; display: none;" href="105/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 105</span>
+						<div class="tileElementHiddenText">Introduction to Computers</div>
+					</a>
+								<a class="tileElement" style="background: rgb(183, 188, 165); position: absolute; display: none;" href="106A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 106A</span>
+						<div class="tileElementHiddenText">Programming Methodology</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 225, 218); position: absolute; display: none;" href="106B/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 106B</span>
+						<div class="tileElementHiddenText">Programming Abstractions</div>
+					</a>
+								<a class="tileElement" style="background: rgb(159, 135, 182); position: absolute; display: none;" href="106E/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 106E</span>
+						<div class="tileElementHiddenText">Exploration of Computing</div>
+					</a>
+								<a class="tileElement" style="background: rgb(144, 178, 206); position: absolute; display: none;" href="106L/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 106L</span>
+						<div class="tileElementHiddenText">Standard C++ Programming Laboratory</div>
+					</a>
+								<a class="tileElement" style="background: rgb(214, 173, 251); position: absolute; display: none;" href="106S/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 106S</span>
+						<div class="tileElementHiddenText">Coding for Social Good</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 194, 238); position: absolute; display: none;" href="106X/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 106X</span>
+						<div class="tileElementHiddenText">Programming Abstractions (Accelerated)</div>
+					</a>
+								<a class="tileElement" style="background: rgb(211, 230, 169); position: absolute; display: none;" href="106AJ/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 106AJ</span>
+						<div class="tileElementHiddenText">Programming Methodology in JavaScript</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 247, 172); position: absolute; display: none;" href="106AP/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 106AP</span>
+						<div class="tileElementHiddenText">Programming Methodology in Python</div>
+					</a>
+								<a class="tileElement" style="background: rgb(185, 227, 249); position: absolute; display: none;" href="106AX/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 106AX</span>
+						<div class="tileElementHiddenText longTitle">Programming Methodologies in JavaScript and Python (Accelera...</div>
+					</a>
+								<a class="tileElement" style="background: rgb(204, 255, 251); position: absolute; display: none;" href="107/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 107</span>
+						<div class="tileElementHiddenText">Computer Organization and Systems</div>
+					</a>
+								<a class="tileElement" style="background: rgb(252, 246, 211); position: absolute; display: none;" href="107A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 107A</span>
+						<div class="tileElementHiddenText">Problem-solving Lab for CS107</div>
+					</a>
+								<a class="tileElement" style="background: rgb(225, 199, 252); position: absolute; display: none;" href="107E/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 107E</span>
+						<div class="tileElementHiddenText">Computer Systems from the Ground Up</div>
+					</a>
+								<a class="tileElement" style="background: rgb(181, 192, 241); position: absolute; display: none;" href="108/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 108</span>
+						<div class="tileElementHiddenText">Object-Oriented Systems Design</div>
+					</a>
+								<a class="tileElement" style="background: rgb(230, 187, 202); position: absolute; display: none;" href="109/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 109</span>
+						<div class="tileElementHiddenText">Introduction to Probability for Computer Scientists</div>
+					</a>
+								<a class="tileElement" style="background: rgb(161, 198, 218); position: absolute; display: none;" href="110/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 110</span>
+						<div class="tileElementHiddenText">Principles of Computer Systems</div>
+					</a>
+								<a class="tileElement" style="background: rgb(242, 205, 234); position: absolute; display: none;" href="110L/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 110L</span>
+						<div class="tileElementHiddenText">Principles of Computer Systems Laboratory</div>
+					</a>
+								<a class="tileElement" style="background: rgb(196, 155, 207); position: absolute; display: none;" href="124/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 124</span>
+						<div class="tileElementHiddenText">From Languages to Information</div>
+					</a>
+								<a class="tileElement" style="background: rgb(202, 154, 182); position: absolute; display: none;" href="129/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 129</span>
+						<div class="tileElementHiddenText">Applied Machine Learning</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 193, 193); position: absolute; display: none;" href="131/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 131</span>
+						<div class="tileElementHiddenText">Computer Vision: Foundations and Applications</div>
+					</a>
+								<a class="tileElement" style="background: rgb(232, 152, 184); position: absolute; display: none;" href="140/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 140</span>
+						<div class="tileElementHiddenText">Operating Systems and Systems Programming</div>
+					</a>
+								<a class="tileElement" style="background: rgb(251, 226, 188); position: absolute; display: none;" href="140E/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 140E</span>
+						<div class="tileElementHiddenText">Operating systems design and implementation</div>
+					</a>
+								<a class="tileElement" style="background: rgb(242, 214, 194); position: absolute; display: none;" href="141/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 141</span>
+						<div class="tileElementHiddenText">Introduction to Computer Sound</div>
+					</a>
+								<a class="tileElement" style="background: rgb(177, 196, 147); position: absolute; display: none;" href="142/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 142</span>
+						<div class="tileElementHiddenText">Web Applications</div>
+					</a>
+								<a class="tileElement" style="background: rgb(228, 179, 177); position: absolute; display: none;" href="143/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 143</span>
+						<div class="tileElementHiddenText">Compilers</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 215, 227); position: absolute; display: none;" href="144/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 144</span>
+						<div class="tileElementHiddenText">Introduction to Computer Networking</div>
+					</a>
+								<a class="tileElement" style="background: rgb(248, 241, 182); position: absolute; display: none;" href="145/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 145</span>
+						<div class="tileElementHiddenText">Data Management and Data Systems</div>
+					</a>
+								<a class="tileElement" style="background: rgb(211, 214, 246); position: absolute; display: none;" href="146/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 146</span>
+						<div class="tileElementHiddenText">Introduction to Game Design and Development</div>
+					</a>
+								<a class="tileElement" style="background: rgb(228, 200, 246); position: absolute; display: none;" href="147/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 147</span>
+						<div class="tileElementHiddenText">Introduction to Human-Computer Interaction Design</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 198, 201); position: absolute; display: none;" href="148/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 148</span>
+						<div class="tileElementHiddenText">Introduction to Computer Graphics and Imaging</div>
+					</a>
+								<a class="tileElement" style="background: rgb(247, 225, 241); position: absolute; display: none;" href="149/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 149</span>
+						<div class="tileElementHiddenText">Parallel Computing</div>
+					</a>
+								<a class="tileElement" style="background: rgb(252, 206, 176); position: absolute; display: none;" href="151/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 151</span>
+						<div class="tileElementHiddenText">Logic Programming</div>
+					</a>
+								<a class="tileElement" style="background: rgb(191, 183, 241); position: absolute; display: none;" href="152/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 152</span>
+						<div class="tileElementHiddenText">Trust and Safety Engineering</div>
+					</a>
+								<a class="tileElement" style="background: rgb(223, 242, 181); position: absolute; display: none;" href="154/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 154</span>
+						<div class="tileElementHiddenText">Introduction to Automata and Complexity Theory</div>
+					</a>
+								<a class="tileElement" style="background: rgb(244, 222, 180); position: absolute; display: none;" href="155/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 155</span>
+						<div class="tileElementHiddenText">Computer and Network Security</div>
+					</a>
+								<a class="tileElement" style="background: rgb(245, 218, 211); position: absolute; display: none;" href="157/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 157</span>
+						<div class="tileElementHiddenText">Computational Logic</div>
+					</a>
+								<a class="tileElement" style="background: rgb(221, 192, 215); position: absolute; display: none;" href="161/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 161</span>
+						<div class="tileElementHiddenText">Design and Analysis of Algorithms</div>
+					</a>
+								<a class="tileElement" style="background: rgb(165, 200, 217); position: absolute; display: none;" href="166/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 166</span>
+						<div class="tileElementHiddenText">Data Structures</div>
+					</a>
+								<a class="tileElement" style="background: rgb(162, 192, 189); position: absolute; display: none;" href="168/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 168</span>
+						<div class="tileElementHiddenText">The Modern Algorithmic Toolbox</div>
+					</a>
+								<a class="tileElement" style="background: rgb(217, 226, 238); position: absolute; display: none;" href="170/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 170</span>
+						<div class="tileElementHiddenText longTitle">Stanford Laptop Orchestra: Composition, Coding, and Performa...</div>
+					</a>
+								<a class="tileElement" style="background: rgb(169, 181, 222); position: absolute; display: none;" href="181/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 181</span>
+						<div class="tileElementHiddenText">Computers, Ethics, and Public Policy</div>
+					</a>
+								<a class="tileElement" style="background: rgb(229, 216, 230); position: absolute; display: none;" href="181W/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 181W</span>
+						<div class="tileElementHiddenText">Computers, Ethics, and Public Policy (WIM)</div>
+					</a>
+								<a class="tileElement" style="background: rgb(129, 163, 198); position: absolute; display: none;" href="182/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 182</span>
+						<div class="tileElementHiddenText">Ethics, Public Policy, and Technological Change</div>
+					</a>
+								<a class="tileElement" style="background: rgb(183, 181, 206); position: absolute; display: none;" href="183E/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 183E</span>
+						<div class="tileElementHiddenText">Effective Leadership in High-Tech</div>
+					</a>
+								<a class="tileElement" style="background: rgb(189, 199, 178); position: absolute; display: none;" href="184/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 184</span>
+						<div class="tileElementHiddenText">Bridging Policy and Tech Through Design</div>
+					</a>
+								<a class="tileElement" style="background: rgb(164, 191, 222); position: absolute; display: none;" href="190/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 190</span>
+						<div class="tileElementHiddenText">Software Design Studio</div>
+					</a>
+								<a class="tileElement" style="background: rgb(242, 230, 251); position: absolute; display: none;" href="191/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 191</span>
+						<div class="tileElementHiddenText">Senior Project</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 207, 207); position: absolute; display: none;" href="191W/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 191W</span>
+						<div class="tileElementHiddenText">Writing Intensive Senior Project (WIM)</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 244, 196); position: absolute; display: none;" href="193P/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 193P</span>
+						<div class="tileElementHiddenText">iOS Application Development</div>
+					</a>
+								<a class="tileElement" style="background: rgb(202, 181, 221); position: absolute; display: none;" href="193X/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 193X</span>
+						<div class="tileElementHiddenText">Web Programming Fundamentals</div>
+					</a>
+								<a class="tileElement" style="background: rgb(250, 174, 192); position: absolute; display: none;" href="194/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 194</span>
+						<div class="tileElementHiddenText">Software Project</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 214, 209); position: absolute; display: none;" href="194A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 194A</span>
+						<div class="tileElementHiddenText">Android Programming Workshop</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 224, 182); position: absolute; display: none;" href="194H/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 194H</span>
+						<div class="tileElementHiddenText">User Interface Design Project</div>
+					</a>
+								<a class="tileElement" style="background: rgb(200, 211, 203); position: absolute; display: none;" href="194W/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 194W</span>
+						<div class="tileElementHiddenText">Software Project (WIM)</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 235, 217); position: absolute; display: none;" href="195/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 195</span>
+						<div class="tileElementHiddenText">Supervised Undergraduate Research</div>
+					</a>
+								<a class="tileElement" style="background: rgb(179, 221, 236); position: absolute; display: none;" href="196/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 196</span>
+						<div class="tileElementHiddenText">Computer Consulting</div>
+					</a>
+								<a class="tileElement" style="background: rgb(228, 168, 182); position: absolute; display: none;" href="197/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 197</span>
+						<div class="tileElementHiddenText">Computer Science Research</div>
+					</a>
+								<a class="tileElement" style="background: rgb(188, 201, 225); position: absolute; display: none;" href="198/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 198</span>
+						<div class="tileElementHiddenText">Teaching Computer Science</div>
+					</a>
+								<a class="tileElement" style="background: rgb(238, 212, 238); position: absolute; display: none;" href="198B/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 198B</span>
+						<div class="tileElementHiddenText">Additional Topics in Teaching Computer Science</div>
+					</a>
+								<a class="tileElement" style="background: rgb(155, 185, 179); position: absolute; display: none;" href="199/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 199</span>
+						<div class="tileElementHiddenText">Independent Work</div>
+					</a>
+								<a class="tileElement" style="background: rgb(131, 154, 180); position: absolute; display: none;" href="199P/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 199P</span>
+						<div class="tileElementHiddenText">Independent Work</div>
+					</a>
+								<a class="tileElement" style="background: rgb(101, 123, 116); position: absolute; display: none;" href="202/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 202</span>
+						<div class="tileElementHiddenText">Law for Computer Science Professionals</div>
+					</a>
+								<a class="tileElement" style="background: rgb(158, 142, 189); position: absolute; display: none;" href="203/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 203</span>
+						<div class="tileElementHiddenText">Cybersecurity: a Legal and Technical Perspective</div>
+					</a>
+								<a class="tileElement" style="background: rgb(149, 158, 121); position: absolute; display: none;" href="204/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 204</span>
+						<div class="tileElementHiddenText">Computational Law</div>
+					</a>
+								<a class="tileElement" style="background: rgb(121, 150, 145); position: absolute; display: none;" href="205A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 205A</span>
+						<div class="tileElementHiddenText longTitle">Mathematical Methods for Robotics, Vision, and Graphics</div>
+					</a>
+								<a class="tileElement" style="background: rgb(193, 214, 238); position: absolute; display: none;" href="205L/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 205L</span>
+						<div class="tileElementHiddenText longTitle">Continuous Mathematical Methods with an Emphasis on Machine...</div>
+					</a>
+								<a class="tileElement" style="background: rgb(235, 185, 225); position: absolute; display: none;" href="206/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 206</span>
+						<div class="tileElementHiddenText">Exploring Computational Journalism</div>
+					</a>
+								<a class="tileElement" style="background: rgb(250, 248, 202); position: absolute; display: none;" href="208E/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 208E</span>
+						<div class="tileElementHiddenText">Great Ideas in Computer Science</div>
+					</a>
+								<a class="tileElement" style="background: rgb(178, 183, 246); position: absolute; display: none;" href="209/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 209</span>
+						<div class="tileElementHiddenText">Law, Bias, &amp; Algorithms</div>
+					</a>
+								<a class="tileElement" style="background: rgb(178, 189, 164); position: absolute; display: none;" href="210A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 210A</span>
+						<div class="tileElementHiddenText">Software Project Experience with Corporate Partners</div>
+					</a>
+								<a class="tileElement" style="background: rgb(175, 178, 217); position: absolute; display: none;" href="210B/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 210B</span>
+						<div class="tileElementHiddenText">Software Project Experience with Corporate Partners</div>
+					</a>
+								<a class="tileElement" style="background: rgb(238, 205, 240); position: absolute; display: none;" href="217/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 217</span>
+						<div class="tileElementHiddenText">Hardware Accelerators for Machine Learning</div>
+					</a>
+								<a class="tileElement" style="background: rgb(144, 136, 188); position: absolute; display: none;" href="221/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 221</span>
+						<div class="tileElementHiddenText">Artificial Intelligence: Principles and Techniques</div>
+					</a>
+								<a class="tileElement" style="background: rgb(129, 152, 137); position: absolute; display: none;" href="223A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 223A</span>
+						<div class="tileElementHiddenText">Introduction to Robotics</div>
+					</a>
+								<a class="tileElement" style="background: rgb(251, 241, 217); position: absolute; display: none;" href="224N/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 224N</span>
+						<div class="tileElementHiddenText">Natural Language Processing with Deep Learning</div>
+					</a>
+								<a class="tileElement" style="background: rgb(152, 163, 195); position: absolute; display: none;" href="224S/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 224S</span>
+						<div class="tileElementHiddenText">Spoken Language Processing</div>
+					</a>
+								<a class="tileElement" style="background: rgb(202, 208, 234); position: absolute; display: none;" href="224U/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 224U</span>
+						<div class="tileElementHiddenText">Natural Language Understanding</div>
+					</a>
+								<a class="tileElement" style="background: rgb(251, 217, 222); position: absolute; display: none;" href="224W/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 224W</span>
+						<div class="tileElementHiddenText">Machine Learning with Graphs</div>
+					</a>
+								<a class="tileElement" style="background: rgb(209, 237, 198); position: absolute; display: none;" href="225A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 225A</span>
+						<div class="tileElementHiddenText">Experimental Robotics</div>
+					</a>
+								<a class="tileElement" style="background: rgb(179, 171, 218); position: absolute; display: none;" href="227B/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 227B</span>
+						<div class="tileElementHiddenText">General Game Playing</div>
+					</a>
+								<a class="tileElement" style="background: rgb(150, 177, 143); position: absolute; display: none;" href="228/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 228</span>
+						<div class="tileElementHiddenText longTitle">Probabilistic Graphical Models: Principles and Techniques</div>
+					</a>
+								<a class="tileElement" style="background: rgb(249, 217, 198); position: absolute; display: none;" href="229/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 229</span>
+						<div class="tileElementHiddenText">Machine Learning</div>
+					</a>
+								<a class="tileElement" style="background: rgb(213, 173, 228); position: absolute; display: none;" href="229A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 229A</span>
+						<div class="tileElementHiddenText">Applied Machine Learning</div>
+					</a>
+								<a class="tileElement" style="background: rgb(219, 232, 224); position: absolute; display: none;" href="229T/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 229T</span>
+						<div class="tileElementHiddenText">Statistical Learning Theory</div>
+					</a>
+								<a class="tileElement" style="background: rgb(161, 119, 153); position: absolute; display: none;" href="230/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 230</span>
+						<div class="tileElementHiddenText">Deep Learning</div>
+					</a>
+								<a class="tileElement" style="background: rgb(179, 222, 255); position: absolute; display: none;" href="231A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 231A</span>
+						<div class="tileElementHiddenText">Computer Vision: From 3D Reconstruction to Recognition</div>
+					</a>
+								<a class="tileElement" style="background: rgb(253, 218, 222); position: absolute; display: none;" href="231C/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 231C</span>
+						<div class="tileElementHiddenText">Computer Vision and Image Analysis of Art</div>
+					</a>
+								<a class="tileElement" style="background: rgb(250, 239, 213); position: absolute; display: none;" href="231N/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 231N</span>
+						<div class="tileElementHiddenText">Convolutional Neural Networks for Visual Recognition</div>
+					</a>
+								<a class="tileElement" style="background: rgb(211, 237, 224); position: absolute; display: none;" href="232/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 232</span>
+						<div class="tileElementHiddenText">Digital Image Processing</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 225, 203); position: absolute; display: none;" href="233/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 233</span>
+						<div class="tileElementHiddenText">Geometric and Topological Data Analysis</div>
+					</a>
+								<a class="tileElement" style="background: rgb(224, 237, 206); position: absolute; display: none;" href="234/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 234</span>
+						<div class="tileElementHiddenText">Reinforcement Learning</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 253, 193); position: absolute; display: none;" href="235/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 235</span>
+						<div class="tileElementHiddenText longTitle">Computational Methods for Biomedical Image Analysis and Inte...</div>
+					</a>
+								<a class="tileElement" style="background: rgb(242, 221, 254); position: absolute; display: none;" href="236/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 236</span>
+						<div class="tileElementHiddenText">Deep Generative Models</div>
+					</a>
+								<a class="tileElement" style="background: rgb(251, 213, 198); position: absolute; display: none;" href="237A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 237A</span>
+						<div class="tileElementHiddenText">Principles of Robot Autonomy I</div>
+					</a>
+								<a class="tileElement" style="background: rgb(219, 239, 251); position: absolute; display: none;" href="237B/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 237B</span>
+						<div class="tileElementHiddenText">Principles of Robot Autonomy II</div>
+					</a>
+								<a class="tileElement" style="background: rgb(242, 252, 211); position: absolute; display: none;" href="238/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 238</span>
+						<div class="tileElementHiddenText">Decision Making under Uncertainty</div>
+					</a>
+								<a class="tileElement" style="background: rgb(202, 240, 237); position: absolute; display: none;" href="239/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 239</span>
+						<div class="tileElementHiddenText">Advanced Topics in Sequential Decision Making</div>
+					</a>
+								<a class="tileElement" style="background: rgb(201, 211, 241); position: absolute; display: none;" href="240/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 240</span>
+						<div class="tileElementHiddenText">Advanced Topics in Operating Systems</div>
+					</a>
+								<a class="tileElement" style="background: rgb(214, 221, 192); position: absolute; display: none;" href="240LX/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 240LX</span>
+						<div class="tileElementHiddenText">Advanced Systems Laboratory, Accelerated</div>
+					</a>
+								<a class="tileElement" style="background: rgb(237, 192, 254); position: absolute; display: none;" href="241/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 241</span>
+						<div class="tileElementHiddenText">Embedded Systems Workshop</div>
+					</a>
+								<a class="tileElement" style="background: rgb(202, 193, 242); position: absolute; display: none;" href="242/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 242</span>
+						<div class="tileElementHiddenText">Programming Languages</div>
+					</a>
+								<a class="tileElement" style="background: rgb(233, 185, 209); position: absolute; display: none;" href="243/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 243</span>
+						<div class="tileElementHiddenText">Program Analysis and Optimizations</div>
+					</a>
+								<a class="tileElement" style="background: rgb(179, 215, 213); position: absolute; display: none;" href="244/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 244</span>
+						<div class="tileElementHiddenText">Advanced Topics in Networking</div>
+					</a>
+								<a class="tileElement" style="background: rgb(253, 191, 213); position: absolute; display: none;" href="244B/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 244B</span>
+						<div class="tileElementHiddenText">Distributed Systems</div>
+					</a>
+								<a class="tileElement" style="background: rgb(182, 213, 235); position: absolute; display: none;" href="245/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 245</span>
+						<div class="tileElementHiddenText">Principles of Data-Intensive Systems</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 249, 201); position: absolute; display: none;" href="246/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 246</span>
+						<div class="tileElementHiddenText">Mining Massive Data Sets</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 216, 195); position: absolute; display: none;" href="246H/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 246H</span>
+						<div class="tileElementHiddenText">Mining Massive Data Sets Hadoop Lab</div>
+					</a>
+								<a class="tileElement" style="background: rgb(246, 192, 203); position: absolute; display: none;" href="247/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 247</span>
+						<div class="tileElementHiddenText">Human-Computer Interaction Design Studio</div>
+					</a>
+								<a class="tileElement" style="background: rgb(216, 161, 201); position: absolute; display: none;" href="247A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 247A</span>
+						<div class="tileElementHiddenText">Design for Artificial Intelligence</div>
+					</a>
+								<a class="tileElement" style="background: rgb(128, 152, 169); position: absolute; display: none;" href="247G/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 247G</span>
+						<div class="tileElementHiddenText">Introduction to Game Design</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 242, 224); position: absolute; display: none;" href="247I/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 247I</span>
+						<div class="tileElementHiddenText">Design for Understanding</div>
+					</a>
+								<a class="tileElement" style="background: rgb(254, 166, 190); position: absolute; display: none;" href="247S/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 247S</span>
+						<div class="tileElementHiddenText">Service Design</div>
+					</a>
+								<a class="tileElement" style="background: rgb(195, 154, 174); position: absolute; display: none;" href="248/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 248</span>
+						<div class="tileElementHiddenText">Interactive Computer Graphics</div>
+					</a>
+								<a class="tileElement" style="background: rgb(209, 220, 207); position: absolute; display: none;" href="250/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 250</span>
+						<div class="tileElementHiddenText">Algebraic Error Correcting Codes</div>
+					</a>
+								<a class="tileElement" style="background: rgb(153, 172, 167); position: absolute; display: none;" href="251/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 251</span>
+						<div class="tileElementHiddenText">Cryptocurrencies and blockchain technologies</div>
+					</a>
+								<a class="tileElement" style="background: rgb(185, 200, 223); position: absolute; display: none;" href="252/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 252</span>
+						<div class="tileElementHiddenText">Analysis of Boolean Functions</div>
+					</a>
+								<a class="tileElement" style="background: rgb(213, 163, 174); position: absolute; display: none;" href="253/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 253</span>
+						<div class="tileElementHiddenText">Web Security</div>
+					</a>
+								<a class="tileElement" style="background: rgb(247, 200, 169); position: absolute; display: none;" href="254/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 254</span>
+						<div class="tileElementHiddenText">Computational Complexity</div>
+					</a>
+								<a class="tileElement" style="background: rgb(180, 210, 219); position: absolute; display: none;" href="254B/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 254B</span>
+						<div class="tileElementHiddenText">Computational Complexity II</div>
+					</a>
+								<a class="tileElement" style="background: rgb(178, 176, 208); position: absolute; display: none;" href="255/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 255</span>
+						<div class="tileElementHiddenText">Introduction to Cryptography</div>
+					</a>
+								<a class="tileElement" style="background: rgb(193, 227, 235); position: absolute; display: none;" href="257/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 257</span>
+						<div class="tileElementHiddenText">Logic and Artificial Intelligence</div>
+					</a>
+								<a class="tileElement" style="background: rgb(183, 188, 165); position: absolute; display: none;" href="259Q/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 259Q</span>
+						<div class="tileElementHiddenText">Quantum Computing</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 225, 218); position: absolute; display: none;" href="260/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 260</span>
+						<div class="tileElementHiddenText">Geometry of Polynomials in Algorithm Design</div>
+					</a>
+								<a class="tileElement" style="background: rgb(159, 135, 182); position: absolute; display: none;" href="261/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 261</span>
+						<div class="tileElementHiddenText">Optimization and Algorithmic Paradigms</div>
+					</a>
+								<a class="tileElement" style="background: rgb(144, 178, 206); position: absolute; display: none;" href="265/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 265</span>
+						<div class="tileElementHiddenText">Randomized Algorithms and Probabilistic Analysis</div>
+					</a>
+								<a class="tileElement" style="background: rgb(214, 173, 251); position: absolute; display: none;" href="269G/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 269G</span>
+						<div class="tileElementHiddenText">Almost Linear Time Graph Algorithms</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 194, 238); position: absolute; display: none;" href="269I/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 269I</span>
+						<div class="tileElementHiddenText">Incentives in Computer Science</div>
+					</a>
+								<a class="tileElement" style="background: rgb(211, 230, 169); position: absolute; display: none;" href="269O/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 269O</span>
+						<div class="tileElementHiddenText">Introduction to Optimization Theory</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 247, 172); position: absolute; display: none;" href="270/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 270</span>
+						<div class="tileElementHiddenText longTitle">Modeling Biomedical Systems: Ontology, Terminology, Problem...</div>
+					</a>
+								<a class="tileElement" style="background: rgb(185, 227, 249); position: absolute; display: none;" href="271/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 271</span>
+						<div class="tileElementHiddenText">Artificial Intelligence in Healthcare</div>
+					</a>
+								<a class="tileElement" style="background: rgb(204, 255, 251); position: absolute; display: none;" href="272/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 272</span>
+						<div class="tileElementHiddenText longTitle">Introduction to Biomedical Informatics Research Methodology</div>
+					</a>
+								<a class="tileElement" style="background: rgb(252, 246, 211); position: absolute; display: none;" href="273A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 273A</span>
+						<div class="tileElementHiddenText">The Human Genome Source Code</div>
+					</a>
+								<a class="tileElement" style="background: rgb(225, 199, 252); position: absolute; display: none;" href="273B/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 273B</span>
+						<div class="tileElementHiddenText">Deep Learning in Genomics and Biomedicine</div>
+					</a>
+								<a class="tileElement" style="background: rgb(181, 192, 241); position: absolute; display: none;" href="273C/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 273C</span>
+						<div class="tileElementHiddenText">Cloud Computing for Biology and Healthcare</div>
+					</a>
+								<a class="tileElement" style="background: rgb(230, 187, 202); position: absolute; display: none;" href="274/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 274</span>
+						<div class="tileElementHiddenText longTitle">Representations and Algorithms for Computational Molecular B...</div>
+					</a>
+								<a class="tileElement" style="background: rgb(161, 198, 218); position: absolute; display: none;" href="275/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 275</span>
+						<div class="tileElementHiddenText">Translational Bioinformatics</div>
+					</a>
+								<a class="tileElement" style="background: rgb(242, 205, 234); position: absolute; display: none;" href="275A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 275A</span>
+						<div class="tileElementHiddenText">Symbolic Musical Information</div>
+					</a>
+								<a class="tileElement" style="background: rgb(196, 155, 207); position: absolute; display: none;" href="275B/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 275B</span>
+						<div class="tileElementHiddenText">Music Query, Analysis, and Style Simulation</div>
+					</a>
+								<a class="tileElement" style="background: rgb(202, 154, 182); position: absolute; display: none;" href="276/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 276</span>
+						<div class="tileElementHiddenText">Information Retrieval and Web Search</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 193, 193); position: absolute; display: none;" href="278/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 278</span>
+						<div class="tileElementHiddenText">Social Computing</div>
+					</a>
+								<a class="tileElement" style="background: rgb(232, 152, 184); position: absolute; display: none;" href="279/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 279</span>
+						<div class="tileElementHiddenText longTitle">Computational Biology: Structure and Organization of Biomole...</div>
+					</a>
+								<a class="tileElement" style="background: rgb(251, 226, 188); position: absolute; display: none;" href="294S/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 294S</span>
+						<div class="tileElementHiddenText">Research Project in Software Systems and Security</div>
+					</a>
+								<a class="tileElement" style="background: rgb(242, 214, 194); position: absolute; display: none;" href="294W/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 294W</span>
+						<div class="tileElementHiddenText">Writing Intensive Research Project in Computer Science</div>
+					</a>
+								<a class="tileElement" style="background: rgb(177, 196, 147); position: absolute; display: none;" href="295/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 295</span>
+						<div class="tileElementHiddenText">Software Engineering</div>
+					</a>
+								<a class="tileElement" style="background: rgb(228, 179, 177); position: absolute; display: none;" href="298/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 298</span>
+						<div class="tileElementHiddenText">Seminar on Teaching Introductory Computer Science</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 215, 227); position: absolute; display: none;" href="300/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 300</span>
+						<div class="tileElementHiddenText">Departmental Lecture Series</div>
+					</a>
+								<a class="tileElement" style="background: rgb(248, 241, 182); position: absolute; display: none;" href="309A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 309A</span>
+						<div class="tileElementHiddenText">Cloud Computing Seminar</div>
+					</a>
+								<a class="tileElement" style="background: rgb(211, 214, 246); position: absolute; display: none;" href="315B/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 315B</span>
+						<div class="tileElementHiddenText">Parallel Computing Research Project</div>
+					</a>
+								<a class="tileElement" style="background: rgb(228, 200, 246); position: absolute; display: none;" href="316/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 316</span>
+						<div class="tileElementHiddenText">Advanced Multi-Core Systems</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 198, 201); position: absolute; display: none;" href="320/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 320</span>
+						<div class="tileElementHiddenText">Value of Data and AI</div>
+					</a>
+								<a class="tileElement" style="background: rgb(247, 225, 241); position: absolute; display: none;" href="325B/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 325B</span>
+						<div class="tileElementHiddenText">Data for Sustainable Development</div>
+					</a>
+								<a class="tileElement" style="background: rgb(252, 206, 176); position: absolute; display: none;" href="326/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 326</span>
+						<div class="tileElementHiddenText">Topics in Advanced Robotic Manipulation</div>
+					</a>
+								<a class="tileElement" style="background: rgb(191, 183, 241); position: absolute; display: none;" href="327A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 327A</span>
+						<div class="tileElementHiddenText">Advanced Robotic Manipulation</div>
+					</a>
+								<a class="tileElement" style="background: rgb(223, 242, 181); position: absolute; display: none;" href="330/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 330</span>
+						<div class="tileElementHiddenText">Deep Multi-task and Meta Learning</div>
+					</a>
+								<a class="tileElement" style="background: rgb(244, 222, 180); position: absolute; display: none;" href="331B/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 331B</span>
+						<div class="tileElementHiddenText">Representation Learning in Computer Vision</div>
+					</a>
+								<a class="tileElement" style="background: rgb(245, 218, 211); position: absolute; display: none;" href="332/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 332</span>
+						<div class="tileElementHiddenText">Advanced Survey of Reinforcement Learning</div>
+					</a>
+								<a class="tileElement" style="background: rgb(221, 192, 215); position: absolute; display: none;" href="333/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 333</span>
+						<div class="tileElementHiddenText">Safe and Interactive Robotics</div>
+					</a>
+								<a class="tileElement" style="background: rgb(165, 200, 217); position: absolute; display: none;" href="334A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 334A</span>
+						<div class="tileElementHiddenText">Convex Optimization I</div>
+					</a>
+								<a class="tileElement" style="background: rgb(162, 192, 189); position: absolute; display: none;" href="335/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 335</span>
+						<div class="tileElementHiddenText">Fair, Accountable, and Transparent (FAT) Deep Learning</div>
+					</a>
+								<a class="tileElement" style="background: rgb(217, 226, 238); position: absolute; display: none;" href="336/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 336</span>
+						<div class="tileElementHiddenText longTitle">Robot Perception and Decision-Making: Optimal and Learning-b...</div>
+					</a>
+								<a class="tileElement" style="background: rgb(169, 181, 222); position: absolute; display: none;" href="337/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 337</span>
+						<div class="tileElementHiddenText">AI-Assisted Care</div>
+					</a>
+								<a class="tileElement" style="background: rgb(229, 216, 230); position: absolute; display: none;" href="341/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 341</span>
+						<div class="tileElementHiddenText">Project in Mining Massive Data Sets</div>
+					</a>
+								<a class="tileElement" style="background: rgb(129, 163, 198); position: absolute; display: none;" href="342/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 342</span>
+						<div class="tileElementHiddenText">Building for Digital Health</div>
+					</a>
+								<a class="tileElement" style="background: rgb(183, 181, 206); position: absolute; display: none;" href="344/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 344</span>
+						<div class="tileElementHiddenText">Topics in Computer Networks</div>
+					</a>
+								<a class="tileElement" style="background: rgb(189, 199, 178); position: absolute; display: none;" href="347/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 347</span>
+						<div class="tileElementHiddenText">Human-Computer Interaction Research</div>
+					</a>
+								<a class="tileElement" style="background: rgb(164, 191, 222); position: absolute; display: none;" href="348A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 348A</span>
+						<div class="tileElementHiddenText">Computer Graphics: Geometric Modeling &amp; Processing</div>
+					</a>
+								<a class="tileElement" style="background: rgb(242, 230, 251); position: absolute; display: none;" href="348B/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 348B</span>
+						<div class="tileElementHiddenText">Computer Graphics: Image Synthesis Techniques</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 207, 207); position: absolute; display: none;" href="348C/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 348C</span>
+						<div class="tileElementHiddenText">Computer Graphics: Animation and Simulation</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 244, 196); position: absolute; display: none;" href="348E/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 348E</span>
+						<div class="tileElementHiddenText longTitle">Character Animation: Modeling, Simulation, and Control of Hu...</div>
+					</a>
+								<a class="tileElement" style="background: rgb(202, 181, 221); position: absolute; display: none;" href="348K/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 348K</span>
+						<div class="tileElementHiddenText">Visual Computing Systems</div>
+					</a>
+								<a class="tileElement" style="background: rgb(250, 174, 192); position: absolute; display: none;" href="348V/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 348V</span>
+						<div class="tileElementHiddenText">Visual Computing Systems</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 214, 209); position: absolute; display: none;" href="349D/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 349D</span>
+						<div class="tileElementHiddenText">Cloud Computing Technology</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 224, 182); position: absolute; display: none;" href="349F/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 349F</span>
+						<div class="tileElementHiddenText">Technology for Financial Systems</div>
+					</a>
+								<a class="tileElement" style="background: rgb(200, 211, 203); position: absolute; display: none;" href="350/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 350</span>
+						<div class="tileElementHiddenText">Secure Compilation</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 235, 217); position: absolute; display: none;" href="353/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 353</span>
+						<div class="tileElementHiddenText">The Practice of Theory Research</div>
+					</a>
+								<a class="tileElement" style="background: rgb(179, 221, 236); position: absolute; display: none;" href="354/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 354</span>
+						<div class="tileElementHiddenText longTitle">Topics in Intractability: Unfulfilled Algorithmic Fantasies</div>
+					</a>
+								<a class="tileElement" style="background: rgb(228, 168, 182); position: absolute; display: none;" href="355/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 355</span>
+						<div class="tileElementHiddenText">Advanced Topics in Cryptography</div>
+					</a>
+								<a class="tileElement" style="background: rgb(188, 201, 225); position: absolute; display: none;" href="356/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 356</span>
+						<div class="tileElementHiddenText">Topics in Computer and Network Security</div>
+					</a>
+								<a class="tileElement" style="background: rgb(238, 212, 238); position: absolute; display: none;" href="357/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 357</span>
+						<div class="tileElementHiddenText">Advanced Topics in Formal Methods</div>
+					</a>
+								<a class="tileElement" style="background: rgb(155, 185, 179); position: absolute; display: none;" href="358/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 358</span>
+						<div class="tileElementHiddenText">Topics in Programming Language Theory</div>
+					</a>
+								<a class="tileElement" style="background: rgb(131, 154, 180); position: absolute; display: none;" href="358A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 358A</span>
+						<div class="tileElementHiddenText">Programming Language Foundations</div>
+					</a>
+								<a class="tileElement" style="background: rgb(101, 123, 116); position: absolute; display: none;" href="359B/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 359B</span>
+						<div class="tileElementHiddenText">Designing Decentralized Applications on Blockchain</div>
+					</a>
+								<a class="tileElement" style="background: rgb(158, 142, 189); position: absolute; display: none;" href="360/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 360</span>
+						<div class="tileElementHiddenText">Simplicity and Complexity in Economic Theory</div>
+					</a>
+								<a class="tileElement" style="background: rgb(149, 158, 121); position: absolute; display: none;" href="361/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 361</span>
+						<div class="tileElementHiddenText">Engineering Design Optimization</div>
+					</a>
+								<a class="tileElement" style="background: rgb(121, 150, 145); position: absolute; display: none;" href="366/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 366</span>
+						<div class="tileElementHiddenText">Computational Social Choice</div>
+					</a>
+								<a class="tileElement" style="background: rgb(193, 214, 238); position: absolute; display: none;" href="368/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 368</span>
+						<div class="tileElementHiddenText">Algorithmic Techniques for Big Data</div>
+					</a>
+								<a class="tileElement" style="background: rgb(235, 185, 225); position: absolute; display: none;" href="369M/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 369M</span>
+						<div class="tileElementHiddenText">Metric Embeddings and Algorithmic Applications</div>
+					</a>
+								<a class="tileElement" style="background: rgb(250, 248, 202); position: absolute; display: none;" href="371/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 371</span>
+						<div class="tileElementHiddenText">Computational Biology in Four Dimensions</div>
+					</a>
+								<a class="tileElement" style="background: rgb(178, 183, 246); position: absolute; display: none;" href="372/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 372</span>
+						<div class="tileElementHiddenText longTitle">Artificial Intelligence for Disease Diagnosis and Informatio...</div>
+					</a>
+								<a class="tileElement" style="background: rgb(178, 189, 164); position: absolute; display: none;" href="373/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 373</span>
+						<div class="tileElementHiddenText">Statistical and Machine Learning Methods for Genomics</div>
+					</a>
+								<a class="tileElement" style="background: rgb(175, 178, 217); position: absolute; display: none;" href="375/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 375</span>
+						<div class="tileElementHiddenText">Large-Scale Neural Network Modeling for Neuroscience</div>
+					</a>
+								<a class="tileElement" style="background: rgb(238, 205, 240); position: absolute; display: none;" href="376/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 376</span>
+						<div class="tileElementHiddenText">Human-Computer Interaction Research</div>
+					</a>
+								<a class="tileElement" style="background: rgb(144, 136, 188); position: absolute; display: none;" href="377C/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 377C</span>
+						<div class="tileElementHiddenText">Topics in HCI: Crowdsourcing and Social Computing</div>
+					</a>
+								<a class="tileElement" style="background: rgb(129, 152, 137); position: absolute; display: none;" href="377E/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 377E</span>
+						<div class="tileElementHiddenText">Designing Solutions to Global Grand Challenges</div>
+					</a>
+								<a class="tileElement" style="background: rgb(251, 241, 217); position: absolute; display: none;" href="377G/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 377G</span>
+						<div class="tileElementHiddenText">Designing Serious Games</div>
+					</a>
+								<a class="tileElement" style="background: rgb(152, 163, 195); position: absolute; display: none;" href="377I/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 377I</span>
+						<div class="tileElementHiddenText">Designing Systems for Humans</div>
+					</a>
+								<a class="tileElement" style="background: rgb(202, 208, 234); position: absolute; display: none;" href="377N/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 377N</span>
+						<div class="tileElementHiddenText">Introduction to the Design of Smart Products</div>
+					</a>
+								<a class="tileElement" style="background: rgb(251, 217, 222); position: absolute; display: none;" href="377Q/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 377Q</span>
+						<div class="tileElementHiddenText">Designing for Accessibility</div>
+					</a>
+								<a class="tileElement" style="background: rgb(209, 237, 198); position: absolute; display: none;" href="377T/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 377T</span>
+						<div class="tileElementHiddenText longTitle">Topics in Human-Computer Interaction: Teaching Studio Classe...</div>
+					</a>
+								<a class="tileElement" style="background: rgb(179, 171, 218); position: absolute; display: none;" href="377U/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 377U</span>
+						<div class="tileElementHiddenText">Understanding Users</div>
+					</a>
+								<a class="tileElement" style="background: rgb(150, 177, 143); position: absolute; display: none;" href="379C/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 379C</span>
+						<div class="tileElementHiddenText">Computational Models of the Neocortex</div>
+					</a>
+								<a class="tileElement" style="background: rgb(249, 217, 198); position: absolute; display: none;" href="384/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 384</span>
+						<div class="tileElementHiddenText longTitle">Seminar on Ethical and Social Issues in Natural Language Pro...</div>
+					</a>
+								<a class="tileElement" style="background: rgb(213, 173, 228); position: absolute; display: none;" href="390A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 390A</span>
+						<div class="tileElementHiddenText">Curricular Practical Training</div>
+					</a>
+								<a class="tileElement" style="background: rgb(219, 232, 224); position: absolute; display: none;" href="390B/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 390B</span>
+						<div class="tileElementHiddenText">Curricular Practical Training</div>
+					</a>
+								<a class="tileElement" style="background: rgb(161, 119, 153); position: absolute; display: none;" href="398/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 398</span>
+						<div class="tileElementHiddenText">Computational Education</div>
+					</a>
+								<a class="tileElement" style="background: rgb(179, 222, 255); position: absolute; display: none;" href="399/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 399</span>
+						<div class="tileElementHiddenText">Independent Project</div>
+					</a>
+								<a class="tileElement" style="background: rgb(253, 218, 222); position: absolute; display: none;" href="399P/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 399P</span>
+						<div class="tileElementHiddenText">Independent Project</div>
+					</a>
+								<a class="tileElement" style="background: rgb(250, 239, 213); position: absolute; display: none;" href="402/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 402</span>
+						<div class="tileElementHiddenText">Beyond Bits and Atoms: Designing Technological Tools</div>
+					</a>
+								<a class="tileElement" style="background: rgb(211, 237, 224); position: absolute; display: none;" href="402L/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 402L</span>
+						<div class="tileElementHiddenText">Beyond Bits and Atoms - Lab</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 225, 203); position: absolute; display: none;" href="421/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 421</span>
+						<div class="tileElementHiddenText">Designing AI to Cultivate Human Well-Being</div>
+					</a>
+								<a class="tileElement" style="background: rgb(224, 237, 206); position: absolute; display: none;" href="428/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 428</span>
+						<div class="tileElementHiddenText">Computation and Cognition: the Probabilistic Approach</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 253, 193); position: absolute; display: none;" href="448B/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 448B</span>
+						<div class="tileElementHiddenText">Data Visualization</div>
+					</a>
+								<a class="tileElement" style="background: rgb(242, 221, 254); position: absolute; display: none;" href="448H/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 448H</span>
+						<div class="tileElementHiddenText">Topics in Computer Graphics: Agile Hardware Design</div>
+					</a>
+								<a class="tileElement" style="background: rgb(251, 213, 198); position: absolute; display: none;" href="448I/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 448I</span>
+						<div class="tileElementHiddenText">Computational Imaging and Display</div>
+					</a>
+								<a class="tileElement" style="background: rgb(219, 239, 251); position: absolute; display: none;" href="448M/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 448M</span>
+						<div class="tileElementHiddenText">Making Making Machines for Makers</div>
+					</a>
+								<a class="tileElement" style="background: rgb(242, 252, 211); position: absolute; display: none;" href="448P/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 448P</span>
+						<div class="tileElementHiddenText">Hacking the Pandemic</div>
+					</a>
+								<a class="tileElement" style="background: rgb(202, 240, 237); position: absolute; display: none;" href="448V/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 448V</span>
+						<div class="tileElementHiddenText longTitle">Topics in Computer Graphics: Computational Video Manipulatio...</div>
+					</a>
+								<a class="tileElement" style="background: rgb(201, 211, 241); position: absolute; display: none;" href="472/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 472</span>
+						<div class="tileElementHiddenText">Data science and AI for COVID-19</div>
+					</a>
+								<a class="tileElement" style="background: rgb(214, 221, 192); position: absolute; display: none;" href="476A/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 476A</span>
+						<div class="tileElementHiddenText">Music, Computing, Design I: the Art of Design</div>
+					</a>
+								<a class="tileElement" style="background: rgb(237, 192, 254); position: absolute; display: none;" href="499/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 499</span>
+						<div class="tileElementHiddenText">Advanced Reading and Research</div>
+					</a>
+								<a class="tileElement" style="background: rgb(202, 193, 242); position: absolute; display: none;" href="499P/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 499P</span>
+						<div class="tileElementHiddenText">Advanced Reading and Research</div>
+					</a>
+								<a class="tileElement" style="background: rgb(233, 185, 209); position: absolute; display: none;" href="520/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 520</span>
+						<div class="tileElementHiddenText">Knowledge Graphs</div>
+					</a>
+								<a class="tileElement" style="background: rgb(179, 215, 213); position: absolute; display: none;" href="521/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 521</span>
+						<div class="tileElementHiddenText">Seminar on AI Safety</div>
+					</a>
+								<a class="tileElement" style="background: rgb(253, 191, 213); position: absolute; display: none;" href="522/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 522</span>
+						<div class="tileElementHiddenText">Seminar in Artificial Intelligence in Healthcare</div>
+					</a>
+								<a class="tileElement" style="background: rgb(182, 213, 235); position: absolute; display: none;" href="529/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 529</span>
+						<div class="tileElementHiddenText">Robotics and Autonomous Systems Seminar</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 249, 201); position: absolute; display: none;" href="544/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 544</span>
+						<div class="tileElementHiddenText">Interactive Media and Games</div>
+					</a>
+								<a class="tileElement" style="background: rgb(255, 216, 195); position: absolute; display: none;" href="547/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 547</span>
+						<div class="tileElementHiddenText">Human-Computer Interaction Seminar</div>
+					</a>
+								<a class="tileElement" style="background: rgb(246, 192, 203); position: absolute; display: none;" href="581/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 581</span>
+						<div class="tileElementHiddenText">Media Innovation</div>
+					</a>
+								<a class="tileElement" style="background: rgb(216, 161, 201); position: absolute; display: none;" href="802/"> 
+						<span class="tileElementText tileElementTextWithSubtext">CS 802</span>
+						<div class="tileElementHiddenText">TGR Dissertation</div>
+					</a>
+						<a class="tileElement" id="moreTile" style="position: absolute; left: 580px; top: 1740px;"> 
+				<span class="tileElementText">+ 244<br>more</span>
+			</a>
+			<div id="noTileResults" style="display: none;">No results. Try a different search.</div>
+		</div>
+	
+
+</body></html>

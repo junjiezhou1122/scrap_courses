@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      cs 28 - Artificial Intelligence, Entrepreneurship and Society in the 21st
+      Century and Beyond at Stanford University | Coursicle Stanford
+    </title>
+    <script>
+      window.schoolName = "stanford";
+    </script>
+
+    <script>
+      window.viewingInApp = false;
+    </script>
+
+    <!-- Init -->
+    <script defer src="/all/directory/shared/js/loginless.js?new5"></script>
+    <!-- 
+	This file contains code that should be executed on every Coursicle page 
+	It is included in all pages to ensure we are running loginless
+
+	NOTE: if you are allowing them to see their profile (top right)
+	then you also need to include shared/loginless/ui/modals.php
+-->
+
+    <!-- Our custom code for tracking console errors, not using defer so that it's usually the first thing that executes and can catch everything else -->
+    <script src="/shared/js/consoleErrorHandling.js"></script>
+
+    <!-- Fingerprinting-->
+    <script defer src="/shared/loginless/backend/lib/toeCopy.min.js"></script>
+
+    <!-- Persistent storage (local storage, cookies, memory, etc) -->
+    <!-- 8/16/24: making this non defer so we can use store right away on page load, probably can't hurt-->
+    <script src="/shared/loginless/backend/lib/store.min.js"></script>
+
+    <!-- For parsing the user agent for fingerprinting and device identification -->
+    <script defer src="/shared/loginless/backend/lib/uaParser.min.js"></script>
+
+    <!-- For determining whether the user is still using Coursicle, so we can stop polling (calls ifvisible.js.map too) -->
+    <script defer src="/shared/loginless/backend/lib/ifvisible.min.js"></script>
+
+    <!-- Our custom code for loginless identification -->
+    <script defer src="/shared/loginless/backend/loginless.js?new=20"></script>
+    <script>
+      /*
+			Any Javascript that executes on page load should be called here
+			Moreover, any code that executes automatically (i.e. not in response to user
+			interaction) should be called here directly or descend from a function called here
+		*/
+
+      document.addEventListener("DOMContentLoaded", () => {
+        loginless();
+      });
+    </script>
+
+    <!-- Meta data -->
+    <meta
+      name="description"
+      content="cs 28 at Stanford University (Stanford) in Stanford, California. Technical developments in artificial intelligence (AI) have opened up newopportunities for entrepreneurship, as well as raised profound longer termquestions about how human societal and economic systems may bere足organized to accommodate the rise of intelligent machines. In thiscourse, closely co足taught by a Stanford professor and a leading SiliconValley venture capitalist, we will examine the current state of the artcapabilities of existing artificial intelligence systems, as well aseconomic challenges and opportunities in early stage startups and largecompanies that could leverage AI. We will focus on gaps between businessneeds and current technical capabilities to identify high impactdirections for the development of future AI technology. Simultaneously, wewill explore the longer term societal impact of AI driven by inexorabletrends in technology and entrepreneurship. The course includes guestlectures from leading technologists and entrepreneurs who employ AI in avariety of fields, including healthcare, education, self足driving cars,computer security, natural language interfaces, computer vision systems,and hardware acceleration. Class Notes: Application, consent of instructor, and permission number required. To enroll apply here: https://ganguli-gang.stanford.edu/cs28_fall2017.html Deadline to apply: Sept. 22."
+    />
+    <meta
+      property="og:image"
+      content="/homepage/img/coursiclePhotoForBots.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Needed to make image big in some places, like Discord -->
+    <link rel="icon" href="/homepage/img/coursicleCLogoMedium.png" />
+    <!-- For social sharing, like Snapchat, GroupMe -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- To get everything set for iPhone -->
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- jQuery -->
+    <script
+      defer
+      src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"
+    ></script>
+
+    <!-- If you're interested in our course data, please contact us at team@coursicle.com -->
+
+    <!-- Custom CSS -->
+    <link defer href="/shared/css/comments.css" rel="stylesheet" />
+    <link href="/all/directory/shared/css/shared.css?new15" rel="stylesheet" />
+    <link
+      href="/all/directory/shared/css/sharedResponsive.css?new9"
+      rel="stylesheet"
+    />
+
+    <!-- Custom JS -->
+    <script defer src="/all/directory/shared/js/shared.js?new13"></script>
+    <script defer src="/shared/js/osSpecific.js?new2"></script>
+
+    <!-- Autocheck web app's version, force refresh if version is too old -->
+    <script
+      defer
+      id="versionCheckerScript"
+      src="/shared/js/getRequiredVersion.js?new4"
+      version-as-of-page-load="4.2.0"
+      check-interval-when-active="600"
+      check-interval-when-inactive="172800"
+    ></script>
+
+    <!-- Isotope package for filtering -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"
+    ></script>
+
+    <!-- Tippy package for tooltips -->
+    <script defer src="/shared/js/libraries/popper.min.js"></script>
+    <script defer src="/shared/js/libraries/tippy-bundle.umd.min.js"></script>
+
+    <!-- Google Fonts -->
+    <!-- Loading in an async way, so it's non render blocking and we get better google lighthouse scores / indexing -->
+    <!-- using a variant of https://stackoverflow.com/a/46750893/2611730, and you can't really tell that the logo isn't loaded on page load -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+
+    <!-- Google Webmaster Verification -->
+    <meta
+      name="google-site-verification"
+      content="zkhO2wc00S5Q2NrM6pl8MqgfQLxtJGu5jQZioogbptA"
+    />
+
+    <!-- PHP -->
+  </head>
+  <body>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      var pluginUrl = "//www.google-analytics.com/plugins/ga/inpage_linkid.js";
+      _gaq.push(["_require", "inpage_linkid", pluginUrl]);
+      _gaq.push(["_setAccount", "UA-66667153-1"]);
+      _gaq.push(["_trackPageview"]);
+
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src =
+          ("https:" == document.location.protocol ? "https://" : "http://") +
+          "stats.g.doubleclick.net/dc.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics (new analytics) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-SRFRW1PCBK"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-SRFRW1PCBK");
+    </script>
+    <div id="header">
+      <a href="/stanford/"
+        ><div id="coursicleLogo">
+          <svg
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 4000 2000"
+            style="height: 100%"
+            preserveAspectRatio="xMidYMid meet"
+            xml:space="preserve"
+          >
+            <path
+              d="M599.4,658.55l-17.56,99.66c0,0,56.59,60.48,159.17,59.79c0,0,85.81-94.65,10.4-194.68
+		c0,0-56.36-72.24-177.82-72.24c0,0-308.68-15.43-360.4,436.08c0,0-29.92,310.71,227.27,333.07c0,0,167.12,18.07,289.2-158.82
+		l-61.66-57.72c0,0-69.21,81.32-155.16,82.76c0,0-111.85,12.65-102.31-198.28c0,0-2.86-188.03,81.13-302.56
+		C491.67,685.61,529.93,628.91,599.4,658.55z"
+              fill="#14A2FF"
+            />
+            <path
+              d="M1638.84,1177.52l-58.04,27.87c0,0,0-53.4,26.35-160.88c26.35-107.49,30.03-213.56,30.03-213.56
+		c-142.98-3.34-179.22,17.81-179.22,17.81c9.19,58.22-55.83,330.3-55.83,330.3s-43.22,18.86-56.76,15.33s25.32-151.89,25.32-151.89
+		c48.28-153.07,19.4-212.29,19.4-212.29c-100.91-3.41-208.48,16.3-208.48,16.3l-2.02,32.22c53.93,51.23,34.58,81.45,34.58,81.45
+		c-20.51,7.46-58.45,9.05-58.45,9.05c-3.74-206.48-139.14-141.68-139.14-141.68C925.74,816.16,875.94,850,875.94,850
+		s-140.67,69.35-136.82,274.36s164.75,196.39,164.75,196.39c199.73,2.54,245.77-267.89,245.77-267.89l45.84-10.42
+		c-34.43,113.68-32.37,185.58-32.37,185.58c5.89,94.22,96.75,95.06,96.75,95.06c76.13-1.26,142.33-56.4,142.33-56.4
+		c27.34,56.95,90.75,54.68,90.75,54.68c82.39,2.28,179.73-87.62,179.73-87.62L1638.84,1177.52z M960.19,1203.92
+		c0,0-44.29,3.31-40.98-100.95s44.64-175.39,44.64-175.39s-33.41,130.85,101.81,132.04
+		C1065.66,1059.63,1029.86,1201.72,960.19,1203.92z"
+              fill="#14A2FF"
+            />
+            <path
+              d="M2339.6,1035.16c0,0,58.98-62.82,56.63-111.6c0,0,4.55-100.08-145.53-98.33c0,0-119.57-2.81-161.3,72.59
+		c0,0-4.64-73.07-70.69-72.61c0,0-47.5-2.87-104.27,53.9c0,0-5.42-27.69-15.7-49.09c0,0-161.74-2.71-203.47,18.39v33.37
+		c0,0,37.09,35.33,37.79,75.21c0.69,39.88-58.21,266.42-56.43,304.57s6.41,50.26,6.41,50.26s140.53,5.49,176.13-18.95v-50.93
+		c0,0,5.25-71.9,20.52-142.75c15.27-70.85,23.76-114.97,23.76-114.97s19.78-19.2,29.44-20.94c0,0,38.46,56.44,44.45,53.54
+		c0,0,50.72-4.44,101.3-59.81c0,0,5.32,57.87,88.19,141.2c82.87,83.34,76.82,116.39,76.82,116.39l-0.61,12.83
+		c0,0-4.74,7.77-10.27,8.83l-2.12,0.38c0,0-28.11-76.55-90.01-118.42c0,0-28.7,1.29-84.37,54.11c0,0-31.02,29.72-30.53,49.94
+		c0.49,20.22,12.33,33.29,36.99,55.98c0,0,45.48,41.52,132.94,43.41c0,0,186.5-0.84,203.81-148.89
+		C2399.47,1172.74,2412.13,1114.83,2339.6,1035.16z M2287.08,977.64c-7.54-2.37-35.65-35.2-35.65-35.2s-32.93-36.79,34.06-35.2
+		C2352.48,908.83,2287.08,977.64,2287.08,977.64z"
+              fill="#14A2FF"
+            />
+            <g>
+              <path
+                d="M2605.67,1202.56c0,0-6.84-33.18,25.03-144.47c31.87-111.29,29.39-155.1,29.39-155.1s3.2-36.26-21.16-73.11
+			c0,0-164.85,1.17-198.91,18.69l-1.4,31c0,0,38.77,43.23,35.89,86.05c-2.88,42.82-32.6,151.48-32.6,151.48
+			s-20.32,73.99-17.88,112.31c2.45,38.32,19.56,90.94,91.28,92.23s145-57.95,145-57.95l33.13-27.67l-28.46-61.52L2605.67,1202.56z"
+                fill="#14A2FF"
+              />
+              <path
+                class="st0"
+                d="M2600.04,579.08c0,0-101.29,3.03-108.35,102.3c0,0-4.71,84.46,89.85,87.15c0,0,100.61,1.07,111.93-94.73
+			C2693.46,673.81,2699.62,579.05,2600.04,579.08z"
+                fill="#14A2FF"
+              />
+            </g>
+            <path
+              d="M2953.8,907.36c4.54,0.78-7.21,55.25-13.38,85.11c0,0,49.78,54.8,134.65,48.01c0,0,82.22-81.85,1.89-170.86
+		c0,0-44.27-47.84-136.53-44.13s-140.52,44.32-140.52,44.32s-113.43,76.81-108.96,244.97c4.34,163.32,97.34,190.56,97.34,190.56
+		s116.24,58.25,254.53-50.91c0,0,33.11-23.85,43.85-41.6l-40.64-53.72c0,0-54.7,57.61-114.46,54.66c-64.71-3.19-59.8-95.3-59.8-95.3
+		S2875.15,893.85,2953.8,907.36z"
+              fill="#14A2FF"
+            />
+            <path
+              d="M3384.69,593.5l-6.63,80.73c-2.17,22.41-18.2,108.08-62.35,318.53c-44.15,210.45-31.79,208.85-31.79,208.85
+		l71.24-25.42l31.31,60.7l-1.09,0.66l-78.12,49.48c-61.01,40.18-115.38,33.82-115.38,33.82c-99.33-10.68-91.11-100.31-91.11-100.31
+		s21.45-149.98,50.42-281.75c29.84-135.72,49.07-293.41,49.07-293.41c3.76-41.34-6.42-87.02-6.42-87.02s87.86-34.82,175.32-31.22
+		C3369.15,527.14,3385.74,544.24,3384.69,593.5z"
+              fill="#14A2FF"
+            />
+            <path
+              d="M3723.21,1157.93c-157.23,134.61-172.73-11.03-172.73-11.03s247.71-32.12,240.71-195.31
+		c0,0,4.23-123.96-151.98-126.77c-152.98-2.76-223.36,118.45-234.71,140.12c-1.02,1.94-2.05,3.86-3.14,5.76
+		c-6.38,11.12-31.12,59.87-31.1,147.31c0.03,93.64,50.67,204.73,167.47,203.22c159.73-2.07,228.87-108.36,228.87-108.36l-41.91-56.09
+		L3723.21,1157.93z M3612.51,907.57c0,0,23.16-3.1,16.96,58.09s-55.94,92.66-80.89,96.77
+		C3547.17,1062.66,3564.35,907.54,3612.51,907.57z"
+              fill="#14A2FF"
+            />
+          </svg></div
+      ></a>
+      <a href=".." class="backLink" id="pageInfo">cs at Stanford</a>
+      <!--Could put a back button here as page info-->
+    </div>
+
+    <h1 id="itemViewHeader">
+      cs 28 - Artificial Intelligence, Entrepreneurship and Society in the 21st
+      Century and Beyond
+    </h1>
+    <div id="subItemContainer">
+      <div id="subItemColumn1">
+        <div id="subItemDescription" class="subItem">
+          <div class="subItemLabel">Description</div>
+          <div class="subItemContent">
+            Technical developments in artificial intelligence (AI) have opened
+            up newopportunities for entrepreneurship, as well as raised profound
+            longer termquestions about how human societal and economic systems
+            may bere足organized to accommodate the rise of intelligent machines.
+            In thiscourse, closely co足taught by a Stanford professor and a
+            leading SiliconValley venture capitalist, we will examine the
+            current state of the artcapabilities of existing artificial
+            intelligence systems, as well aseconomic challenges and
+            opportunities in early stage startups and largecompanies that could
+            leverage AI. We will focus on gaps between businessneeds and current
+            technical capabilities to identify high impactdirections for the
+            development of future AI technology. Simultaneously, wewill explore
+            the longer term societal impact of AI driven by inexorabletrends in
+            technology and entrepreneurship. The course includes guestlectures
+            from leading technologists and entrepreneurs who employ AI in
+            avariety of fields, including healthcare, education, self足driving
+            cars,computer security, natural language interfaces, computer vision
+            systems,and hardware acceleration. Class Notes: Application, consent
+            of instructor, and permission number required. To enroll apply here:
+            https://ganguli-gang.stanford.edu/cs28_fall2017.html Deadline to
+            apply: Sept. 22.
+          </div>
+        </div>
+
+        <div id="subItemProfessors" class="subItem">
+          <div class="subItemLabel">Recent Professors</div>
+          <div class="subItemContent">
+            <a
+              class="professorLink"
+              href="https://www.coursicle.com/stanford/professors/S.+Ganguli/"
+              >S. Ganguli</a
+            >
+          </div>
+        </div>
+
+        <div id="subItemRecentSemestersCoursePage" class="subItem">
+          <div class="subItemLabel">Recent Semesters</div>
+          <div class="subItemContent">Fall 2017</div>
+        </div>
+
+        <div id="subItemCredits" class="subItem">
+          <div class="subItemLabel">Credits</div>
+          <div class="subItemContent">2</div>
+        </div>
+      </div>
+      <div id="subItemColumn2">
+        <div id="subItemNotifyLinkCoursePage" class="subItem">
+          <div class="subItemLabel">Open Seat Checker</div>
+          <div class="subItemContent">
+            <a
+              class="courseLink"
+              href="/stanford/?search=cs+28&type=course"
+              onclick="gtag('event', 'plug', {'page' : 'course', 'link' : 'app'})"
+              >Get notified when cs 28 has an open seat</a
+            >
+          </div>
+        </div>
+
+        <div id="subItemScheduleLinkCoursePage" class="subItem">
+          <div class="subItemLabel">Schedule Planner</div>
+          <div class="subItemContent">
+            <a
+              class="courseLink"
+              href="/stanford/?search=cs+28&type=course"
+              onclick="gtag('event', 'plug', {'page' : 'course', 'link' : 'scheduler'})"
+              >Add cs 28 to your schedule</a
+            >
+          </div>
+        </div>
+
+        <!-- 
+					// excluding this for now, it just doesn't seem very important and thus adds clutter
+					<div class="subItem">
+						<div class="subItemLabel">Avg. Sections</div>
+						<div class="subItemContent">
+							
+						</div>
+					</div>
+				-->
+      </div>
+    </div>
+  </body>
+</html>

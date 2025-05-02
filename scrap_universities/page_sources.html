@@ -1,0 +1,3344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Schools on Coursicle</title>
+    <script>
+      window.schoolName = "none";
+    </script>
+
+    <script>
+      window.viewingInApp = false;
+    </script>
+
+    <!-- Init -->
+    <script defer src="/all/directory/shared/js/loginless.js?new5"></script>
+    <!-- 
+	This file contains code that should be executed on every Coursicle page 
+	It is included in all pages to ensure we are running loginless
+
+	NOTE: if you are allowing them to see their profile (top right)
+	then you also need to include shared/loginless/ui/modals.php
+-->
+
+    <!-- Our custom code for tracking console errors, not using defer so that it's usually the first thing that executes and can catch everything else -->
+    <script src="/shared/js/consoleErrorHandling.js"></script>
+
+    <!-- Fingerprinting-->
+    <script defer src="/shared/loginless/backend/lib/toeCopy.min.js"></script>
+
+    <!-- Persistent storage (local storage, cookies, memory, etc) -->
+    <!-- 8/16/24: making this non defer so we can use store right away on page load, probably can't hurt-->
+    <script src="/shared/loginless/backend/lib/store.min.js"></script>
+
+    <!-- For parsing the user agent for fingerprinting and device identification -->
+    <script defer src="/shared/loginless/backend/lib/uaParser.min.js"></script>
+
+    <!-- For determining whether the user is still using Coursicle, so we can stop polling (calls ifvisible.js.map too) -->
+    <script defer src="/shared/loginless/backend/lib/ifvisible.min.js"></script>
+
+    <!-- Our custom code for loginless identification -->
+    <script defer src="/shared/loginless/backend/loginless.js?new=20"></script>
+    <script>
+      /*
+			Any Javascript that executes on page load should be called here
+			Moreover, any code that executes automatically (i.e. not in response to user
+			interaction) should be called here directly or descend from a function called here
+		*/
+
+      document.addEventListener("DOMContentLoaded", () => {
+        loginless();
+      });
+    </script>
+
+    <!-- Meta data -->
+    <meta
+      name="description"
+      content="All courses on Coursicle organized by school."
+    />
+    <meta
+      property="og:image"
+      content="/homepage/img/coursiclePhotoForBots.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Needed to make image big in some places, like Discord -->
+    <link rel="icon" href="/homepage/img/coursicleCLogoMedium.png" />
+    <!-- For social sharing, like Snapchat, GroupMe -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- To get everything set for iPhone -->
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- jQuery -->
+    <script
+      defer
+      src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"
+    ></script>
+
+    <!-- If you're interested in our course data, please contact us at team@coursicle.com -->
+
+    <!-- Custom CSS -->
+    <link defer href="/shared/css/comments.css" rel="stylesheet" />
+    <link href="/all/directory/shared/css/shared.css?new15" rel="stylesheet" />
+    <link
+      href="/all/directory/shared/css/sharedResponsive.css?new9"
+      rel="stylesheet"
+    />
+
+    <!-- Custom JS -->
+    <script defer src="/all/directory/shared/js/shared.js?new13"></script>
+    <script defer src="/shared/js/osSpecific.js?new2"></script>
+
+    <!-- Autocheck web app's version, force refresh if version is too old -->
+    <script
+      defer
+      id="versionCheckerScript"
+      src="/shared/js/getRequiredVersion.js?new4"
+      version-as-of-page-load="4.2.0"
+      check-interval-when-active="600"
+      check-interval-when-inactive="172800"
+    ></script>
+
+    <!-- Isotope package for filtering -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"
+    ></script>
+
+    <!-- Tippy package for tooltips -->
+    <script defer src="/shared/js/libraries/popper.min.js"></script>
+    <script defer src="/shared/js/libraries/tippy-bundle.umd.min.js"></script>
+
+    <!-- Google Fonts -->
+    <!-- Loading in an async way, so it's non render blocking and we get better google lighthouse scores / indexing -->
+    <!-- using a variant of https://stackoverflow.com/a/46750893/2611730, and you can't really tell that the logo isn't loaded on page load -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+
+    <!-- Google Webmaster Verification -->
+    <meta
+      name="google-site-verification"
+      content="zkhO2wc00S5Q2NrM6pl8MqgfQLxtJGu5jQZioogbptA"
+    />
+
+    <!-- PHP -->
+  </head>
+  <body>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      var pluginUrl = "//www.google-analytics.com/plugins/ga/inpage_linkid.js";
+      _gaq.push(["_require", "inpage_linkid", pluginUrl]);
+      _gaq.push(["_setAccount", "UA-66667153-1"]);
+      _gaq.push(["_trackPageview"]);
+
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src =
+          ("https:" == document.location.protocol ? "https://" : "http://") +
+          "stats.g.doubleclick.net/dc.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics (new analytics) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-SRFRW1PCBK"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-SRFRW1PCBK");
+    </script>
+    <div id="schoolPageContainer">
+      <div id="header">
+        <a href="/schools/"
+          ><div id="coursicleLogo">
+            <svg
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 4000 2000"
+              style="height: 100%"
+              preserveAspectRatio="xMidYMid meet"
+              xml:space="preserve"
+            >
+              <path
+                d="M599.4,658.55l-17.56,99.66c0,0,56.59,60.48,159.17,59.79c0,0,85.81-94.65,10.4-194.68
+		c0,0-56.36-72.24-177.82-72.24c0,0-308.68-15.43-360.4,436.08c0,0-29.92,310.71,227.27,333.07c0,0,167.12,18.07,289.2-158.82
+		l-61.66-57.72c0,0-69.21,81.32-155.16,82.76c0,0-111.85,12.65-102.31-198.28c0,0-2.86-188.03,81.13-302.56
+		C491.67,685.61,529.93,628.91,599.4,658.55z"
+                fill="#14A2FF"
+              />
+              <path
+                d="M1638.84,1177.52l-58.04,27.87c0,0,0-53.4,26.35-160.88c26.35-107.49,30.03-213.56,30.03-213.56
+		c-142.98-3.34-179.22,17.81-179.22,17.81c9.19,58.22-55.83,330.3-55.83,330.3s-43.22,18.86-56.76,15.33s25.32-151.89,25.32-151.89
+		c48.28-153.07,19.4-212.29,19.4-212.29c-100.91-3.41-208.48,16.3-208.48,16.3l-2.02,32.22c53.93,51.23,34.58,81.45,34.58,81.45
+		c-20.51,7.46-58.45,9.05-58.45,9.05c-3.74-206.48-139.14-141.68-139.14-141.68C925.74,816.16,875.94,850,875.94,850
+		s-140.67,69.35-136.82,274.36s164.75,196.39,164.75,196.39c199.73,2.54,245.77-267.89,245.77-267.89l45.84-10.42
+		c-34.43,113.68-32.37,185.58-32.37,185.58c5.89,94.22,96.75,95.06,96.75,95.06c76.13-1.26,142.33-56.4,142.33-56.4
+		c27.34,56.95,90.75,54.68,90.75,54.68c82.39,2.28,179.73-87.62,179.73-87.62L1638.84,1177.52z M960.19,1203.92
+		c0,0-44.29,3.31-40.98-100.95s44.64-175.39,44.64-175.39s-33.41,130.85,101.81,132.04
+		C1065.66,1059.63,1029.86,1201.72,960.19,1203.92z"
+                fill="#14A2FF"
+              />
+              <path
+                d="M2339.6,1035.16c0,0,58.98-62.82,56.63-111.6c0,0,4.55-100.08-145.53-98.33c0,0-119.57-2.81-161.3,72.59
+		c0,0-4.64-73.07-70.69-72.61c0,0-47.5-2.87-104.27,53.9c0,0-5.42-27.69-15.7-49.09c0,0-161.74-2.71-203.47,18.39v33.37
+		c0,0,37.09,35.33,37.79,75.21c0.69,39.88-58.21,266.42-56.43,304.57s6.41,50.26,6.41,50.26s140.53,5.49,176.13-18.95v-50.93
+		c0,0,5.25-71.9,20.52-142.75c15.27-70.85,23.76-114.97,23.76-114.97s19.78-19.2,29.44-20.94c0,0,38.46,56.44,44.45,53.54
+		c0,0,50.72-4.44,101.3-59.81c0,0,5.32,57.87,88.19,141.2c82.87,83.34,76.82,116.39,76.82,116.39l-0.61,12.83
+		c0,0-4.74,7.77-10.27,8.83l-2.12,0.38c0,0-28.11-76.55-90.01-118.42c0,0-28.7,1.29-84.37,54.11c0,0-31.02,29.72-30.53,49.94
+		c0.49,20.22,12.33,33.29,36.99,55.98c0,0,45.48,41.52,132.94,43.41c0,0,186.5-0.84,203.81-148.89
+		C2399.47,1172.74,2412.13,1114.83,2339.6,1035.16z M2287.08,977.64c-7.54-2.37-35.65-35.2-35.65-35.2s-32.93-36.79,34.06-35.2
+		C2352.48,908.83,2287.08,977.64,2287.08,977.64z"
+                fill="#14A2FF"
+              />
+              <g>
+                <path
+                  d="M2605.67,1202.56c0,0-6.84-33.18,25.03-144.47c31.87-111.29,29.39-155.1,29.39-155.1s3.2-36.26-21.16-73.11
+			c0,0-164.85,1.17-198.91,18.69l-1.4,31c0,0,38.77,43.23,35.89,86.05c-2.88,42.82-32.6,151.48-32.6,151.48
+			s-20.32,73.99-17.88,112.31c2.45,38.32,19.56,90.94,91.28,92.23s145-57.95,145-57.95l33.13-27.67l-28.46-61.52L2605.67,1202.56z"
+                  fill="#14A2FF"
+                />
+                <path
+                  class="st0"
+                  d="M2600.04,579.08c0,0-101.29,3.03-108.35,102.3c0,0-4.71,84.46,89.85,87.15c0,0,100.61,1.07,111.93-94.73
+			C2693.46,673.81,2699.62,579.05,2600.04,579.08z"
+                  fill="#14A2FF"
+                />
+              </g>
+              <path
+                d="M2953.8,907.36c4.54,0.78-7.21,55.25-13.38,85.11c0,0,49.78,54.8,134.65,48.01c0,0,82.22-81.85,1.89-170.86
+		c0,0-44.27-47.84-136.53-44.13s-140.52,44.32-140.52,44.32s-113.43,76.81-108.96,244.97c4.34,163.32,97.34,190.56,97.34,190.56
+		s116.24,58.25,254.53-50.91c0,0,33.11-23.85,43.85-41.6l-40.64-53.72c0,0-54.7,57.61-114.46,54.66c-64.71-3.19-59.8-95.3-59.8-95.3
+		S2875.15,893.85,2953.8,907.36z"
+                fill="#14A2FF"
+              />
+              <path
+                d="M3384.69,593.5l-6.63,80.73c-2.17,22.41-18.2,108.08-62.35,318.53c-44.15,210.45-31.79,208.85-31.79,208.85
+		l71.24-25.42l31.31,60.7l-1.09,0.66l-78.12,49.48c-61.01,40.18-115.38,33.82-115.38,33.82c-99.33-10.68-91.11-100.31-91.11-100.31
+		s21.45-149.98,50.42-281.75c29.84-135.72,49.07-293.41,49.07-293.41c3.76-41.34-6.42-87.02-6.42-87.02s87.86-34.82,175.32-31.22
+		C3369.15,527.14,3385.74,544.24,3384.69,593.5z"
+                fill="#14A2FF"
+              />
+              <path
+                d="M3723.21,1157.93c-157.23,134.61-172.73-11.03-172.73-11.03s247.71-32.12,240.71-195.31
+		c0,0,4.23-123.96-151.98-126.77c-152.98-2.76-223.36,118.45-234.71,140.12c-1.02,1.94-2.05,3.86-3.14,5.76
+		c-6.38,11.12-31.12,59.87-31.1,147.31c0.03,93.64,50.67,204.73,167.47,203.22c159.73-2.07,228.87-108.36,228.87-108.36l-41.91-56.09
+		L3723.21,1157.93z M3612.51,907.57c0,0,23.16-3.1,16.96,58.09s-55.94,92.66-80.89,96.77
+		C3547.17,1062.66,3564.35,907.54,3612.51,907.57z"
+                fill="#14A2FF"
+              />
+            </svg></div
+        ></a>
+        <div id="pageInfo">Schools</div>
+      </div>
+
+      <script>
+        // distinct variable to prevent collisions
+        window.schoolSelectInsidePWA = false;
+      </script>
+
+      <!-- TODO: really need to test the contact modal on all pages -->
+      <!-- TODO: need to test deep linking for android now, autoselecting school in particular -->
+
+      <style>
+        .searchIcon {
+          height: 15px;
+          position: absolute;
+          top: 15px;
+          left: 16px;
+          fill: #c5c5c6;
+        }
+
+        #universalSchoolSearchField {
+          position: relative;
+          z-index: 99;
+          margin: auto;
+          height: 45px;
+          width: 400px;
+          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+          color: #333;
+          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+          border-radius: 34px;
+          border: 1px solid #e1e3e1;
+          box-shadow: none;
+          left: 0px;
+        }
+
+        /* we don't want to make these links blue. */
+        #universalSchoolSearchResultsOuterContainer a {
+          color: inherit;
+          text-decoration: inherit;
+        }
+
+        #universalSchoolSearchResultsOuterContainer a:hover {
+          color: inherit;
+          text-decoration: inherit;
+        }
+
+        #universalSchoolSearchFieldInput {
+          padding-top: 0px;
+          padding-bottom: 0px;
+          padding-left: 43px;
+          height: 100%;
+          line-height: normal !important;
+          width: 86% !important;
+          border: none;
+          font-family: inherit;
+          font-size: 16px;
+          border-radius: 5px;
+          color: #333;
+          background-color: transparent;
+        }
+
+        #universalSchoolSearchFieldInput:focus {
+          outline: none;
+        }
+
+        #universalSchoolSearchFieldIcon {
+          font-size: 16px;
+          position: absolute;
+          top: calc(50% - 8px);
+          left: 20px;
+          color: #b6b6b6;
+        }
+
+        #universalSchoolSearchFieldIcon:hover {
+          cursor: text;
+        }
+
+        #universalSchoolSearchResultsContainer {
+          width: 65%;
+          max-width: 1100px;
+          height: 510px;
+          min-height: 510px !important;
+          margin: auto;
+          margin-bottom: 75px;
+          padding-left: 10px;
+          padding-right: 10px;
+          position: relative;
+          z-index: 0 !important;
+          /* making overflow hidden here
+		causes an annoying thing where the page
+		auto-scrolls to the top on refresh */
+          background-color: white;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
+          overflow-y: scroll;
+          grid-auto-rows: 115px;
+          scrollbar-width: none;
+          padding-top: 10px;
+        }
+
+        #universalSchoolSearchResultsContainer::-webkit-scrollbar {
+          display: none;
+        }
+
+        #universalSchoolSearchResultsOuterContainer {
+          container-type: size;
+          height: 510px;
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .universalSchoolSearchNoResultsOuterContainer {
+          container-type: size;
+        }
+
+        #universalSchoolSearchField {
+          container-type: size;
+        }
+
+        #universalSchoolSearchResultsContainer::-webkit-scrollbar {
+          display: none;
+          /* Hides the scrollbar */
+        }
+
+        .universalSchoolSearchResultSchoolName {
+          font-weight: 500;
+          font-size: 19px;
+          -webkit-line-clamp: 2;
+          line-height: 23px;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          color: #333;
+        }
+
+        .universalSchoolSearchResult {
+          box-sizing: border-box;
+          height: 107px;
+          -webkit-user-select: none; /* Safari */
+          -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* IE10+/Edge */
+          user-select: none; /* Standard */
+        }
+
+        .universalSchoolSearchResultLowerSchoolInfoContainer {
+          font-size: 13px;
+          padding-top: 2px;
+        }
+
+        .universalSchoolSearchResultCountryFlag {
+          font-size: 15px;
+        }
+
+        /*Universal Responsive Styling Starts */
+        @container (max-width: 1400px) {
+          .universalSchoolSearchResultSchoolName {
+            font-size: 18px;
+            -webkit-line-clamp: 2;
+          }
+
+          .universalSchoolSearchResultLowerSchoolInfoContainer {
+            font-size: 15px;
+          }
+
+          #universalSchoolSearchResultsContainer {
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 20px;
+            /* grid-column-gap: clamp(50px, 10vw,220px); */
+          }
+
+          .selectSchoolName {
+            font-size: clamp(12px, 1.4vw, 20px);
+          }
+        }
+
+        @container (max-width: 950px) {
+          #universalSchoolSearchResultsContainer {
+            grid-template-columns: repeat(1, 1fr);
+          }
+
+          #universalSchoolSearchResultsContainer {
+            grid-auto-rows: 107px;
+          }
+        }
+
+        @container (min-width: 740px) {
+          .universalSchoolSearchNoResultsInnerContainer {
+            width: 410px;
+          }
+        }
+
+        @container (max-width: 740px) {
+          .universalSchoolSearchNoResultsInnerContainer {
+            width: 352px;
+          }
+
+          #universalSchoolSearchNotFoundSchoolLargeText {
+            font-size: 23px;
+          }
+          #universalSchoolSearchFieldIcon {
+            top: calc(50% - 7px);
+          }
+
+          #universalSchoolSearchFieldInput {
+            font-size: 16px;
+          }
+
+          #universalSchoolSearchResultsContainer {
+            width: 78%;
+            font-size: 17px !important;
+            -webkit-line-clamp: 2;
+          }
+        }
+
+        @media (max-width: 500px) {
+          #universalSchoolSearchField {
+            width: 89% !important;
+            margin-top: 25px;
+            margin-bottom: 25px;
+          }
+
+          #universalSchoolSearchFieldIcon {
+            top: calc(50% - 8px) !important;
+          }
+
+          #universalSchoolSearchResultsContainer {
+            width: unset !important;
+            min-height: unset !important;
+            padding: unset !important;
+          }
+
+          .universalSchoolSearchResult {
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+
+          .universalSchoolSearchResultOuterContainer {
+            padding-left: unset;
+          }
+        }
+
+        @container (max-width: 300px) {
+          #universalSchoolSearchNotFoundSchoolLargeText {
+            font-size: 18px !important;
+          }
+
+          #universalSchoolSearchFieldInput {
+            font-size: 14px;
+          }
+
+          #universalSchoolSearchFieldIcon {
+            font-size: 14px;
+          }
+
+          .universalSchoolSearchResultLowerSchoolInfoContainer {
+            font-size: 14px;
+          }
+          .universalSchoolSearchResultSchoolName {
+            font-size: 15px;
+          }
+        }
+
+        @container (max-width: 170px) {
+          #universalSchoolSearchNotFoundSchoolLargeText {
+            text-wrap: wrap;
+            text-align: center;
+          }
+
+          #universalSchoolSearchFieldInput {
+            padding-left: 33px;
+          }
+
+          #universalSchoolSearchFieldInput::placeholder {
+            font-size: 12px;
+          }
+
+          .searchIcon {
+            height: 12px;
+            top: 17px;
+            left: 14px;
+          }
+
+          .universalSchoolSearchResultLowerSchoolInfoContainer {
+            font-size: 12px;
+          }
+          .universalSchoolSearchResultSchoolName {
+            font-size: 13px;
+          }
+        }
+
+        @container (max-width: 150px) {
+          #universalSchoolSearchFieldInput::placeholder {
+            font-size: 11px;
+          }
+
+          .searchIcon {
+            height: 11px;
+            top: 18px;
+            left: 14px;
+          }
+
+          .universalSchoolSearchResultLowerSchoolInfoContainer {
+            font-size: 11px;
+          }
+          .universalSchoolSearchResultSchoolName {
+            font-size: 12px;
+          }
+        }
+
+        /*Responsive Styling Ends */
+
+        #universalSchoolSearchField *::placeholder {
+          color: #c5c5c6 !important;
+        }
+
+        #universalSchoolSearchField {
+          font-weight: 400;
+        }
+
+        #universalSchoolSearchField {
+          margin-top: 45px;
+          margin-bottom: 45px;
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .universalSchoolSearchResultOuterContainer {
+          height: inherit;
+          width: auto;
+          background-color: blue;
+          background-color: white;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          /* padding: 10px; */
+        }
+
+        .universalSchoolSearchResultInnerContentContainer {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+        }
+
+        .universalSchoolSearchResultDipColor {
+          min-width: 11px;
+          max-width: 6px;
+          background-color: greenyellow;
+          height: inherit;
+          position: absolute;
+          border-radius: 8px;
+          border-top-right-radius: 0px;
+          border-bottom-right-radius: 0px;
+        }
+
+        .universalSchoolSearchResultInfoContainer {
+          display: flex;
+          flex-direction: column;
+          margin-left: 32px !important;
+          gap: 4px;
+          line-height: 20px;
+        }
+
+        .universalSchoolSearchResultLowerSchoolInfoContainer {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 5px;
+        }
+
+        .universalSchoolSearchResultSchoolLocation {
+          color: #ada9a9;
+          -webkit-line-clamp: 1;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .universalSchoolSearchResultInnerContentContainer:hover {
+          background-color: #f6f6f6;
+          cursor: pointer;
+        }
+
+        .universalSchoolSearchResultInnerContentContainer {
+          transition: background-color 0.15s ease;
+          border-radius: 9px;
+          height: inherit;
+          padding: 15px;
+          border: 1px solid #e8e8e8;
+          /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); */
+          padding-left: 0px;
+          /* padding-right: 7px; */
+        }
+
+        .universalSchoolSearchNoResultsOuterContainer {
+          display: flex;
+          justify-content: center;
+          height: 100%;
+          width: 100%;
+          position: absolute;
+        }
+
+        .universalSchoolSearchNoResultsInnerContainer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          top: 25px;
+          position: relative;
+          container-type: size;
+        }
+
+        #universalSchoolSearchNotFoundSchoolLargeText {
+          font-weight: 600;
+          margin-top: 25px;
+        }
+
+        #universalSchoolSearchNotFoundSchoolSmallText {
+          text-align: center;
+          margin-top: 11px;
+          color: #cfcfcf;
+          font-size: 15px;
+          max-width: 400px;
+        }
+
+        #universalSchoolSearchNotFoundSchoolSmallText a {
+          color: #089dff;
+        }
+
+        .universalSchoolSearchNotFoundSchoolIcon {
+          height: 48px;
+          fill: #14a2ff;
+        }
+
+        .universalSchoolSearchNotFoundSchoolIcon svg {
+          height: 100%;
+        }
+
+        #universalSchoolSearchNoResults {
+          height: 400px;
+          display: none;
+          font-size: 14px;
+          font-family: "Avenir", BlinkMacSystemFont, "Segoe UI", Roboto,
+            "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+            "Segoe UI Emoji", "Segoe UI Symbol" !important;
+        }
+      </style>
+
+      <style>
+        #universalSchoolSearchResultsContainer {
+          height: 100% !important;
+        }
+
+        #universalSchoolSearchResultsOuterContainer {
+          height: 100%;
+        }
+        #universalSchoolSearchContainer {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
+
+        #schoolPageContainer {
+          display: flex;
+          flex-direction: column;
+          height: 100vh;
+        }
+
+        #universalSchoolSearchResultsOuterContainer {
+          flex-grow: 1 !important;
+        }
+
+        @media (max-width: 500px) {
+          .universalSchoolSearchResultInfoContainer {
+            margin-left: 26px !important;
+          }
+        }
+      </style>
+
+      <script type="text/javascript">
+        // jquery isn't necessarily loaded prior to this script, have to wait for the page to load
+        document.addEventListener("DOMContentLoaded", () => {
+          // this gets triggered when you actually click on a school result
+          window.universalSchoolSelected = function (school) {
+            var urlParam = new URLSearchParams(
+              window.location.search
+            ).toString();
+            let destination;
+
+            //verbose; ternary operator wasn't working.
+            if (urlParam.length > 0) {
+              destination = "/" + school + "/?" + urlParam;
+            } else {
+              destination = "/" + school + "/";
+            }
+
+            // send the request that they've selected their school
+            // by using beacon we're able to make sure the browser makes this
+            // request even if we're in the process/have navigated to
+            // another page.
+            setUserData(
+              (uuid = store.get("uuid")),
+              (deviceID = null),
+              (token = null),
+              (school = school),
+              (userDataJsonString = null),
+              (useBeacon = true)
+            );
+
+            // take them to the school page they selected
+            window.location.href = destination;
+          };
+
+          $(document).on("click", ".universalSchoolSearchResult", function () {
+            var school = $(this).attr("data-school-subdomain");
+
+            //if we are on the directory page, don't take them to the schedule. Instead, take them to the course page.
+            if ("schools" == window.location.pathname.replace(/^\/|\/$/g, "")) {
+              school = school + "/courses";
+            }
+            universalSchoolSelected(school);
+          });
+
+          window.schoolSearchPaginationCounter = 0;
+          getSchoolRequestInProgress = false;
+
+          function requestMoreSchools() {
+            //if multiple calls are made, use the most updated one.
+            //but notice this is only the case if this search is a new one.
+            //if they're just scrolling the page really quickly, we don't want to skip any pagination and so must honor each request.
+            if (
+              getSchoolRequestInProgress &&
+              window.schoolSearchPaginationCounter == 0
+            ) {
+              schoolSearchRequest.abort();
+            }
+
+            const resultsLength = 24;
+            schoolSearchRequest = $.ajax({
+              url: "/shared/schools/getSchools.php",
+              type: "GET",
+              dataType: "json",
+              data: {
+                uuid: store.get("uuid"),
+                query: window.userInput,
+                count: resultsLength,
+                offset: window.schoolSearchPaginationCounter * resultsLength,
+              },
+              beforeSend: function () {
+                getSchoolRequestInProgress = true;
+              },
+              success: function (response) {
+                if (
+                  response.length == 0 &&
+                  window.schoolSearchPaginationCounter == 0
+                ) {
+                  $(
+                    "#universalSchoolSearchResultsContainer, #universalSchoolSearchResultsOuterContainer"
+                  ).hide();
+                  $("#universalSchoolSearchNoResults").show();
+                  return;
+                }
+                $(
+                  "#universalSchoolSearchResultsContainer, #universalSchoolSearchResultsOuterContainer"
+                ).show();
+                $("#universalSchoolSearchNoResults").hide();
+
+                //we want to keep track of how far down in the results the user has scrolled, so that on addition of results we place them instantly back where they were
+                let amountScrolled = $(
+                  "#universalSchoolSearchResultsContainer"
+                ).get(0).scrollTop;
+
+                if (window.schoolSearchPaginationCounter == 0) {
+                  $(".universalSchoolSearchResult")
+                    .not("#searchResultTemplate")
+                    .remove();
+                }
+                let suffix = "";
+                if (window.location.pathname.includes("/schools")) {
+                  //relevant to the __.coursicle.com/schools page.
+                  suffix += "/courses";
+                } else {
+                  suffix += window.schoolSelectInsidePWA ? "/?pwa=true" : "";
+                }
+
+                response.forEach((school) => {
+                  let dipColor = school.primaryColor;
+                  let schoolName = school.fullName;
+                  let countryFlag = school.countryEmoji;
+                  let schoolLocation = [school.city, school.region].join(", ");
+                  let subdomain = school.subdomain;
+
+                  // schoolSelect.php adds an extra hidden result to be used as a template by the js (we should take care not to delete it).
+                  let newResult = $("#searchResultTemplate").clone();
+                  newResult.removeAttr("id").removeAttr("style");
+                  newResult.attr("data-school-subdomain", subdomain);
+                  newResult
+                    .find(".universalSchoolSearchResultDipColor")
+                    .css("background-color", `${dipColor}`);
+                  newResult
+                    .find(".universalSchoolSearchResultSchoolName")
+                    .text(`${schoolName}`);
+                  newResult
+                    .find(".universalSchoolSearchResultCountryFlag")
+                    .text(`${countryFlag}`);
+                  newResult
+                    .find(".universalSchoolSearchResultSchoolLocation")
+                    .text(`${schoolLocation}`);
+                  $("#universalSchoolSearchResultsContainer").append(newResult);
+                  $("#universalSchoolSearchResultsContainer").get(0).scrollTop =
+                    amountScrolled;
+                });
+              },
+
+              complete: function () {
+                getSchoolRequestInProgress = false;
+              },
+            });
+          }
+
+          window.existingSearchInput = "";
+
+          $("#universalSchoolSearchFieldInput").on("input", function () {
+            window.userInput = $("#universalSchoolSearchFieldInput")
+              .val()
+              .toLowerCase()
+              .trim();
+
+            if (window.userInput != window.existingSearchInput) {
+              window.schoolSearchPaginationCounter = 0;
+              window.existingSearchInput = window.userInput;
+            }
+
+            requestMoreSchools();
+          });
+
+          $("#universalSchoolSearchField").on("click", function () {
+            $("#universalSchoolSearchFieldInput").focus();
+          });
+
+          $("#universalSchoolSearchResultsContainer").on("scroll", function () {
+            let universalSchoolSearchResultsContainerObject = $(
+              "#universalSchoolSearchResultsContainer"
+            ).get(0);
+            let amountScrolledPlusHeightOfContainer =
+              universalSchoolSearchResultsContainerObject.scrollTop +
+              universalSchoolSearchResultsContainerObject.getBoundingClientRect()
+                .height;
+
+            //the total possible scrollable distance of the tile container
+            let availableToScroll =
+              universalSchoolSearchResultsContainerObject.scrollHeight;
+
+            //if we're within 200 pixels of the bottom and there is not a request in progress.
+            //the second condition is helpful in preventing rapidfire requests before one can be returned.
+            if (
+              Math.abs(
+                availableToScroll - amountScrolledPlusHeightOfContainer
+              ) < 200 &&
+              getSchoolRequestInProgress == false
+            ) {
+              window.schoolSearchPaginationCounter += 1;
+              requestMoreSchools();
+            }
+          });
+
+          //Fixing the problem wherein scrolling the school select container would scroll the entire page.
+          //Now we just pause the whole page while a scroll in the universalSchoolSearchResultsContainer.
+
+          let scrollTimeout;
+
+          $("#universalSchoolSearchResultsContainer").on(
+            "wheel",
+            function (event) {
+              // Disable body scroll by setting overflow to hidden
+              $("body").css("overflow", "hidden");
+
+              // Clear any existing timeout to avoid re-triggering the "scroll end" logic prematurely
+              clearTimeout(scrollTimeout);
+
+              // Set a timeout to enable scroll again after scrolling stops (after a small delay)
+              scrollTimeout = setTimeout(function () {
+                // Re-enable body scroll
+                $("body").css("overflow", "");
+              }, 200);
+            }
+          );
+        });
+      </script>
+
+      <!-- School select for various views - schedule maker, profile page (web + pwa), homepage (web + pwa), colleges page-->
+      <div id="universalSchoolSearchContainer">
+        <div id="universalSchoolSearchField">
+          <input
+            id="universalSchoolSearchFieldInput"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            placeholder="Find your school"
+          />
+          <svg
+            class="searchIcon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+            />
+          </svg>
+        </div>
+
+        <div id="universalSchoolSearchNoResults">
+          <div class="universalSchoolSearchNoResultsOuterContainer">
+            <div class="universalSchoolSearchNoResultsInnerContainer">
+              <i class="universalSchoolSearchNotFoundSchoolIcon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M337.8 5.4C327-1.8 313-1.8 302.2 5.4L166.3 96 48 96C21.5 96 0 117.5 0 144L0 464c0 26.5 21.5 48 48 48l272 0s0 0 0 0l-64 0 0-96c0-35.3 28.7-64 64-64l.3 0 .5 0c3.4-37.7 18.7-72.1 42.2-99.1C350.2 260 335.6 264 320 264c-48.6 0-88-39.4-88-88s39.4-88 88-88s88 39.4 88 88c0 18.3-5.6 35.3-15.1 49.4c29-21 64.6-33.4 103.1-33.4c59.5 0 112.1 29.6 144 74.8L640 144c0-26.5-21.5-48-48-48L473.7 96 337.8 5.4zM96 192l32 0c8.8 0 16 7.2 16 16l0 64c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-64c0-8.8 7.2-16 16-16zm0 128l32 0c8.8 0 16 7.2 16 16l0 64c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-64c0-8.8 7.2-16 16-16zM320 128c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-16 0 0-16c0-8.8-7.2-16-16-16zM496 512a144 144 0 1 0 0-288 144 144 0 1 0 0 288zm0-96a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm0-144c8.8 0 16 7.2 16 16l0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80c0-8.8 7.2-16 16-16z"
+                  />
+                </svg>
+              </i>
+              <div id="universalSchoolSearchNotFoundSchoolLargeText">
+                We couldn't find your school
+              </div>
+              <div id="universalSchoolSearchNotFoundSchoolSmallText">
+                Coursicle aims to support students at every school worldwide. If
+                you don't see your school listed, please submit it
+                <span class="universalSchoolSearchRequestSchoolLinkText"
+                  >here</span
+                >.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="universalSchoolSearchResultsOuterContainer">
+          <div id="universalSchoolSearchResultsContainer">
+            <div
+              class="universalSchoolSearchResult"
+              id="searchResultTemplate"
+              data-school-subdomain="templatedSubdomain"
+              style="display: none"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #cfcfcf"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName"></div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag"></div>
+                      <div
+                        class="universalSchoolSearchResultSchoolLocation"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="snhu"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #042250"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      Southern New Hampshire University
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        Manchester, New Hampshire
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="ivytechindianapolis"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #166e56"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      Ivy Tech Community College, Indianapolis
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        Indianapolis, Indiana
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="asu"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #8f1340"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      Arizona State University
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        Tempe, Arizona
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="tamu"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #500000"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      Texas A&M University
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        College Station, Texas
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="ucf"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #b8a46a"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      University of Central Florida
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        Orlando, Florida
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="ubc"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #003468"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      The University of British Columbia
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇨🇦
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        Vancouver, British Columbia
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="umgc"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #002260"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      University of Maryland Global Campus
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        Adelphi, Maryland
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="osu"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #d02037"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      Ohio State University
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        Columbus, Ohio
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="mdc"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #005daa"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      Miami Dade College
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        Miami, Florida
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="nyu"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #5b0f8d"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      New York University
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        New York, New York
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="illinois"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #fa6300"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      University of Illinois at Urbana-Champaign
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        Champaign, Illinois
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="mdckendall"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #005daa"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      Miami Dade College, Kendall
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        Miami, Florida
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="universalSchoolSearchResult" data-school-subdomain="uw">
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #4b2e84"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      University of Washington
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        Seattle, Washington
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="umn"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #98002f"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      University of Minnesota, Twin Cities
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        Minneapolis, Minnesota
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="ufl"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #011ca7"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      University of Florida
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        Gainesville, Florida
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="fiu"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #002b60"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      Florida International University
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        Miami, Florida
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="nvccwoodbridge"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #016c38"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      Northern Virginia Community College, Woodbridge
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        Woodbridge, Virginia
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="utexas"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #ab4c20"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      University of Texas at Austin
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        Austin, Texas
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="arizona"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #aa0520"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      University of Arizona
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        Tucson, Arizona
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="purdue"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #b1810b"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      Purdue University
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        West Lafayette, Indiana
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="umich"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #002e62"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      University of Michigan
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        Ann Arbor, Michigan
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="msu"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #01693f"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      Michigan State University
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        East Lansing, Michigan
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="rutgers"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #e41a36"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      Rutgers University - New Brunswick
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        New Brunswick, New Jersey
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="universalSchoolSearchResult"
+              data-school-subdomain="psu"
+            >
+              <div class="universalSchoolSearchResultOuterContainer">
+                <div
+                  class="universalSchoolSearchResultDipColor"
+                  style="background-color: #001a47"
+                ></div>
+                <div class="universalSchoolSearchResultInnerContentContainer">
+                  <div class="universalSchoolSearchResultInfoContainer">
+                    <div class="universalSchoolSearchResultSchoolName">
+                      Pennsylvania State University
+                    </div>
+                    <div
+                      class="universalSchoolSearchResultLowerSchoolInfoContainer"
+                    >
+                      <div class="universalSchoolSearchResultCountryFlag">
+                        🇺🇸
+                      </div>
+                      <div class="universalSchoolSearchResultSchoolLocation">
+                        University Park, Pennsylvania
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        window.baseModalUserIsMobile = false;
+
+        /* Gabriel found that, because the base modal background is contained in school change profile menu by schoolSelect, clicking the support option and showing the modal would not show the base modal background.
+	So now, if it's in that view, we want to pull it out so it is available for use behind all base modals.
+	Opted not to use left rail since on first load it is not necessarily in the left rail.
+	*/
+
+        document.addEventListener("DOMContentLoaded", function () {
+          var baseModalBackground = document.getElementById(
+            "baseModalBackground"
+          );
+          var leftRail = document.getElementById("leftRail");
+
+          if (
+            document.querySelector(
+              "#chatProfileChangeSchool #baseModalBackground"
+            ) !== null
+          ) {
+            document.body.appendChild(baseModalBackground);
+          }
+        });
+      </script>
+
+      <!-- Experimenting with using slideable modals for any mobile, TODO: Nathan see if you can get this to work -->
+
+      <!-- 
+	Coursicle's main modal. Invoke the baseModal class selector any time you are displaying a modal. Include this php file any time you wish to use such a mooal.
+	- on web, it's as simple as: window.showBaseModal('#myModal')
+	- on pwa, do: renderSlidablemodal('#myModal')
+	Remember, any modal you create should have the class 'baseModal', e.g.:
+	<div id='myModal' class='baseModal'>
+		//modal contents
+	</div>
+-->
+
+      <div id="baseModalBackground"></div>
+
+      <style>
+        #baseModalBackground {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(
+            0,
+            0,
+            0,
+            0.4
+          ); /* Dark background with opacity */
+          justify-content: center;
+          align-items: center;
+          z-index: 9998; /* Ensures the background is below the modal */
+          cursor: pointer;
+        }
+
+        .baseModal {
+          opacity: 0; /* Initially hidden */
+          visibility: hidden; /* Initially hidden */
+          background-color: white;
+          padding: 31px;
+          padding-top: 24px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          max-width: 500px;
+          width: 100%;
+          z-index: 9999; /* Ensures the modal is above the background */
+          flex-direction: column;
+          margin: auto;
+          left: 50%;
+          top: -100%; /* Start the modal off-screen */
+          transform: translate(-50%, 0); /* Center horizontally */
+          transition: top 0.3s ease-out, opacity 0.3s ease-out,
+            visibility 0.3s ease-out; /* Smooth transition for sliding and opacity */
+          position: fixed;
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        .slidableModal .baseModal {
+          box-sizing: border-box;
+        }
+
+        /* Show the modal */
+        .baseModal.baseModalShow {
+          display: flex;
+          top: 10%; /* Adjust this value as needed */
+          opacity: 1; /* Make it visible */
+          visibility: visible; /* Make it visible */
+        }
+
+        .baseModal.isInPWA {
+          position: unset;
+          transform: unset;
+          padding: 20px;
+          padding-top: 0px;
+          box-shadow: none;
+        }
+
+        @media screen and (max-width: 650px) {
+          .baseModal {
+            max-width: 420px;
+          }
+        }
+
+        /* Title styling */
+        .baseModalTitle {
+          font-size: 28px;
+          margin-bottom: 15px;
+          color: #333;
+        }
+
+        .baseModal label {
+          color: #333;
+        }
+
+        .baseModal *::placeholder,
+        .baseModal *::placeholder {
+          color: #c1c1c1; /* Your desired color */
+          opacity: 1; /* Ensures full opacity for the placeholder text */
+        }
+
+        .baseModal textarea:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      </style>
+
+      <script type="text/javascript">
+        // jquery isn't necessarily loaded prior to this script, have to wait for the page to load
+        document.addEventListener("DOMContentLoaded", () => {
+          // Check if the element with ID 'shadowBackgroundBehindModals', 'hiddenModals' exists
+          ["shadowBackgroundBehindModals", "hiddenModals"].forEach(
+            (id) =>
+              //short circuit. If the id is there, it won't proceed to re-add
+              !document.getElementById(id) &&
+              document.body.appendChild(
+                Object.assign(document.createElement("div"), { id })
+              )
+          );
+          window.baseModalUserIsMobile = false;
+          window.showBaseModal = function (modalSelector) {
+            // handles whether it's the PWA or not
+            $(`${modalSelector}`).show();
+            $(`.baseModal${modalSelector}`).addClass("baseModalShow");
+
+            if (!baseModalUserIsMobile) {
+              $("#baseModalBackground").fadeIn(300);
+            } else {
+              $(`.baseModal${modalSelector}`).addClass("isInPWA");
+              renderSlidableModal(`${modalSelector}`, true);
+            }
+          };
+
+          window.hideBaseModal = function (modalSelector = "") {
+            $("#baseModalBackground").fadeOut(300);
+            $(`.baseModal${modalSelector}`).removeClass("baseModalShow");
+            if (typeof hideSlidableModal == "function") {
+              hideSlidableModal();
+            }
+          };
+
+          // when the user clicks the faded background
+          $(document).on(
+            "click",
+            "#baseModalBackground, #shadowBackgroundBehindModals",
+            function () {
+              hideBaseModal();
+            }
+          );
+
+          // when the user presses escape
+          $(document).on("keydown", function (event) {
+            if (event.key === "Escape" || event.keyCode === 27) {
+              hideBaseModal();
+            }
+          });
+        });
+      </script>
+
+      <div id="requestYourSchoolModal" class="baseModal">
+        <div id="requestSchoolHeaderText">Request your school</div>
+        <div id="requestSchoolSubHeaderText">
+          If we don't have your school listed yet, please submit it below so we
+          can add support.
+        </div>
+        <div id="requestSchoolInputFieldsFlexContainer">
+          <div class="requestSchoolRowContainer">
+            <div class="requestSchoolRowVerticalFlexContainer">
+              <div class="requestSchoolRowHeader">Name</div>
+              <div class="requestSchoolInputContainer">
+                <input
+                  class="requestSchoolInput unchangedSchoolRequestField"
+                  id="requestSchoolNameInput"
+                  placeholder="Example University"
+                />
+              </div>
+              <div class="requestSchoolIncompleteText">Name is required</div>
+            </div>
+          </div>
+
+          <div class="requestSchoolRowContainer">
+            <div class="requestSchoolRadioColumn requestSchoolType">
+              <div class="requestSchoolRowHeader">Type</div>
+              <form class="requestSchoolRadioButtonStack">
+                <div class="requestSchoolRadioButtonFlexContainer">
+                  <span
+                    class="requestSchoolRadioButton radioBtnActive requestSchoolType"
+                    id="request-university"
+                  ></span>
+                  <div class="requestSchoolRadioButtonName">University</div>
+                </div>
+                <div class="requestSchoolRadioButtonFlexContainer">
+                  <span
+                    class="requestSchoolRadioButton requestSchoolType"
+                    id="request-high-school"
+                  ></span>
+                  <div class="requestSchoolRadioButtonName">High school</div>
+                </div>
+                <div class="requestSchoolRadioButtonFlexContainer">
+                  <span
+                    class="requestSchoolRadioButton requestSchoolType"
+                    id="request-middle-school"
+                  ></span>
+                  <div class="requestSchoolRadioButtonName">Middle school</div>
+                </div>
+                <div class="requestSchoolRadioButtonFlexContainer">
+                  <span
+                    class="requestSchoolRadioButton requestSchoolType"
+                    id="request-primary-school"
+                  ></span>
+                  <div class="requestSchoolRadioButtonName">Primary school</div>
+                </div>
+              </form>
+            </div>
+            <div class="requestSchoolRadioColumn">
+              <div class="requestSchoolRowHeader">Term structure</div>
+              <form class="requestSchoolRadioButtonStack">
+                <div class="requestSchoolRadioButtonFlexContainer">
+                  <span
+                    class="requestSchoolRadioButton radioBtnActive requestSchoolTermStructure"
+                    id="termStructureSemester"
+                  ></span>
+                  <div class="requestSchoolRadioButtonName">Semester</div>
+                </div>
+                <div class="requestSchoolRadioButtonFlexContainer">
+                  <span
+                    class="requestSchoolRadioButton requestSchoolTermStructure"
+                    id="termStructureQuarter"
+                  ></span>
+                  <div class="requestSchoolRadioButtonName">Quarter</div>
+                </div>
+                <div class="requestSchoolRadioButtonFlexContainer">
+                  <span
+                    class="requestSchoolRadioButton requestSchoolTermStructure"
+                    id="termStructureTrimester"
+                  ></span>
+                  <div class="requestSchoolRadioButtonName">Trimester</div>
+                </div>
+                <div
+                  class="requestSchoolRadioButtonFlexContainer yearRoundHiddenRadio"
+                  style="display: none"
+                >
+                  <span
+                    class="requestSchoolRadioButton requestSchoolTermStructure"
+                    id="termStructureYearRound"
+                  ></span>
+                  <div class="requestSchoolRadioButtonName">Year-round</div>
+                </div>
+                <div class="requestSchoolRadioButtonFlexContainer">
+                  <span
+                    class="requestSchoolRadioButton requestSchoolTermStructure"
+                    id="termStructureOther"
+                  ></span>
+                  <div class="requestSchoolRadioButtonName">Other</div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="requestSchoolRowContainer">
+            <div class="requestSchoolRowVerticalFlexContainer">
+              <div class="requestSchoolRowHeader">Country</div>
+              <div class="requestSchoolInputContainer">
+                <div
+                  class="requestSchoolDropdownOuterBorder unchangedSchoolRequestField"
+                  id="requestSchoolCountryDropdown"
+                >
+                  <input
+                    class="requestSchoolDropdownInput"
+                    style="display: none"
+                  />
+                  <div
+                    class="requestSchoolCurrentlySelectedOptionsContainer"
+                    id="requestSchoolCurrentlySelectedCountry"
+                  >
+                    United States
+                  </div>
+                  <span class="dropdownArrow">
+                    <svg
+                      class="downArrowCaret"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 320 512"
+                    >
+                      <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                      <path
+                        d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <div
+                    id="countrySearchDropdownFlexContainer"
+                    class="searchDropdownFlexContainer"
+                    style="display: none"
+                  >
+                    <div
+                      id="countrySearchDropdown"
+                      class="requestSchoolSearchDropdown"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="requestSchoolIncompleteText">Country is required</div>
+            </div>
+          </div>
+
+          <div class="requestSchoolRowContainer">
+            <div class="requestSchoolRowVerticalFlexContainer">
+              <div class="requestSchoolRowHeader">Region</div>
+              <div class="requestSchoolInputContainer">
+                <div
+                  class="requestSchoolDropdownOuterBorder unchangedSchoolRequestField"
+                  id="requestSchoolRegionDropdown"
+                >
+                  <input
+                    class="requestSchoolDropdownInput"
+                    style="display: none"
+                  />
+                  <div
+                    class="requestSchoolCurrentlySelectedOptionsContainer"
+                    id="requestSchoolCurrentlySelectedRegion"
+                  >
+                    New York
+                  </div>
+                  <span class="dropdownArrow">
+                    <svg
+                      class="downArrowCaret"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 320 512"
+                    >
+                      <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                      <path
+                        d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <div
+                    id="regionSearchDropdownFlexContainer"
+                    class="searchDropdownFlexContainer"
+                    style="display: none"
+                  >
+                    <div
+                      id="regionSearchDropdown"
+                      class="requestSchoolSearchDropdown"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="requestSchoolIncompleteText">Region is required</div>
+            </div>
+
+            <div class="requestSchoolRowVerticalFlexContainer">
+              <div class="requestSchoolRowHeader">City</div>
+              <div class="requestSchoolInputContainer">
+                <div
+                  class="requestSchoolDropdownOuterBorder unchangedSchoolRequestField"
+                  id="requestSchoolCityDropdown"
+                >
+                  <input
+                    class="requestSchoolDropdownInput"
+                    style="display: none"
+                  />
+                  <div
+                    class="requestSchoolCurrentlySelectedOptionsContainer"
+                    id="requestSchoolCurrentlySelectedCity"
+                  >
+                    Brooklyn
+                  </div>
+                  <span class="dropdownArrow">
+                    <svg
+                      class="downArrowCaret"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 320 512"
+                    >
+                      <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                      <path
+                        d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <div
+                    id="citySearchDropdownFlexContainer"
+                    class="searchDropdownFlexContainer"
+                    style="display: none"
+                  >
+                    <div
+                      id="citySearchDropdown"
+                      class="requestSchoolSearchDropdown"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="requestSchoolIncompleteText">City is required</div>
+            </div>
+          </div>
+
+          <div class="requestSchoolRowContainer">
+            <div class="requestSchoolRowVerticalFlexContainer">
+              <div class="requestSchoolRowHeader">School homepage</div>
+              <div class="requestSchoolInputContainer">
+                <input
+                  class="requestSchoolInput requestSchoolOptionalField"
+                  id="requestSchoolHomepage"
+                  placeholder="www.example.edu (optional)"
+                  autocomplete="off"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="requestSchoolRowContainer courseSearchPage">
+            <div class="requestSchoolRowVerticalFlexContainer">
+              <div class="requestSchoolRowHeader">Course search page</div>
+              <div class="requestSchoolInputContainer">
+                <input
+                  class="requestSchoolInput requestSchoolOptionalField"
+                  id="requestSchoolCourseSearchPage"
+                  placeholder="www.example.edu/course-search (optional)"
+                  autocomplete="off"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="requestSchoolRowContainer">
+            <div class="requestSchoolRowVerticalFlexContainer">
+              <div class="requestSchoolRowHeader">
+                Anything else we should know?
+              </div>
+              <div class="requestSchoolInputContainer">
+                <textarea
+                  class="requestSchoolInput requestSchoolOptionalField"
+                  id="requestSchoolAdditionalInput"
+                  placeholder="Add anything else you might want to say."
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <div id="requestSchoolSubmitButtonCenteringContainer">
+            <div
+              id="requestSchoolSubmitButton"
+              class="requestSchoolSubmitButton"
+              style="display: flex"
+            >
+              Submit
+            </div>
+            <div
+              id="requestSchoolSubmitButtonLoading"
+              class="requestSchoolSubmitButton"
+              style="display: none"
+            >
+              <div class="requestSchoolSpinner">
+                <div class="requestSchoolSpinnerBlade"></div>
+                <div class="requestSchoolSpinnerBlade"></div>
+                <div class="requestSchoolSpinnerBlade"></div>
+                <div class="requestSchoolSpinnerBlade"></div>
+                <div class="requestSchoolSpinnerBlade"></div>
+                <div class="requestSchoolSpinnerBlade"></div>
+                <div class="requestSchoolSpinnerBlade"></div>
+                <div class="requestSchoolSpinnerBlade"></div>
+              </div>
+            </div>
+            <div
+              id="requestSchoolSubmitButtonSuccess"
+              class="requestSchoolSubmitButton"
+              style="display: none"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .universalSchoolSearchRequestSchoolLinkText {
+          color: #45acff;
+        }
+        .universalSchoolSearchRequestSchoolLinkText:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+
+        #requestYourSchoolModal {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          line-height: 1.42857143;
+          display: none;
+          width: 465px !important;
+          box-sizing: content-box;
+          height: 700px;
+          padding-top: 0px !important;
+          top: 5%;
+          overflow-y: scroll;
+          padding: 18px;
+        }
+
+        #requestYourSchoolModal {
+          ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        #requestYourSchoolModal::-webkit-scrollbar {
+          display: none;
+        }
+
+        #requestYourSchoolModal *::placeholder {
+          color: #9c9c9f;
+        }
+
+        #requestYourSchoolModal * {
+          box-sizing: border-box;
+        }
+
+        #requestYourSchoolModal .requestSchoolInput {
+          line-height: 20px;
+        }
+
+        .requestSchoolRadioButtonStack {
+          margin-bottom: 14px;
+        }
+
+        #requestYourSchoolModal textarea {
+          resize: none;
+          padding-top: 11px;
+        }
+
+        #requestYourSchoolModal input {
+          outline: 0;
+        }
+
+        #requestYourSchoolModal .modal-content {
+          height: 600px;
+          overflow-y: scroll;
+        }
+        .modal-backdrop.in {
+          opacity: 0.25 !important;
+        }
+        .requestSchoolRowVerticalFlexContainer {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          flex: 1 1 auto;
+          gap: 8px;
+          width: 0;
+        }
+
+        .unchangedSchoolRequestField,
+        #requestSchoolNameInput::placeholder {
+          color: #dedede;
+          fill: #dedede;
+        }
+
+        .requestSchoolDropdownItem {
+          color: black;
+        }
+
+        .requestYourSchoolModal .modal-dialog {
+          width: 330px;
+          height: 220px;
+        }
+
+        .requestYourSchoolModal .modal-content {
+          width: 330px;
+          height: 200px;
+        }
+
+        #requestSchoolHeaderText {
+          font-size: 28px;
+          font-weight: 500;
+          text-align: center;
+          margin-top: 33px;
+          color: #333 !important;
+        }
+
+        .requestSchoolRadioButtonName {
+          color: #333;
+        }
+
+        .requestSchoolRadioButtonName:hover {
+          cursor: pointer;
+        }
+
+        #requestSchoolSubHeaderText {
+          text-align: center;
+          margin-left: 62px;
+          margin-right: 62px;
+          color: #aaaaaa;
+          margin-top: 10px;
+        }
+
+        .requestSchoolRowContainer {
+          padding-left: 22px;
+          padding-right: 22px;
+          display: flex;
+          flex-direction: row;
+          gap: 28px;
+        }
+
+        .requestSchoolInputContainer {
+          display: flex;
+        }
+        .requestSchoolInput,
+        .requestSchoolDropdownOuterBorder {
+          border-radius: 9px;
+          height: 45px;
+          padding-left: 15px;
+          width: 100%;
+          flex: 1 1 auto;
+          border: 1px solid #e8e8e8;
+          padding-top: 6px;
+          padding-bottom: 6px;
+        }
+
+        .requestSchoolDropdownOuterBorder {
+          padding-right: 0px;
+          padding-left: 0px;
+          display: inline-block;
+          align-items: center;
+          justify-content: space-between;
+          height: 45px;
+        }
+
+        .requestSchoolDropdownOuterBorder:hover {
+          cursor: pointer;
+        }
+
+        .requestSchoolRowHeader {
+          font-size: 17px;
+          font-weight: 500;
+          margin-left: 2px;
+          color: black !important;
+        }
+
+        #requestSchoolAdditionalInput {
+          height: 110px;
+        }
+
+        #requestSchoolInputFieldsFlexContainer {
+          display: flex;
+          flex-direction: column;
+          gap: 17px;
+          margin-top: 16px;
+        }
+
+        .dropdownArrow svg {
+          width: 15px;
+          height: 15px;
+          float: right;
+          top: -23px;
+          position: relative;
+          right: 14px;
+        }
+
+        .requestSchoolDropdownInput {
+          width: 100%;
+          height: 100%;
+          display: none;
+          border: none;
+          padding-left: 15px;
+          padding-right: 22px;
+          font-size: 14px;
+        }
+
+        .requestSchoolCurrentlySelectedOptionsContainer {
+          width: calc(100% - 30px);
+          height: 100%;
+          align-items: center;
+          padding-left: 15px;
+          font-size: 14px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          line-height: 30px;
+          display: block;
+        }
+
+        .requestSchoolSubmitButton {
+          color: white;
+          width: 100%;
+          margin-left: 22px;
+          margin-right: 22px;
+          height: 70x;
+          border-radius: 25px;
+          min-height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 5px;
+          margin-top: 10px;
+          font-weight: bold;
+        }
+
+        #requestSchoolSubmitButton {
+          background-color: #14a2ff;
+        }
+
+        #requestSchoolSubmitButtonLoading {
+          display: none;
+          background-color: #14a2ff;
+        }
+
+        #requestSchoolSubmitButtonSuccess {
+          display: none;
+          background-color: #7ed321;
+        }
+
+        #requestSchoolSubmitButtonSuccess svg {
+          height: 30px;
+          width: 30px;
+          fill: white;
+        }
+
+        #requestSchoolSubmitButtonCenteringContainer {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+
+        .requestSchoolRadioButtonStack {
+          display: flex;
+          flex-direction: column;
+          padding-left: 7px;
+          margin-top: 8px;
+          gap: 10px;
+        }
+
+        .requestSchoolRadioColumn {
+          width: 100%;
+        }
+
+        .requestSchoolRadioButtonStack label {
+          display: flex;
+          gap: 8px;
+          font-weight: 400;
+        }
+
+        .requestSchoolRadioButtonFlexContainer {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+        }
+
+        .requestSchoolRadioButton {
+          width: 17px;
+          height: 17px;
+          box-shadow: inset 0 0 0 1.5px #d7d7d7; /* Default border color */
+          border-radius: 50%;
+          background-color: transparent;
+          cursor: pointer;
+          position: relative;
+          outline: none;
+          transition: all 0s;
+        }
+
+        .requestSchoolRadioButton.radioBtnActive {
+          box-shadow: inset 0 0 0 5px #0fa2ff; /* Thicker border when active */
+        }
+
+        .dropdownArrowInverted svg {
+          transform: rotate(180deg);
+        }
+
+        #countrySearchDropdown,
+        #regionSearchDropdown,
+        #citySearchDropdown {
+          z-index: 20000000;
+          position: relative;
+          width: 100%;
+          border-radius: 6px;
+          border: 1px solid #e7e7e7;
+          background-color: white;
+        }
+
+        #countrySearchDropdownFlexContainer,
+        #regionSearchDropdownFlexContainer,
+        #citySearchDropdownFlexContainer {
+          width: 100%;
+          position: relative;
+          justify-content: center;
+          left: 0px;
+          display: none;
+        }
+
+        #countrySearchDropdown:empty {
+          display: none;
+        }
+
+        .searchDropdownFlexContainer {
+          height: auto;
+          max-height: 170px;
+        }
+        .requestSchoolDropdownItem {
+          min-height: 44px;
+          height: auto;
+          background-color: white;
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          padding-left: 10px;
+          padding-right: 10px;
+          transition: background-color 0.3s ease;
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+
+        .requestSchoolDropdownItem:first-of-type {
+          border-top-left-radius: 6px;
+          border-top-right-radius: 6px;
+        }
+
+        .requestSchoolDropdownItem:last-of-type {
+          border-bottom-left-radius: 6px;
+          border-bottom-right-radius: 6px;
+        }
+
+        .requestSchoolDropdownItem:hover {
+          background-color: #f1f1f1;
+          cursor: pointer;
+        }
+
+        .schoolSelectIncomplete {
+          border: 1px solid red;
+        }
+
+        .requestSchoolIncompleteText {
+          color: red;
+          font-weight: 500;
+          padding-left: 2px;
+        }
+
+        .requestSchoolSearchDropdown {
+          overflow-y: scroll;
+        }
+
+        .yearRoundHiddenRadio {
+          display: none;
+        }
+
+        .requestSchoolSpinner {
+          position: relative;
+          transform: scale(0.8);
+          width: 28px;
+          height: 28px;
+          transform: scale(0.8);
+        }
+
+        .requestSchoolSpinnerBlade {
+          top: 9.2px;
+          left: 12px;
+          width: 4px;
+          height: 9.2px;
+          border-radius: 2px;
+          background-color: white;
+          animation: iSpinnerBlade 1s linear infinite;
+          will-change: opacity;
+          position: absolute;
+        }
+
+        .requestSchoolSpinnerBlade:nth-child(1) {
+          -webkit-transform: rotate(45deg) translateY(-9.2px);
+          transform: rotate(45deg) translateY(-9.2px);
+          animation-delay: -1.625s;
+        }
+
+        .requestSchoolSpinnerBlade:nth-child(2) {
+          -webkit-transform: rotate(90deg) translateY(-9.2px);
+          transform: rotate(90deg) translateY(-9.2px);
+          animation-delay: -1.5s;
+        }
+
+        .requestSchoolSpinnerBlade:nth-child(3) {
+          -webkit-transform: rotate(135deg) translateY(-9.2px);
+          transform: rotate(135deg) translateY(-9.2px);
+          animation-delay: -1.375s;
+        }
+
+        .requestSchoolSpinnerBlade:nth-child(4) {
+          -webkit-transform: rotate(180deg) translateY(-9.2px);
+          transform: rotate(180deg) translateY(-9.2px);
+          animation-delay: -1.25s;
+        }
+
+        .requestSchoolSpinnerBlade:nth-child(5) {
+          -webkit-transform: rotate(225deg) translateY(-9.2px);
+          transform: rotate(225deg) translateY(-9.2px);
+          animation-delay: -1.125s;
+        }
+
+        .requestSchoolSpinnerBlade:nth-child(6) {
+          -webkit-transform: rotate(270deg) translateY(-9.2px);
+          transform: rotate(270deg) translateY(-9.2px);
+          animation-delay: -1s;
+        }
+
+        .requestSchoolSpinnerBlade:nth-child(7) {
+          -webkit-transform: rotate(315deg) translateY(-9.2px);
+          transform: rotate(315deg) translateY(-9.2px);
+          animation-delay: -0.875s;
+        }
+
+        .requestSchoolSpinnerBlade:nth-child(8) {
+          -webkit-transform: rotate(360deg) translateY(-9.2px);
+          transform: rotate(360deg) translateY(-9.2px);
+          animation-delay: -0.75s;
+        }
+
+        /* Why are we doing stuff like this here? If we need to, it should be specific to the request school modal */
+
+        .modal-backdrop.show {
+          opacity: 0.25 !important;
+        }
+
+        #requestYourSchoolModal .modal-dialog {
+          max-width: 600px;
+          width: 600px;
+        }
+
+        .requestSchoolInput {
+          box-sizing: border-box;
+          font-size: 14px;
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        #requestYourSchoolModal .modal-content {
+          -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .slidableModal #requestYourSchoolModal {
+          -ms-overflow-style: none;
+          /* IE and Edge */
+          scrollbar-width: none;
+          /* Firefox */
+        }
+        .slidableModal #requestYourSchoolModal {
+          width: 100% !important;
+          padding-left: 0px;
+          height: calc(100% - 20px);
+        }
+
+        .slidableModal:has(> #requestYourSchoolModal) {
+          padding: 0px 0 0 0;
+        }
+
+        ::-webkit-scrollbar {
+          display: none;
+        }
+
+        @-webkit-keyframes iSpinnerBlade {
+          0% {
+            opacity: 0.85;
+          }
+
+          50% {
+            opacity: 0.25;
+          }
+
+          100% {
+            opacity: 0.25;
+          }
+        }
+
+        @keyframes iSpinnerBlade {
+          0% {
+            opacity: 0.85;
+          }
+
+          50% {
+            opacity: 0.25;
+          }
+
+          100% {
+            opacity: 0.25;
+          }
+        }
+
+        @media screen and (max-width: 500px) {
+          #requestSchoolSubHeaderText {
+            margin-left: 35px;
+            margin-right: 35px;
+          }
+
+          #requestSchoolInputFieldsFlexContainer {
+            gap: 15px;
+          }
+        }
+      </style>
+
+      <script>
+        //Begin request school modal code
+        //on the school select search page, if there are no results, there is a message indicating
+        //to click *here* to submit a request. This is the listener.
+
+        // jquery isn't necessarily loaded prior to this script, have to wait for the page to load
+        document.addEventListener("DOMContentLoaded", () => {
+          $(".universalSchoolSearchRequestSchoolLinkText").on(
+            "click",
+            function () {
+              //resetting modal state.
+              $("#requestYourSchoolModal").scrollTop(0);
+              $(".requestSchoolDropdownOuterBorder").addClass(
+                "unchangedSchoolRequestField"
+              );
+              $(".radioBtnActive").removeClass(".radioBtnActive");
+              $(".requestSchoolInput").val("");
+              $("#requestSchoolCountryDropdown");
+              changeRequestSubmitButton("submit");
+
+              unmarkAllIncompleteFields();
+
+              //default the radio buttons to the 'Semester' and 'University' options.
+              $("#termStructureSemester").click();
+              $("#request-university").click();
+
+              //On web, we are inserting the school select php into the left rail, which in turn makes the request school modal a child of the left rail as well.
+              //This leads to unwanted behaivor where the modal displays solely in the left rail and badly. As a solution, we are moving the modal and the grey background (the latter of these is now happening in baseModal.php)
+              //and appending it to the body. This works fine with dismissing the modal and reclicking the request school modal link.
+
+              $("#leftRail #requestYourSchoolModal").appendTo("body");
+
+              window.showBaseModal("#requestYourSchoolModal");
+              //fetch the countries, regions, cities.
+              getRequestSchoolViewData();
+            }
+          );
+
+          //when you click a radio button to select type or term structure
+          $(document).on(
+            "click",
+            ".requestSchoolRadioButtonFlexContainer",
+            function () {
+              //get the flex container holding all of the buttons
+              let radioButtonStack = $(this).closest(
+                ".requestSchoolRadioButtonStack"
+              );
+
+              //within this stack, remove any other active selections.
+              radioButtonStack
+                .find(".requestSchoolRadioButton")
+                .removeClass("radioBtnActive");
+
+              //apply the selection.
+              $(this)
+                .find(".requestSchoolRadioButton")
+                .addClass("radioBtnActive");
+
+              // If the user has selected any type besides university, we hide the course search page and we show the year round option.
+              if ($(this).closest(".requestSchoolType").length > 0) {
+                //selection other than university
+                if ($(this).find("#request-university").length == 0) {
+                  //hide the option to provide a course search link
+                  $(".courseSearchPage").hide();
+                  //show the option for year round term structure
+                  $(
+                    ".requestSchoolRadioButtonFlexContainer.yearRoundHiddenRadio"
+                  ).css("display", "flex");
+                  return;
+                }
+
+                //otherwise (selected university), hide the year round option, clear its selection, and add option for course search link.
+                $(
+                  ".requestSchoolRadioButtonFlexContainer.yearRoundHiddenRadio"
+                ).hide();
+                $(".yearRoundHiddenRadio .radioBtnActive").removeClass(
+                  "radioBtnActive"
+                );
+                $(".courseSearchPage").show();
+              }
+            }
+          );
+
+          //When you click into a dropdown, either open or close the relevant dropdown options.
+          $(".requestSchoolDropdownOuterBorder").on("click", function () {
+            let context = $(this).attr("id");
+            renderRequestSchoolDropdownSearch(context);
+          });
+
+          //get the countries, regions, and cities with which to populate the request school dropdown.
+          function getRequestSchoolViewData() {
+            if (window.requestSchoolViewData) {
+              return window.requestSchoolViewData;
+            }
+            $.ajax({
+              url: "/shared/requests/getRequestSchoolViewData.php",
+              type: "GET",
+              success(response) {
+                window.requestSchoolViewData = response;
+              },
+            });
+          }
+
+          function requestSchoolCheckCountryRegionCityFields(
+            fieldBeingAttempted
+          ) {
+            //check if country and region have been set.
+            let countrySelected = !$("#requestSchoolCountryDropdown").is(
+              ".unchangedSchoolRequestField"
+            );
+            let regionSelected = !$("#requestSchoolRegionDropdown").is(
+              ".unchangedSchoolRequestField"
+            );
+
+            let missingFields = ["country", "region"];
+
+            if (countrySelected) {
+              missingFields.splice(missingFields.indexOf("country"), 1);
+            }
+            if (regionSelected) {
+              missingFields.splice(missingFields.indexOf("region"), 1);
+            }
+
+            switch (fieldBeingAttempted) {
+              case "requestSchoolCityDropdown":
+                if (missingFields.length == 0) {
+                  //country and region have both been set. We return that no additional fields are required.
+                  return [];
+                }
+                break;
+
+              case "requestSchoolRegionDropdown":
+                if (
+                  missingFields.length == 1 &&
+                  missingFields.includes("region")
+                ) {
+                  //only region is missing. This is expected, so we return that no additional fields are required.
+                  return [];
+                }
+                missingFields.splice(missingFields.indexOf("region"), 1);
+                break;
+
+              default:
+                //we assume that by this point they are selecting a country, for which there are no prerequisite fields.
+                return [];
+                break;
+            }
+            return missingFields;
+          }
+
+          async function renderRequestSchoolDropdownSearch(context) {
+            window.requestSchoolDropdownItems;
+            let dropdownContainer;
+            let dropdownFlexContainer;
+            let inputContainer;
+            let selectedCountry =
+              requestSchoolLocationDetails["countrySearchDropdown"];
+            let selectedRegion =
+              requestSchoolLocationDetails["regionSearchDropdown"];
+
+            let flexContainers = {
+              country: $("#countrySearchDropdownFlexContainer"),
+              region: $("#regionSearchDropdownFlexContainer"),
+              city: $("#citySearchDropdownFlexContainer"),
+            };
+
+            //this function handles all the dropdowns  in the request school modal.
+            //eventually the dropdown options will be informed by network request.
+
+            let missingRequiredFields =
+              requestSchoolCheckCountryRegionCityFields(context);
+
+            //there is a precedence for selecting country, region, and city. Country must be selected first, then region.
+            if (missingRequiredFields.length > 0) {
+              missingRequiredFields.forEach(function (field) {
+                markIncompleteField(
+                  flexContainers[field].closest(
+                    ".requestSchoolRowVerticalFlexContainer"
+                  )
+                );
+              });
+              return;
+            }
+
+            if (!window.requestSchoolViewData) {
+              alert(
+                "Loading geographical data. Please try again in a few moments"
+              );
+              return;
+            }
+
+            switch (context) {
+              case "requestSchoolCountryDropdown":
+                requestSchoolDropdownItems = Object.keys(
+                  window.requestSchoolViewData["geographies"]
+                );
+                dropdownContainer = $("#countrySearchDropdown");
+                dropdownFlexContainer = flexContainers["country"];
+                break;
+
+              case "requestSchoolCityDropdown":
+                let optionsToShowForSelectedRegion =
+                  requestSchoolViewData["geographies"]?.[selectedCountry]?.[
+                    selectedRegion
+                  ];
+                requestSchoolDropdownItems = optionsToShowForSelectedRegion
+                  ? optionsToShowForSelectedRegion
+                  : [];
+                dropdownContainer = $("#citySearchDropdown");
+                dropdownFlexContainer = flexContainers["city"];
+                break;
+
+              case "requestSchoolRegionDropdown":
+                let optionsToShowForSelectedCountry =
+                  requestSchoolViewData["geographies"]?.[selectedCountry];
+                requestSchoolDropdownItems = optionsToShowForSelectedCountry
+                  ? Object.keys(optionsToShowForSelectedCountry)
+                  : [];
+                dropdownContainer = $("#regionSearchDropdown");
+                dropdownFlexContainer = flexContainers["region"];
+                break;
+            }
+
+            inputContainer = dropdownFlexContainer.closest(
+              ".requestSchoolInputContainer"
+            );
+
+            inputContainer.addClass("requestSchoolSearchOpen");
+
+            //we determine here whether a dropdown is open by checking if the typing input is showing
+            //rather than the selected option at the top.
+            if ($(".requestSchoolDropdownInput").is(":visible")) {
+              //hide and reset everything pertaining to the dropdown.
+              resetAllSchoolSelectDropdownStates(inputContainer);
+              return;
+            }
+
+            //populate the relevant dropdown
+            dropdownContainer.empty();
+            let resorted = ensureUsersLocationAppearsFirstInSearch();
+            resorted.forEach(function (searchItem) {
+              dropdownContainer.append(
+                generateSchoolSelectDropdownHtml(searchItem)
+              );
+            });
+
+            // Add 'other' to the end of the dropdown unless it's the country dropdown.
+            if (context != "requestSchoolCountryDropdown") {
+              let otherHtml = generateSchoolSelectDropdownHtml("Other");
+              dropdownContainer.append(otherHtml);
+            }
+
+            //show the relevant dropdown
+            dropdownFlexContainer.css("display", "flex");
+            inputContainer
+              .find(".requestSchoolDropdownInput")
+              .css("display", "inline-block")
+              .focus();
+            inputContainer
+              .find(".requestSchoolCurrentlySelectedOptionsContainer")
+              .hide();
+            inputContainer
+              .find(".dropdownArrow")
+              .addClass("dropdownArrowInverted");
+            inputContainer.find(".requestSchoolSearchDropdown").show();
+          }
+
+          function generateSchoolSelectDropdownHtml(name) {
+            return `<div class='requestSchoolDropdownItem'>${name}</div>`;
+          }
+
+          //we cannot do a more focused 'blur' listener because it fires for all inputs of the class you provide, for some reason.
+          $(document).on("click", function (e) {
+            //if you don't include this check, the dropdown search closes as soon as you open it.
+            if (
+              !$(e.target).closest(
+                ".requestSchoolInputContainer.requestSchoolSearchOpen"
+              ).length
+            ) {
+              resetAllSchoolSelectDropdownStates();
+            }
+          });
+
+          //hide the dropdown searches, rotate the arrow, etc.
+          function resetAllSchoolSelectDropdownStates() {
+            $(".requestSchoolDropdownInput").hide();
+            $(".requestSchoolCurrentlySelectedOptionsContainer").show();
+            $(".dropdownArrow").removeClass("dropdownArrowInverted");
+            $(".searchDropdownFlexContainer").hide();
+            $(".requestSchoolSearchOpen").removeClass(
+              "requestSchoolSearchOpen"
+            );
+          }
+
+          function scanForIncompleteFields(highlight = true) {
+            fieldsToMarkIncomplete = [];
+
+            //get rid of any lingering incomplete field indicators.  They will be re-added if necessary.
+            unmarkAllIncompleteFields();
+
+            // standard input fields
+            $(".requestSchoolInput").each(function () {
+              if (
+                $(this).val().length == 0 &&
+                !$(this).is(".requestSchoolOptionalField")
+              ) {
+                fieldsToMarkIncomplete.push(
+                  $(this).closest(".requestSchoolRowVerticalFlexContainer")
+                );
+              }
+            });
+            // dropdown input fields
+            $(".requestSchoolDropdownOuterBorder").each(function () {
+              //don't do anything if the field is optional.
+              if ($(this).is(".requestSchoolOptionalField")) {
+                return;
+              }
+              //the dropdown has not been changed by user action, but is a required field.
+              if ($(this).is(".unchangedSchoolRequestField")) {
+                fieldsToMarkIncomplete.push(
+                  $(this).closest(".requestSchoolRowVerticalFlexContainer")
+                );
+              }
+              //the dropdown field is required yet empty; we cannot use this alone because dropdowns have grey default text like "United States"
+              else if (
+                $(this)
+                  .find(".requestSchoolCurrentlySelectedOptionsContainer")
+                  .text().length == 0
+              ) {
+                fieldsToMarkIncomplete.push(
+                  $(this).closest(".requestSchoolRowVerticalFlexContainer")
+                );
+              }
+            });
+            return fieldsToMarkIncomplete;
+          }
+
+          //we pass the flex container containing the incomplete field, that way the input is uniform for both dropdown and standard input field types.
+          function markIncompleteField(flexContainer) {
+            flexContainer
+              .find(".requestSchoolInput, .requestSchoolDropdownOuterBorder")
+              .addClass("schoolSelectIncomplete");
+            flexContainer.find(".requestSchoolIncompleteText").show();
+          }
+
+          function unmarkAllIncompleteFields() {
+            $(".requestSchoolIncompleteText").hide();
+            $(".schoolSelectIncomplete").removeClass("schoolSelectIncomplete");
+          }
+
+          //keep track of user selections for country, region, city.
+          window.requestSchoolLocationDetails = {};
+
+          $(document).on("click", ".requestSchoolDropdownItem", function () {
+            let dropdownID = $(this).parent().attr("id");
+            //change the selected option in the dropdown
+            $(this)
+              .closest(".searchDropdownFlexContainer")
+              .siblings(".requestSchoolCurrentlySelectedOptionsContainer")
+              .text($(this).text());
+            requestSchoolLocationDetails[dropdownID] = $(this).text();
+
+            //get rid of incomplete field styling, and make note that the field has been changed.
+            $(this)
+              .closest(".requestSchoolDropdownOuterBorder")
+              .removeClass("unchangedSchoolRequestField")
+              .removeClass("schoolSelectIncomplete");
+            $(this)
+              .closest(".requestSchoolRowVerticalFlexContainer")
+              .find(".requestSchoolIncompleteText")
+              .hide();
+
+            let parentID = $(this).parent().attr("id");
+            //Clear city every time we change the country and region
+            if (
+              ["countrySearchDropdown", "regionSearchDropdown"].includes(
+                parentID
+              )
+            ) {
+              $("#requestSchoolCurrentlySelectedCity").text("Brooklyn");
+              $("#requestSchoolCityDropdown").addClass(
+                "unchangedSchoolRequestField"
+              );
+            }
+
+            //clear region every time we change country
+            if (parentID == "countrySearchDropdown") {
+              $("#requestSchoolCurrentlySelectedRegion").text("New York");
+              $("#requestSchoolRegionDropdown").addClass(
+                "unchangedSchoolRequestField"
+              );
+            }
+          });
+
+          //this listener is for typing in dropdown search.
+          $(".requestSchoolDropdownInput").on("keydown", function (e) {
+            //if they press the enter key, just close the search and display whatever they've typed
+            if (e.which == 13) {
+              resetAllSchoolSelectDropdownStates();
+              return;
+            }
+
+            let inputElement = $(this);
+
+            //we wrap in a setTimeout of zero, otherwise the displayed element and the input will be out of sync by one character.
+            setTimeout(function () {
+              let currentInputText = inputElement.val();
+              let dropdownID = inputElement
+                .closest(".requestSchoolInputContainer")
+                .find(".requestSchoolSearchDropdown")
+                .attr("id");
+              requestSchoolLocationDetails[dropdownID] = currentInputText;
+
+              let outerBorder = inputElement.closest(
+                ".requestSchoolDropdownOuterBorder"
+              );
+
+              //get rid of incomplete field styling
+              outerBorder.removeClass("schoolSelectIncomplete");
+
+              if (currentInputText.length > 0) {
+                outerBorder.removeClass("unchangedSchoolRequestField");
+              } else {
+                outerBorder.addClass("unchangedSchoolRequestField");
+              }
+
+              //make the currently selected option reflect what has been typed
+              inputElement
+                .siblings(".requestSchoolCurrentlySelectedOptionsContainer")
+                .text(currentInputText);
+
+              // '[field] is required' text removed.
+              inputElement
+                .closest(".requestSchoolRowVerticalFlexContainer")
+                .find(".requestSchoolIncompleteText")
+                .hide();
+
+              searchRequestSchoolDropdownItems(currentInputText, dropdownID);
+            }, 0);
+          });
+
+          //this listener is for typing in standard input fields, like Name.
+          $(".requestSchoolInput").on("keydown", function () {
+            let inputElement = $(this);
+            setTimeout(function () {
+              inputElement
+                .closest(".requestSchoolInput")
+                .removeClass("unchangedSchoolRequestField")
+                .removeClass("schoolSelectIncomplete");
+              inputElement
+                .closest(".requestSchoolRowVerticalFlexContainer")
+                .find(".requestSchoolIncompleteText")
+                .hide();
+            }, 0);
+          });
+
+          $("#requestSchoolSubmitButton").on("click", function () {
+            changeRequestSubmitButton("loading");
+            let incompleteFields = scanForIncompleteFields();
+
+            if (incompleteFields.length > 0) {
+              //don't take action immediately - give it a second for the spinner to spin.
+              setTimeout(function () {
+                incompleteFields.forEach(function (field) {
+                  markIncompleteField(field);
+                });
+                $(".schoolSelectIncomplete").first().get(0).scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                });
+                changeRequestSubmitButton("submit");
+              }, 1000);
+            } else {
+              let path = window.location.pathname;
+              var page = "unknown";
+              if (path == "/") {
+                page = "homepage";
+              } else if (path.includes("/schools/")) {
+                page = "schools";
+              } else if (path.includes("/app/")) {
+                page = "First school search"; // pwa
+              } else if (path == "/college-schedule-maker/") {
+                page = "schedule maker";
+              } else if (window.schoolName) {
+                page = "app - " + window.schoolName;
+              }
+
+              let data = Object.fromEntries(
+                Object.entries({
+                  uuid: store.get("uuid"),
+                  client: window.schoolSelectInsidePWA ? "android" : "web",
+                  page: page,
+                  name: $("#requestSchoolNameInput").val(),
+                  type: $(".requestSchoolType.radioBtnActive")
+                    .siblings(".requestSchoolRadioButtonName")
+                    .text(),
+                  calendarType: $(".requestSchoolTermStructure.radioBtnActive")
+                    .siblings(".requestSchoolRadioButtonName")
+                    .text(),
+                  country: $("#requestSchoolCurrentlySelectedCountry").text(),
+                  region: $("#requestSchoolCurrentlySelectedRegion").text(),
+                  city: $("#requestSchoolCurrentlySelectedCity").text(),
+                  homepage: $("#requestSchoolHomepage").val(),
+                  courseSearch: $("#requestSchoolCourseSearchPage").val(),
+                  comment: $("#requestSchoolAdditionalInput").val(),
+                }).filter(
+                  ([fieldName, fieldValue]) =>
+                    fieldValue !== null && fieldValue.length !== 0
+                )
+              );
+
+              $.ajax({
+                url: "/shared/requests/requestSchool.php",
+                type: "POST",
+                dataType: "json",
+                data: data,
+                success: function (response) {
+                  //seems like we never get here, so we'll just begin the settimeout immediately after the request begins.
+                },
+              });
+              setTimeout(function () {
+                changeRequestSubmitButton("success");
+                setTimeout(function () {
+                  hideBaseModal();
+                }, 2000);
+              }, 1000);
+            }
+          });
+
+          function changeRequestSubmitButton(state) {
+            $(".requestSchoolSubmitButton").hide();
+            let buttonToShow;
+
+            switch (state) {
+              case "submit":
+                buttonToShow = $("#requestSchoolSubmitButton");
+                break;
+              case "loading":
+                buttonToShow = $("#requestSchoolSubmitButtonLoading");
+                break;
+              case "success":
+                buttonToShow = $("#requestSchoolSubmitButtonSuccess");
+                break;
+            }
+            buttonToShow.css("display", "flex");
+          }
+
+          function ensureUsersLocationAppearsFirstInSearch() {
+            let priorityItems = Object.values(
+              window.requestSchoolViewData.usersLocation
+            );
+            let prioritizedList = requestSchoolDropdownItems.filter((item) =>
+              priorityItems.includes(item)
+            );
+            let normalList = requestSchoolDropdownItems.filter(
+              (item) => !priorityItems.includes(item)
+            );
+            let resorted = prioritizedList.concat(normalList);
+            return resorted;
+          }
+
+          function searchRequestSchoolDropdownItems(searchTerm, dropdownID) {
+            let searchItemContainer = $(`#${dropdownID}`);
+            // Clear the container
+            searchItemContainer.empty();
+
+            if (searchTerm.length == 0) {
+              let resorted = ensureUsersLocationAppearsFirstInSearch();
+              resorted.forEach((name) => {
+                searchItemContainer.append(
+                  generateSchoolSelectDropdownHtml(name)
+                );
+              });
+              // Always add 'Other' at the end unless this is the country search
+              if (dropdownID == "countrySearchDropdown") {
+                return;
+              }
+              const otherHtml = generateSchoolSelectDropdownHtml("Other");
+              searchItemContainer.append(otherHtml);
+
+              return;
+            }
+
+            // Convert search term to lowercase for case-insensitive comparison
+            const searchTermLower = searchTerm.toLowerCase();
+
+            // Filter the items based on the search term
+            const exactMatches = requestSchoolDropdownItems.filter(
+              (item) => item.toLowerCase() === searchTermLower
+            );
+
+            const beginningMatches = requestSchoolDropdownItems.filter(
+              (item) =>
+                item.toLowerCase().startsWith(searchTermLower) &&
+                item.toLowerCase() !== searchTermLower
+            );
+
+            const intraMatches = requestSchoolDropdownItems.filter(
+              (item) =>
+                item.toLowerCase().includes(searchTermLower) &&
+                !item.toLowerCase().startsWith(searchTermLower)
+            );
+
+            // If there are exact matches, show only those
+            if (exactMatches.length > 0) {
+              exactMatches.forEach((name) => {
+                const html = generateSchoolSelectDropdownHtml(name);
+                searchItemContainer.append(html);
+              });
+            } else {
+              // Sort matches alphabetically, excluding "Other"
+              const sortedBeginningMatches = beginningMatches
+                .filter((item) => item.toLowerCase() !== "other")
+                .sort((a, b) => a.localeCompare(b));
+              const sortedIntraMatches = intraMatches
+                .filter((item) => item.toLowerCase() !== "other")
+                .sort((a, b) => a.localeCompare(b));
+
+              // Generate and append the new HTML for beginning matches
+              sortedBeginningMatches.forEach((name) => {
+                const html = generateSchoolSelectDropdownHtml(name);
+                searchItemContainer.append(html);
+              });
+
+              // Generate and append the new HTML for intra-string matches
+              sortedIntraMatches.forEach((name) => {
+                const html = generateSchoolSelectDropdownHtml(name);
+                searchItemContainer.append(html);
+              });
+            }
+            // Always add 'Other' at the end unless this is the country search
+            if (dropdownID == "countrySearchDropdown") {
+              return;
+            }
+            const otherHtml = generateSchoolSelectDropdownHtml("Other");
+            searchItemContainer.append(otherHtml);
+          }
+        });
+      </script>
+    </div>
+  </body>
+</html>
