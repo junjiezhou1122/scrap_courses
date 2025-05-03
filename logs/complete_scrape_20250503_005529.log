@@ -1,0 +1,87 @@
+2025-05-03 00:56:05,675 - INFO - Starting complete scraping process
+2025-05-03 00:56:05,685 - INFO - Created output directory: output/universities
+2025-05-03 00:56:05,685 - INFO - Created output directory: output/departments
+2025-05-03 00:56:05,685 - INFO - Created output directory: output/courses
+2025-05-03 00:56:05,685 - INFO - Created output directory: output/course_details
+2025-05-03 00:56:05,685 - INFO - Loading universities from /Users/meng/Desktop/tmp/scrap_courses/output/universities/universities.csv
+2025-05-03 00:56:05,691 - INFO - Loaded 144 universities from file
+2025-05-03 00:56:05,691 - INFO - Loaded 144 universities from file (skipping scraping)
+2025-05-03 00:56:05,691 - INFO - Starting to scrape departments for 144 universities
+2025-05-03 00:56:05,691 - INFO - Processing university 1/144: snhu
+2025-05-03 00:56:05,704 - INFO - Progress saved to output/scraping_progress.json
+2025-05-03 00:56:05,704 - INFO - University snhu already processed according to progress tracker, checking for existing data
+2025-05-03 00:56:05,706 - INFO - Loaded 60 existing departments for snhu
+2025-05-03 00:56:05,706 - INFO - Processing university 2/144: ivytechindianapolis
+2025-05-03 00:56:05,714 - INFO - Progress saved to output/scraping_progress.json
+2025-05-03 00:56:05,714 - INFO - University ivytechindianapolis already processed according to progress tracker, checking for existing data
+2025-05-03 00:56:05,716 - INFO - Loaded 111 existing departments for ivytechindianapolis
+2025-05-03 00:56:05,716 - INFO - Processing university 3/144: asu
+2025-05-03 00:56:05,723 - INFO - Progress saved to output/scraping_progress.json
+2025-05-03 00:56:05,723 - INFO - Starting department scraper for URL: https://www.coursicle.com/asu/courses/
+2025-05-03 00:56:11,715 - INFO - WebDriver set up successfully
+2025-05-03 00:56:15,859 - INFO - Visited homepage first: https://www.coursicle.com/asu/
+2025-05-03 00:56:25,685 - INFO - Navigated to https://www.coursicle.com/asu/courses/
+2025-05-03 00:56:33,315 - WARNING - Error during human behavior simulation: empty range in randrange(773, -175)
+2025-05-03 00:56:48,699 - WARNING - Timeout waiting for tile container, checking for bot detection
+2025-05-03 00:56:53,847 - INFO - No 'More' button found or it's not needed
+2025-05-03 00:56:53,861 - INFO - Found 0 department tiles
+2025-05-03 00:56:58,368 - WARNING - Error during human behavior simulation: empty range in randrange(773, -175)
+2025-05-03 00:56:58,369 - WARNING - No departments found, saving debug information
+2025-05-03 00:56:58,371 - ERROR - Error during department scraping: cannot access local variable 'os' where it is not associated with a value
+2025-05-03 00:56:58,488 - INFO - Browser closed
+2025-05-03 00:56:58,488 - ERROR - Error processing university asu: cannot access local variable 'os' where it is not associated with a value
+2025-05-03 00:56:58,488 - INFO - Processing university 4/144: tamu
+2025-05-03 00:56:58,498 - INFO - Progress saved to output/scraping_progress.json
+2025-05-03 00:56:58,498 - INFO - University tamu already processed according to progress tracker, checking for existing data
+2025-05-03 00:56:58,501 - INFO - Loaded 283 existing departments for tamu
+2025-05-03 00:56:58,501 - INFO - Processing university 5/144: ucf
+2025-05-03 00:56:58,507 - INFO - Progress saved to output/scraping_progress.json
+2025-05-03 00:56:58,507 - INFO - University ucf already processed according to progress tracker, checking for existing data
+2025-05-03 00:56:58,510 - INFO - Loaded 245 existing departments for ucf
+2025-05-03 00:56:58,510 - INFO - Processing university 6/144: ubc
+2025-05-03 00:56:58,515 - INFO - Progress saved to output/scraping_progress.json
+2025-05-03 00:56:58,515 - INFO - University ubc already processed according to progress tracker, checking for existing data
+2025-05-03 00:56:58,517 - INFO - Loaded 253 existing departments for ubc
+2025-05-03 00:56:58,517 - INFO - Processing university 7/144: umgc
+2025-05-03 00:56:58,523 - INFO - Progress saved to output/scraping_progress.json
+2025-05-03 00:56:58,523 - INFO - University umgc already processed according to progress tracker, checking for existing data
+2025-05-03 00:56:58,525 - INFO - Loaded 126 existing departments for umgc
+2025-05-03 00:56:58,525 - INFO - Processing university 8/144: osu
+2025-05-03 00:56:58,530 - INFO - Progress saved to output/scraping_progress.json
+2025-05-03 00:56:58,530 - INFO - University osu already processed according to progress tracker, checking for existing data
+2025-05-03 00:56:58,531 - INFO - Loaded 247 existing departments for osu
+2025-05-03 00:56:58,531 - INFO - Processing university 9/144: mdc
+2025-05-03 00:56:58,536 - INFO - Progress saved to output/scraping_progress.json
+2025-05-03 00:56:58,537 - INFO - University mdc already processed according to progress tracker, checking for existing data
+2025-05-03 00:56:58,538 - INFO - Loaded 214 existing departments for mdc
+2025-05-03 00:56:58,538 - INFO - Processing university 10/144: nyu
+2025-05-03 00:56:58,544 - INFO - Progress saved to output/scraping_progress.json
+2025-05-03 00:56:58,544 - INFO - University nyu already processed according to progress tracker, checking for existing data
+2025-05-03 00:56:58,546 - INFO - Loaded 772 existing departments for nyu
+2025-05-03 00:56:58,546 - INFO - Processing university 11/144: illinois
+2025-05-03 00:56:58,552 - INFO - Progress saved to output/scraping_progress.json
+2025-05-03 00:56:58,552 - INFO - University illinois already processed according to progress tracker, checking for existing data
+2025-05-03 00:56:58,554 - INFO - Loaded 212 existing departments for illinois
+2025-05-03 00:56:58,554 - INFO - Processing university 12/144: mdckendall
+2025-05-03 00:56:58,561 - INFO - Progress saved to output/scraping_progress.json
+2025-05-03 00:56:58,561 - INFO - University mdckendall already processed according to progress tracker, checking for existing data
+2025-05-03 00:56:58,562 - INFO - Loaded 253 existing departments for mdckendall
+2025-05-03 00:56:58,562 - INFO - Processing university 13/144: uw
+2025-05-03 00:56:58,568 - INFO - Progress saved to output/scraping_progress.json
+2025-05-03 00:56:58,568 - INFO - University uw already processed according to progress tracker, checking for existing data
+2025-05-03 00:56:58,569 - INFO - Loaded 319 existing departments for uw
+2025-05-03 00:56:58,569 - INFO - Processing university 14/144: umn
+2025-05-03 00:56:58,574 - INFO - Progress saved to output/scraping_progress.json
+2025-05-03 00:56:58,574 - INFO - University umn already processed according to progress tracker, checking for existing data
+2025-05-03 00:56:58,577 - INFO - Loaded 339 existing departments for umn
+2025-05-03 00:56:58,577 - INFO - Processing university 15/144: ufl
+2025-05-03 00:56:58,583 - INFO - Progress saved to output/scraping_progress.json
+2025-05-03 00:56:58,583 - INFO - Starting department scraper for URL: https://www.coursicle.com/ufl/courses/
+2025-05-03 00:57:00,847 - INFO - WebDriver set up successfully
+2025-05-03 00:57:03,655 - INFO - Visited homepage first: https://www.coursicle.com/ufl/
+2025-05-03 00:57:13,040 - INFO - Navigated to https://www.coursicle.com/ufl/courses/
+2025-05-03 00:57:22,328 - WARNING - Error during human behavior simulation: empty range in randrange(773, -175)
+2025-05-03 00:57:27,763 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /session/2d2eb80cfd97e50544097ee1106fe518
+2025-05-03 00:57:27,767 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10283bc50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/2d2eb80cfd97e50544097ee1106fe518
+2025-05-03 00:57:27,768 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102831480>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/2d2eb80cfd97e50544097ee1106fe518
+2025-05-03 00:57:27,769 - INFO - Browser closed
